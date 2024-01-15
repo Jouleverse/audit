@@ -7,14 +7,14 @@ const core_nodes = [
 	{
 		owner: 'JNSDAO',
 		type: 'witness',
-		ip: '43.134.121.187',
+		ip: '43.134.121.187', // bootnode.jnsdao.com
 		id: '2379e2c19b8a0e4a76d011b07e41493902c1f274abc5adce3e20fe60f0cabac6',
 		enode: 'enode://19dc6b15744e8ad73f860d6ca7bf7b1acf37497ef8a720a88d64449ec837af460535fcf01662907aaece6bde0c2ff539a9d79e353d043769134666a1586fa4e0@43.134.121.187:30311'
 	},
 	{
 		owner: 'Jeff',
 		type: 'witness',
-		ip: '43.136.53.164',
+		ip: '43.136.53.164', // bootnode-jeff.jnsdao.com
 		id: '36d1c18a197fea99e9b55b111b03ab03866367838b3017ae91984e0648e3f677',
 		enode: 'enode://f3e4e524d89b4cdb9ee390d9485cee4d6a5e9a260f5673cab118505cc3e69fe8365bc00434222d27fe4082ca798b13ad8e7e139d1315f635fd0e46dbe96fa809@43.136.53.164:30311'
 	},
@@ -99,7 +99,7 @@ const core_nodes = [
 	{
 		owner: '严光红',
 		type: 'witness',
-		ip: '1.14.111.74',
+		ip: '1.14.111.74', // bootnode-ygh.jnsdao.com
 		id: '65e0dc09479950368c2edaa0d7f3dd30af33ebd0187b31f0ad5df55535905f01',
 		enode: 'enode://b3eca38a3d18a789a0ca4e0e871c77fbf98fbe82cb8ed577895be8be14599abd07df88fe5fcf5fa11a63843b25bbc69b28da9a68bc0fcf42b01583329d4e0006@1.14.111.74:30311'
 	},
@@ -113,14 +113,14 @@ const core_nodes = [
 	{
 		owner: '比尔盖',
 		type: 'witness',
-		ip: '62.234.5.241',
+		ip: '62.234.5.241', // bootnode-biergai.jnsdao.com
 		id: 'b3af9021f81a99afb7ae6a09448973453ddab57db15a9f7cfb8db94171d3920d',
 		enode: 'enode://1c4979289156cf90ac190bd6a5f6841886c421ff017dd0d842d8e847973d751f9e13c90e880081c3ba8df5bc572969266c25dac98fc60da68ce6857dcf39da23@62.234.5.241:30311'
 	},
 	{
 		owner: 'Koant',
 		type: 'witness',
-		ip: '111.230.23.83',
+		ip: '111.230.23.83', // bootnode-koant.jnsdao.com
 		id: '6070dfa4ec231c5abeba83114eb8238d69a453e4c17d4aa6706ae320dc0aa922',
 		enode: 'enode://6fd8e9c18272d4fb523beb44bfe9fa4d85107f530ab60a324b5e1aff23ef7f57f7bb6c4959d0b37d3645e2583c6492ec8b4125e30d97aeb10b810f29b9de2cdd@111.230.23.83:30311'
 	},
@@ -134,14 +134,14 @@ const core_nodes = [
 	{
 		owner: 'OPEN',
 		type: 'witness',
-		ip: '124.222.199.61',
+		ip: '124.222.199.61', // bootnode-open.jnsdao.com
 		id: '7da1b99acd6bedf5de7ae595aa3676e329b35fc3fa87a93ab0312638549de473',
 		enode: 'enode://0a8b5aa7210ada01d9919e4f1a19860a2946f6e54ae2e0fb8c7e1b7e5482546c478260d284255da92d95d579cffd6ce06ec0bf520b7e4e71876a1efa68f7674d@124.222.199.61:30311'
 	},
 	{
 		owner: '谢勇',
 		type: 'witness',
-		ip: '120.26.11.88',
+		ip: '120.26.11.88', // bootnode-wenqinghuo.jnsdao.com
 		id: 'fb444f8dedff72c18926703b0e9556c99ace3dbcfa442e32b72eb73f147db71f',
 		enode: 'enode://a3962d318258089803e5600a9f3d1c09e4a87272086e1f1d156fce1742f3baa2ea9f8af9756eb745742fc655fe4daec40a48cc52b8abcc620a6aaf17fa8a52ef@120.26.11.88:30311'
 	},
