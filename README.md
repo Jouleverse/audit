@@ -25,11 +25,12 @@ ln audit/audit_network.js data/audit_network.js
 2) 跑一下下述命令，观察运行结果是否正确：
 
 ```
-docker exec jouleverse-mainnet /j/geth --exec 'loadScript("/audit/audit_network.js");1' attach /data/mainnet/geth.ipc
+docker exec jouleverse-mainnet /j/geth --exec 'loadScript("/data/audit_network.js");1' attach /data/mainnet/geth.ipc
 ```
 
 3) 执行 crontab -e ，添加定时任务，内容参见 audit_network.crontab
 
+注意：运行docker的权限问题。确保定时任务能够顺利执行。
 
 ### 日常维护
 
