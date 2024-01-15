@@ -6,7 +6,7 @@ Audit scripts and their usage for monitoring Jouleverse.
 
 用途：用于每日审计Jouleverse网络节点运行情况。
 
-节点类型：1) witness - 见证节点；2) miner* - 预备中的记账节点（已PoS质押，未投票）；3) miner - 记账节点。
+节点类型：1) witness - 见证节点；2) miner\* - 预备中的记账节点（已PoS质押，未投票）；3) miner - 记账节点。
 
 ### 使用方法
 
@@ -65,4 +65,6 @@ docker exec jouleverse-mainnet /j/geth --exec 'loadScript("/audit/audit_network.
 - auto detect if I am the audit node
 - put it to github repo audit/, open for anyone to audit
 
+0.2.2 evan.j
+- add enode infos for all nodes, and automatically addPeer if not seeing it.
 

@@ -8,69 +8,79 @@ const core_nodes = [
 		owner: 'JNSDAO',
 		type: 'witness',
 		ip: '43.134.121.187',
-		id: '2379e2c19b8a0e4a76d011b07e41493902c1f274abc5adce3e20fe60f0cabac6'
+		id: '2379e2c19b8a0e4a76d011b07e41493902c1f274abc5adce3e20fe60f0cabac6',
+		enode: 'enode://19dc6b15744e8ad73f860d6ca7bf7b1acf37497ef8a720a88d64449ec837af460535fcf01662907aaece6bde0c2ff539a9d79e353d043769134666a1586fa4e0@43.134.121.187:30311'
 	},
 	{
 		owner: 'Jeff',
 		type: 'witness',
 		ip: '43.136.53.164',
-		id: '36d1c18a197fea99e9b55b111b03ab03866367838b3017ae91984e0648e3f677'
+		id: '36d1c18a197fea99e9b55b111b03ab03866367838b3017ae91984e0648e3f677',
+		enode: 'enode://f3e4e524d89b4cdb9ee390d9485cee4d6a5e9a260f5673cab118505cc3e69fe8365bc00434222d27fe4082ca798b13ad8e7e139d1315f635fd0e46dbe96fa809@43.136.53.164:30311'
 	},
 	{
 		owner: 'Koant',
 		type: 'miner',
 		ip: '119.29.202.168',
 		id: '958a680d9c0fd958b21e5f851539c93b12466a668b37dd4eb3b831f28ac1f199',
-		signer: '0xA23e676de107F45A2C873109b6976c1D69b4ad55'
+		signer: '0xA23e676de107F45A2C873109b6976c1D69b4ad55',
+		enode: 'enode://dbf6ba9d689929e1f8824d53b0e7bd62ceeaff32d65821de5054dd2b48b7701458fb537345c1842c428d5e8918775cffef411e74b073c5d1ff815e78d13270fb@119.29.202.168:30311'
 	},
 	{
 		owner: '谢勇', //稳清活
 		type: 'miner',
 		ip: '82.157.251.101',
 		id: '6f0ef352cc2536d91f0a55efbec480c8e2b76a11fc5c30830167e026327f0a18',
-		signer: '0x93196aeEb56fe0F5672d84b8F50C123b5dA50329'
+		signer: '0x93196aeEb56fe0F5672d84b8F50C123b5dA50329',
+		enode: 'enode://c43fa0ea62dfc0e09906f67a8b730918cbe567a3f53322470780ecdc569efda1a2dd9e4707ac65e3b558e9bf8a025a22da33b1ad08211290211b8c5ed0ed1671@82.157.251.101:30311'
 	},
 	{
 		owner: 'Jacky',
 		type: 'miner',
 		ip: '47.94.93.119',
 		id: 'e88e333abc2dce665fd9c35bef4a0383249b1670955cefac4c582092fa34fbcb',
-		signer: '0x28D314d2B00EED89041843d4Cd7b9de91170f37a'
+		signer: '0x28D314d2B00EED89041843d4Cd7b9de91170f37a',
+		enode: 'enode://be96ad65107a3d520943f761d00a79a6e08bd4acc5b008b58ff8406761e5ca7e923bcb310654089b1ab364579f70ebe042f2baf9c9adbfa8482052f31c6766f1@47.94.93.119:30311'
 	},
 	{
 		owner: '一痕',
 		type: 'miner',
 		ip: '106.75.5.22',
 		id: '8118c7cb3f83c1192ed5cdabf3c23798a982faaf2268c5cb2b956dd6d8ecdc2e',
-		signer: '0xf7bB10CeDE7E8A0524526577bB4F14390965Cbfa'
+		signer: '0xf7bB10CeDE7E8A0524526577bB4F14390965Cbfa',
+		enode: 'enode://91ccd999fe750e950d722f71279c678cae4abdcadfe18e18e2f785871648d386c3db8d2a39fcad49488f6daea4b5d41d3d7cbbb979c31299e9387e0c9d867a37@106.75.5.22:30311'
 	},
 	{
 		owner: '教链',
 		type: 'miner',
 		ip: '82.157.210.13',
 		id: '61cb546c70e6a470e8ee64c4ff5fbef138d9afe116fb24147636802d6ffac30b',
-		signer: '0x85db5D64BD1a2652A75C4A7e12Eeba2f43c57bC4'
+		signer: '0x85db5D64BD1a2652A75C4A7e12Eeba2f43c57bC4',
+		enode: 'enode://d667d09c38706d40fa1c15cde8dc28c117087cdf55d41d402d70b0817636c6f65e6a6463e81ab178ad9a896ea93c37b479a01ff19dfe13cd4276ea2c64575c76@81.68.150.141:30311'
 	},
 	{
 		owner: '比尔盖',
 		type: 'miner',
 		ip: '101.43.165.39',
 		id: '32c90f8ee743e588e421c8d374a5ca02ebcabbdc0e6b5b1b912c83185f4522ca',
-		signer: '0x1323caeca07e7bd2b5bdb4bc13e67029ad56fa2f'
+		signer: '0x1323caeca07e7bd2b5bdb4bc13e67029ad56fa2f',
+		enode: 'enode://d33540329429582a6c10c917f66103a8e9ce97da24c34bf14d5fd211a8eb4640c6d5ac1a30a764cebd872e6966c04750912726359534a9d4fba5d78c837f4bf0@101.43.165.39:30311'
 	},
 	{
 		owner: 'Menger',
 		type: 'miner',
 		ip: '62.234.21.37',
 		id: '16376be08813c07d06cdf5e073916f97846c67ec08f1f9c3be4ac5d894ab4670',
-		signer: '0x3fc084c968e77f264803ef5af09e6d6f05228bea'
+		signer: '0x3fc084c968e77f264803ef5af09e6d6f05228bea',
+		enode: 'enode://72ced57bb2a447947d7bf6378ee927fb04954eba69063571bec3cd3e3cf8d5e660ffb3e62a2cf073045f949a592b2a2c66a1d5bf700a00f069531239749a8382@62.234.21.37:30311'
 	},
 	{
 		owner: '严光红',
 		type: 'miner',
 		ip: '106.53.60.230',
 		id: 'f92367cc2a9b02c68d6f024b7630bdfa6060d0ce70fc676696633a59eef3ae39',
-		signer: '0xcce6cc1ba66c6b9af2c7b20d78155c74ed9aad6f'
+		signer: '0xcce6cc1ba66c6b9af2c7b20d78155c74ed9aad6f',
+		enode: 'enode://94b45bc3705c8abebeda0ee9b31a76188b59c0c69397362e96accd39b15a56668775204d4f2e3e7ddb2b14df0b640b5bb9cd4dcb60c252ef80268f1af815f623@106.53.60.230:30311'
 	},
 	/*{
 		owner: 'li17',
@@ -83,144 +93,173 @@ const core_nodes = [
 		type: 'miner',
 		ip: '47.100.5.124',
 		id: 'ffd502a7cebcaad58aff75d9dfde768067d3e78baf31870a7f4debf353107581',
-		signer: '0x002ed4ea787fd611f44a8277b5e204aad5c81717'
+		signer: '0x002ed4ea787fd611f44a8277b5e204aad5c81717',
+		enode: 'enode://b7055440d2792887e10ca12192d5d30200a4d9352d9de560732589014e26e5b6c587c5ae201441597795f33b2af6afecadb31193bf6f467024e3144ba40f6d2b@47.100.5.124:30311'
 	},
 	{
 		owner: '严光红',
 		type: 'witness',
 		ip: '1.14.111.74',
-		id: '65e0dc09479950368c2edaa0d7f3dd30af33ebd0187b31f0ad5df55535905f01'
+		id: '65e0dc09479950368c2edaa0d7f3dd30af33ebd0187b31f0ad5df55535905f01',
+		enode: 'enode://b3eca38a3d18a789a0ca4e0e871c77fbf98fbe82cb8ed577895be8be14599abd07df88fe5fcf5fa11a63843b25bbc69b28da9a68bc0fcf42b01583329d4e0006@1.14.111.74:30311'
 	},
 	{
 		owner: '岑云',
 		type: 'witness',
 		ip: '101.34.72.97',
-		id: '0f8d5ded2922bbe42689bd91988f4415d4f81b7a0e22120edde3c30fe8b8b36f'
+		id: '0f8d5ded2922bbe42689bd91988f4415d4f81b7a0e22120edde3c30fe8b8b36f',
+		enode: 'enode://5ac5fa3a878b63f911314311a1804732e63e7fd6dabc8d34f5dd033322d479cc5be4764d05eadea7ca70e83910129c5898d163d7454916b4a2738f510cd77b01@101.34.72.97:30311'
 	},
 	{
 		owner: '比尔盖',
 		type: 'witness',
 		ip: '62.234.5.241',
-		id: 'b3af9021f81a99afb7ae6a09448973453ddab57db15a9f7cfb8db94171d3920d'
+		id: 'b3af9021f81a99afb7ae6a09448973453ddab57db15a9f7cfb8db94171d3920d',
+		enode: 'enode://1c4979289156cf90ac190bd6a5f6841886c421ff017dd0d842d8e847973d751f9e13c90e880081c3ba8df5bc572969266c25dac98fc60da68ce6857dcf39da23@62.234.5.241:30311'
 	},
 	{
 		owner: 'Koant',
 		type: 'witness',
 		ip: '111.230.23.83',
-		id: '6070dfa4ec231c5abeba83114eb8238d69a453e4c17d4aa6706ae320dc0aa922'
+		id: '6070dfa4ec231c5abeba83114eb8238d69a453e4c17d4aa6706ae320dc0aa922',
+		enode: 'enode://6fd8e9c18272d4fb523beb44bfe9fa4d85107f530ab60a324b5e1aff23ef7f57f7bb6c4959d0b37d3645e2583c6492ec8b4125e30d97aeb10b810f29b9de2cdd@111.230.23.83:30311'
 	},
 	{
 		owner: 'Leo',
 		type: 'witness',
 		ip: '121.40.97.50',
-		id: '27c01da9e04d8de57b363054772e417a55706cae39f1e5c20abdffe0c3dbe6b7'
+		id: '27c01da9e04d8de57b363054772e417a55706cae39f1e5c20abdffe0c3dbe6b7',
+		enode: 'enode://aac8963e6ed260be67d83275faed5cbda6880ecec31abc7e223932c12b5b131d81edc4efb7bc977572afefd6cd3dcd3b4903b44689ca57f8a4f80e935106dacd@121.40.97.50:30311'
 	},
 	{
 		owner: 'OPEN',
 		type: 'witness',
 		ip: '124.222.199.61',
-		id: '7da1b99acd6bedf5de7ae595aa3676e329b35fc3fa87a93ab0312638549de473'
+		id: '7da1b99acd6bedf5de7ae595aa3676e329b35fc3fa87a93ab0312638549de473',
+		enode: 'enode://0a8b5aa7210ada01d9919e4f1a19860a2946f6e54ae2e0fb8c7e1b7e5482546c478260d284255da92d95d579cffd6ce06ec0bf520b7e4e71876a1efa68f7674d@124.222.199.61:30311'
 	},
 	{
 		owner: '谢勇',
 		type: 'witness',
 		ip: '120.26.11.88',
-		id: 'fb444f8dedff72c18926703b0e9556c99ace3dbcfa442e32b72eb73f147db71f'
+		id: 'fb444f8dedff72c18926703b0e9556c99ace3dbcfa442e32b72eb73f147db71f',
+		enode: 'enode://a3962d318258089803e5600a9f3d1c09e4a87272086e1f1d156fce1742f3baa2ea9f8af9756eb745742fc655fe4daec40a48cc52b8abcc620a6aaf17fa8a52ef@120.26.11.88:30311'
 	},
 	{
 		owner: '火星',
 		type: 'witness',
 		ip: '101.32.170.145',
-		id: 'f19522300833eaa81a37030f89aac7169cfcc1ebc32c54ce35518cbcf15722d8'
+		id: 'f19522300833eaa81a37030f89aac7169cfcc1ebc32c54ce35518cbcf15722d8',
+		enode: 'enode://2092f257d31cfa7b601cf88dbf40a9abe589296a1eabf6f5f92fcbefd96c7af6dd0995658a57e671ce94217a3e87f666088bce8a936d02fe0edc84738002408d@101.32.170.145:30311'
 	},
 	{
 		owner: 'Angel',
 		type: 'witness',
 		ip: '115.159.194.193',
-		id: '00be8ffef4f441c87e65315a3809f94c98197c1e9b614c65f9ca0edb9d00ccb6'
+		id: '00be8ffef4f441c87e65315a3809f94c98197c1e9b614c65f9ca0edb9d00ccb6',
+		enode: 'enode://7d757a706f1c662f63134bfd7439efafb62f11328d0904a3b38677bb27e50632bec061c27e7cbda9eebca08b8040ae96bb04b2de14fc3d9bcb979a8e6d476bfc@115.159.194.193:30311'
 	},
-	{
+	/*{
 		owner: '如行',
 		type: 'witness',
 		ip: '47.102.145.16',
 		id: '813c74e91083e2a26b8df6abfe9e58ae188e97739690be8815c89dd5515a066f'
-	},
+	},*/
 	{
 		owner: '老谢',
 		type: 'witness',
 		ip: '1.14.106.165',
-		id: '8e38af25891db9f7e3c5e430d4b220910685830ea33cd7a23cc0b0086474aa9e'
+		id: '8e38af25891db9f7e3c5e430d4b220910685830ea33cd7a23cc0b0086474aa9e',
+		enode: 'enode://8d820aefee882f7767be1035cbe018200c4daf9030482aa5f6b25665b78b6ee31f4e041d9b439e4ea6c0a7cce5cd76b6fffa76f0bb4229ee6751d52947065dfe@1.14.106.165:30311'
 	},
 	{
 		owner: 'Stars',
 		type: 'witness',
 		ip: '8.210.106.181',
-		id: 'c6d31bf38cd1d1d5c329a08b3a1c3d1d85ed5edd0cfcd9cc5668f1c9ed354342'
+		id: 'c6d31bf38cd1d1d5c329a08b3a1c3d1d85ed5edd0cfcd9cc5668f1c9ed354342',
+		enode: 'enode://b750ce05ff791ff659481b7ede44338478f4eb816573c9e71aa892df085bab2841c8271c0c534c290c0348d3fd7468ad3df888dd7a286e298ab0d1037295f823@8.210.106.181:30311'
 	},
 	{
 		owner: '明海云',
 		type: 'witness',
 		ip: '43.139.249.74',
-		id: 'ea8bcbf9ec92291e54472d3390de4c5231b03661609c46087298b5b451543b02'
+		id: 'ea8bcbf9ec92291e54472d3390de4c5231b03661609c46087298b5b451543b02',
+		enode: 'enode://256ec7a9357908270c02c39bec8ba1852a71a4892c9fab95de89fe1a78a6839504f2b4ab1c12e877b8f7d3f6646fbc816ff56d707cc56d49de6158e4cc39ba93@43.139.249.74:30311'
 	},
 	{
 		owner: 'gwendol',
 		type: 'witness',
 		ip: '119.29.222.90',
-		id: 'ef9301f5b766aa299c2b7f1a199447346772dcc5c326529ff257710530aae46e'
+		id: 'ef9301f5b766aa299c2b7f1a199447346772dcc5c326529ff257710530aae46e',
+		enode: 'enode://1dc186a0c401bcfc560d7188810ce3290bd7a05a76bc0fc9237a06042576cf1f1c356f8fb556da234950b88c21c08ff2ba70ab4e58564a74ea46a24511ccff7c@119.29.222.90:30311'
 	},
 	{
 		owner: '狮子猫',
 		type: 'witness',
 		ip: '123.206.109.17',
-		id: 'e97fcd7f8aed3881648f6d2859ed5da1a589ba9e25c43106c5ff51a14e1994e1'
+		id: 'e97fcd7f8aed3881648f6d2859ed5da1a589ba9e25c43106c5ff51a14e1994e1',
+		enode: 'enode://efc01ff491d277c73394095de99e8d62d25b5b981e03a4de5419d9bbf5bf6dd1ef6b89e169d376970c1a7af4fc73c90fd2d34b954f02c5367e0150911944cc41@123.206.109.17:30311'
 	},
-	{
+	/*{
 		owner: 'ucanfilm',
 		type: 'witness',
 		ip: '47.104.106.73',
 		id: 'ceceab24a1f11259f9e9b88a1bd40aca659cf9d4426a08bea4a89110cc7e81e4'
-	},
+	},*/
 	{
 		owner: '元码',
 		type: 'witness',
 		ip: '47.95.200.73',
-		id: 'c6b0f385fd54806b3febf12e4aea8906fad1a175773a4790f9965bdfeb674ce4'
+		id: 'c6b0f385fd54806b3febf12e4aea8906fad1a175773a4790f9965bdfeb674ce4',
+		enode: 'enode://bba7d137900d93f0b2b62ebcb7917055e47c77b34bba2784008b841561b81fa331a84d45f1fa227f49b18500deb9a3b324a18a7761372f8e9ab1f285a590f146@47.95.200.73:30311'
 	},
 	{
 		owner: 'OPEN',
 		type: 'miner', //miner*
 		ip: '43.142.106.3',
 		id: '6cb4e5340a7e5008dfbc3f20f128bc5a6569e343447ecfcd3018304879f28473',
-		signer: '0xa2547655F12DF995E74fC4b9E3192De432b8b56f'
+		signer: '0xa2547655F12DF995E74fC4b9E3192De432b8b56f',
+		enode: 'enode://73cd7670e483a1d7238cf0bdd557236ea554fa343e9bed85e92f2e45cef859f3a1f4a0f7571a18f54090a206fd62132ded8d3327310a2564374cc01ecad65314@43.142.106.3:30311'
 	},
 	{
 		owner: 'Jeff',
 		type: 'miner', //miner*
 		ip: '47.120.35.41',
 		id: '58871675d4f24d7c916b4c3ccad303b3b862abfe125b1650b0177bd8be09e896',
-		signer: '0x0ac52a05a4f87404b03dd58a7ac1427429522222'
+		signer: '0x0ac52a05a4f87404b03dd58a7ac1427429522222',
+		enode: 'enode://db1d084eaf12722b04600084a9bd5dcdbbff89facedff931629354ac396acf3564082fbae5a933f1bf4332a174bf9374941dc1caa1527f32c909589a26796014@47.120.35.41:30311'
 	},
 	{
 		owner: 'bonny',
 		type: 'witness',
 		ip: '123.207.42.3',
-		id: '846e5a80a3ffa352be827443689bcae87fa01d47fd00edaab2b103c0d0b5a80d'
+		id: '846e5a80a3ffa352be827443689bcae87fa01d47fd00edaab2b103c0d0b5a80d',
+		enode: 'enode://3732ea7ef0e0d52f83e67136a09bfc82dbcdc53ec5fab8fb3d540f55e6a966fa76908fcd06103a0fa31fe140d2fd52ca1782e5e8c0ea8b59d8bae5d650e3f93d@123.207.42.3:30311'
 	},
 	{
 		owner: 'Mr.',
 		type: 'witness',
 		ip: '43.136.53.179',
-		id: 'f7f5b821da9e90caad7979373188f9488496800c94746b1955e8aaabdca0fc6d'
+		id: 'f7f5b821da9e90caad7979373188f9488496800c94746b1955e8aaabdca0fc6d',
+		enode: 'enode://be6a094cb5cbef591ac4dc53e82473f29df312e88f804fc110232e8d7972341149bc1bed778893940fb1c523206fbb3682b74f112d615888ec083fe1adca37b5@43.136.53.179:30311'
 	},
 	{
 		owner: 'cijin',
 		type: 'witness',
 		ip: '106.53.39.89',
-		id: '73741045125ed13335ab0440857a745473d43edc5bd5667f92f44e021aa9bf01'
+		id: '73741045125ed13335ab0440857a745473d43edc5bd5667f92f44e021aa9bf01',
+		enode: 'enode://662cbf6b247cd57069c219cdcc23c279af0b0b9679d1161051a999659aef4cf4d5d4f36ee921c60bd52136133d066626f9d7a91e8c2e52f4152d78464ffe9021@106.53.39.89:30311'
 	},
 ]
 
+// add peers in case if not
+const all_ids = admin.peers.reduce((ids, n) => ids.concat(n.id), [])
+for (const node of core_nodes) {
+	if (!(node.id in all_ids)) 
+		admin.addPeer(node.enode)
+}
+
+// do stats
 var this_node
 const id_nodes = {} //nodes indexed by id
 const signers = {} //miner nodes indexed by lc(signer address)
