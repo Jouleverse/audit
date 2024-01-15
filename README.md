@@ -16,21 +16,19 @@ Audit scripts and their usage for monitoring Jouleverse.
 git clone git@github.com:Jouleverse/audit.git
 ```
 
-建立软链接，让docker能看到脚本：
+建立硬链接，让docker能看到脚本：（注意：不能用软链接即symbolic link，否则找不到）
 
 ```
-ln -s data/audit_network.js audit/audit_network.js
+ln audit/audit_network.js data/audit_network.js
 ```
 
-2) 修改脚本，把担任审计任务的见证节点【本节点】的类型从witness改为audit（把其他类型为audit的节点改为witness）
-
-3) 跑一下下述命令，观察运行结果是否正确：
+2) 跑一下下述命令，观察运行结果是否正确：
 
 ```
 docker exec jouleverse-mainnet /j/geth --exec 'loadScript("/audit/audit_network.js");1' attach /data/mainnet/geth.ipc
 ```
 
-4) 执行 crontab -e ，添加定时任务，内容参见 audit_network.crontab
+3) 执行 crontab -e ，添加定时任务，内容参见 audit_network.crontab
 
 
 ### 日常维护
@@ -52,4 +50,19 @@ docker exec jouleverse-mainnet /j/geth --exec 'loadScript("/audit/audit_network.
 4. 节点群周知大家，新节点成功纳入审计报告（可将第2步试运行的审计报告截图发群中）
 
 5. 把更新后的audit_network.js和audit_network.crontab 推送到github 并发 Pull Request 请求合并到主干
+
+### Revision History
+
+2023.10.18: 0.1 evan.j
+
+2023.10.26: 0.1.1 evan.j + Angel witness
+
+2023.10.28: 0.1.2 evan.j + Menger 比尔盖 miners, - Menger witness
+
+...
+
+2024.1.15: 0.2.1 evan.j
+- auto detect if I am the audit node
+- put it to github repo audit/, open for anyone to audit
+
 

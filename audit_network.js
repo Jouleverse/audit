@@ -2,18 +2,11 @@
 // run:
 // sudo docker exec -it jouleverse-mainnet /j/geth --exec 'loadScript("/data/audit_network.js")' attach /data/mainnet/geth.ipc
 
-// revisions:
-// 0.2 2024.1.15 evan.j put it to github repo audit/, open for anyone to audit
-// ...
-// 0.1.2 2023.10.28 evan.j + Menger 比尔盖 miners, - Menger witness
-// 0.1.1 2023.10.26 evan.j + Angel witness
-// 0.1 2023.10.18 evan.j
-
 // indexed by IP address
 const core_nodes = [
 	{
 		owner: 'JNSDAO',
-		type: 'audit',
+		type: 'witness',
 		ip: '43.134.121.187',
 		id: '2379e2c19b8a0e4a76d011b07e41493902c1f274abc5adce3e20fe60f0cabac6'
 	},
@@ -228,12 +221,15 @@ const core_nodes = [
 	},
 ]
 
+var this_node
 const id_nodes = {} //nodes indexed by id
 const signers = {} //miner nodes indexed by lc(signer address)
 for (const node of core_nodes) {
 	id_nodes[node.id] = node
 	if (node.type == 'miner') {
 		signers[node.signer.toLowerCase()] = node
+	} else if (node.type == 'witness' && node.id == admin.nodeInfo.id) {
+		this_node = node
 	}
 }
 
@@ -287,7 +283,7 @@ if (diff_t < 60) {
 console.log('Latest Block Height:', last_block_n)
 console.log('Latest Block Time:', last_block_t)
 
-// count connected nodes
+// count live nodes only
 var count = count_miner = count_witness = 0;
 for (const [id, node] of Object.entries(id_nodes)) {
 	if (node.status == 'connected' || (node.type == 'miner' && node.block_rate > 0))  {
@@ -304,10 +300,7 @@ console.log('Network Size: ', count + 1, ' nodes (', count_miner, ' miners, ', c
 
 console.log('---------------- nodes status -----------------')
 
-//print this audit node itself first
-const node = core_nodes[0]
-console.log(node.type, node.ip, '✅', 'connected', node.owner, '0')
-
+// the reporting func
 const report = function(node) {
 	node.status = node.status ? node.status : 'disconnected'
 	node.audit = (node.status == 'connected') ? '✅':'❌'
@@ -321,12 +314,16 @@ for (const [id, node] of Object.entries(id_nodes)) {
 		report(node)
 }
 
+//print this audit node itself after miners but before witness + miner*
+const node = this_node
+console.log(node.type + '(a)', node.ip, '✅', 'connected', node.owner, '0')
+
 // second scan, miner* (miner ready candidate - after PoS, before voting)
 for (const [id, node] of Object.entries(id_nodes)) {
 	if (node.type == 'miner*')
 		report(node)
 }
-//
+
 // third scan, connected witness
 for (const [id, node] of Object.entries(id_nodes)) {
 	if (node.type == 'witness' && node.status)
@@ -335,6 +332,6 @@ for (const [id, node] of Object.entries(id_nodes)) {
 
 // fourth scan, disconnected witness
 for (const [id, node] of Object.entries(id_nodes)) {
-	if (node.type == 'witness' && !node.status)
+	if (node.type == 'witness' && !node.status && node.id != this_node.id)
 		report(node)
 }
