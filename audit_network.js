@@ -149,8 +149,8 @@ const core_nodes = [
 		owner: '火星',
 		type: 'witness',
 		ip: '101.32.170.145',
-		id: 'f19522300833eaa81a37030f89aac7169cfcc1ebc32c54ce35518cbcf15722d8',
-		enode: 'enode://2092f257d31cfa7b601cf88dbf40a9abe589296a1eabf6f5f92fcbefd96c7af6dd0995658a57e671ce94217a3e87f666088bce8a936d02fe0edc84738002408d@101.32.170.145:30311'
+		id: '9bfbcdd542f8f7af28a9b3c50dc5dbd1bff8085311b9b216716a7106880ad6f2',
+		enode: 'enode:enode://5fe23cce534e7a49a0a6f79203fec02e84391ada79cf8fc0dc8ef2901ddc5620beea52dbab009c6ecb2bdc127ae084a252ffbf5c9221f733d096f346d3f25cf9@101.32.170.145:30311'
 	},
 	{
 		owner: 'Angel',
