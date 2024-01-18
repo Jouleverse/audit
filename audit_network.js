@@ -307,7 +307,7 @@ const core_nodes = [
 // add peers in case if not
 const all_ids = admin.peers.reduce((ids, n) => ids.concat(n.id), [])
 for (const node of core_nodes) {
-	if (!(node.id in all_ids)) 
+	if (!all_ids.includes(node.id))
 		admin.addPeer(node.enode)
 }
 
