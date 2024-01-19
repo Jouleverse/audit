@@ -142,8 +142,8 @@ const core_nodes = [
 		owner: '谢勇',
 		type: 'witness',
 		ip: '120.26.11.88', // bootnode-wenqinghuo.jnsdao.com
-		id: 'fb444f8dedff72c18926703b0e9556c99ace3dbcfa442e32b72eb73f147db71f',
-		enode: 'enode://a3962d318258089803e5600a9f3d1c09e4a87272086e1f1d156fce1742f3baa2ea9f8af9756eb745742fc655fe4daec40a48cc52b8abcc620a6aaf17fa8a52ef@120.26.11.88:30311'
+		id: 'cc99492e1e2d2f9b125b8e1faae3c8d0d47eeadc63ac3ac7e58b0767bfde2726',
+		enode: 'enode://b7908693bf2268db08c4fa868d8ea88298e9844a5892681eb63cb4a1a4b254356b5936f6a006dcc709212043b8da325ab72beb3cc2c26cc98843dc301914c961@120.26.11.88:30311'
 	},
 	{
 		owner: '火星',
