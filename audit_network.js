@@ -150,7 +150,7 @@ const core_nodes = [
 		type: 'witness',
 		ip: '101.32.170.145',
 		id: '9bfbcdd542f8f7af28a9b3c50dc5dbd1bff8085311b9b216716a7106880ad6f2',
-		enode: 'enode:enode://5fe23cce534e7a49a0a6f79203fec02e84391ada79cf8fc0dc8ef2901ddc5620beea52dbab009c6ecb2bdc127ae084a252ffbf5c9221f733d096f346d3f25cf9@101.32.170.145:30311'
+		enode: 'enode://5fe23cce534e7a49a0a6f79203fec02e84391ada79cf8fc0dc8ef2901ddc5620beea52dbab009c6ecb2bdc127ae084a252ffbf5c9221f733d096f346d3f25cf9@101.32.170.145:30311'
 	},
 	{
 		owner: 'Angel',
@@ -260,9 +260,10 @@ const core_nodes = [
 	},
 	{
 		owner: '火星',
-		type: 'miner*',
+		type: 'miner',
 		ip: '47.100.127.191',
 		id: 'eee09cee70c41c21c6ab1ae71236f3e96660d5f7a50b9cc69a276b67d375032f',
+		signer: '0x87d973cAD9fE24252F5E4bFbd43B66bF31718886',
 		enode: 'enode://1ac2352580896800012fb5461ebafcea10289d07dcf8adaf4d45bb4da57eaf71c650b58030e27d1d0c71096c638b416b70547511e22d6f9716c06236e1785a78@47.100.127.191:30311'
 	},
 	{
@@ -296,11 +297,13 @@ const core_nodes = [
 	},
 	{
 		owner: '明海云',
-		type: 'miner*',
+		type: 'miner',
 		ip: '129.204.236.149',
 		id: 'cfae8e5f430c68db93d8d85987fa7dc20f17da1bb478f90477ff880f68452024',
+		signer: '0xf3b67b1e625a8ffe7af9645e9e1432d145f2046a',
 		enode: 'enode://7d2f86c4a16a46aa62674c713c44d9b1c2a0bbcee4e4315c1a9eed47e87c3dfe59916f971bfe5f8b71acd2b5165a89b858569a18a8d12e51bd12273ffc485cbf@129.204.236.149:30311'
 	},
+
 
 ]
 
