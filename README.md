@@ -12,7 +12,7 @@ Note: @deprecated 旧审计脚本audit_network.js已废弃。
 
 ### 审计项目
 
-1. 区块链总体运行良好🟢与否
+1. 区块链总体运行区块是否良好🟢
 2. 记账节点enode连接情况🟩 ，以及出块率（0 < block rate < 1）✅
 3. 见证节点enode连接情况🟩 ，以及8501 rpc连通性及当前区块高度✅
 
@@ -35,7 +35,7 @@ pip install web3
 2) 跑一下下述命令，观察运行结果是否正确：
 
 ```
-python3 audit_network.js ~/data/mainnet/geth.ipc
+python3 audit_network.py ~/data/mainnet/geth.ipc
 ```
 
 注意：检查 ~/data/mainnet/geth.ipc 是否有足够权限访问
