@@ -4,7 +4,7 @@ Audit scripts and their usage for monitoring Jouleverse.
 
 ## audit_network.py
 
-Note: @deprecated 旧审计脚本audit_network.js已废弃。
+```Note: @deprecated 旧审计脚本audit_network.js已废弃。```
 
 用途：用于每日审计Jouleverse网络节点运行情况。
 
@@ -42,7 +42,7 @@ python3 audit_network.py ~/data/mainnet/geth.ipc
 
 3) 执行 crontab -e ，添加定时任务，内容参见 audit_network.crontab
 
-注意：运行docker的权限问题。确保定时任务能够顺利执行。
+注意：访问geth.ipc的权限问题。确保定时任务能够顺利执行。
 
 ### 日常维护
 
