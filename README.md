@@ -2,11 +2,21 @@
 
 Audit scripts and their usage for monitoring Jouleverse.
 
-## audit_network.js
+## audit_network.py
+
+Note: @deprecated 旧审计脚本audit_network.js已废弃。
 
 用途：用于每日审计Jouleverse网络节点运行情况。
 
 节点类型：1) witness - 见证节点；2) miner\* - 预备中的记账节点（已PoS质押，未投票）；3) miner - 记账节点。
+
+### 审计项目
+
+1. 区块链总体运行良好🟢与否
+2. 记账节点enode连接情况🟩 ，以及出块率（0 < block rate < 1）✅
+3. 见证节点enode连接情况🟩 ，以及8501 rpc连通性及当前区块高度✅
+
+miner\* 由于是中间过渡状态，故暂不检查出块率（没有），也不检查8501 rpc（为安全起见记账节点配置关闭了rpc），也不会统计到网络节点数量中。
 
 ### 使用方法
 
@@ -16,17 +26,19 @@ Audit scripts and their usage for monitoring Jouleverse.
 git clone git@github.com:Jouleverse/audit.git
 ```
 
-建立硬链接，让docker能看到脚本：（注意：不能用软链接即symbolic link，否则找不到）
+2) 安装python依赖库
 
 ```
-ln audit/audit_network.js data/audit_network.js
+pip install web3
 ```
 
 2) 跑一下下述命令，观察运行结果是否正确：
 
 ```
-docker exec jouleverse-mainnet /j/geth --exec 'loadScript("/data/audit_network.js");1' attach /data/mainnet/geth.ipc
+python3 audit_network.js ~/data/mainnet/geth.ipc
 ```
+
+注意：检查 ~/data/mainnet/geth.ipc 是否有足够权限访问
 
 3) 执行 crontab -e ，添加定时任务，内容参见 audit_network.crontab
 
@@ -43,14 +55,14 @@ docker exec jouleverse-mainnet /j/geth --exec 'loadScript("/data/audit_network.j
 审计节点需要做的事情是：
 
 1. 审查节点报告到节点群中的信息，判断其节点运行状态良好，符合要求。确认无误后，提醒他填写节点信息登记表
-
-2. 根据登记信息，将该节点添加到audit_network.js脚本中。试运行一下，观察审计结果，确认节点接入正常
-
+2. 根据登记信息，将该节点添加到audit_network.py脚本中。试运行一下，观察审计结果，确认节点接入正常
 3. crontab -e 编辑定时任务，把该节点登记的email地址添加到每日审计报告发送的email列表尾部
-
 4. 节点群周知大家，新节点成功纳入审计报告（可将第2步试运行的审计报告截图发群中）
+5. 把更新后的audit_network.py和audit_network.crontab 推送到github 并发 Pull Request 请求合并到主干
 
-5. 把更新后的audit_network.js和audit_network.crontab 推送到github 并发 Pull Request 请求合并到主干
+### TODO
+
+- 记录每次检查结果，按月汇总可用率百分比，纳入报告，作为服务水平指标，供PoWh激励参考
 
 ### Revision History
 
@@ -68,4 +80,10 @@ docker exec jouleverse-mainnet /j/geth --exec 'loadScript("/data/audit_network.j
 
 0.2.2 evan.j
 - add enode infos for all nodes, and automatically addPeer if not seeing it.
+
+...
+
+2024.1.16: handover audit responsibility to Jeff
+
+2024.1.24: evan.j: python rewrite using web3
 
