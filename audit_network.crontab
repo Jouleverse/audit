@@ -1,1 +1,7 @@
-15 6 * * * docker exec jouleverse-mainnet /j/geth --exec 'loadScript("/data/audit_network.js");1' attach /data/mainnet/geth.ipc | mail -a "Content-Type: text/plain; charset=UTF-8" -s 'jouleverse network audit report - '`date +\%Y\%m\%d` evan@blockcoach.com,gjw00001@126.com,15916208774@163.com,ygh200@126.com,liuyihen@yeah.net,18210085831@163.com,1320058132@qq.com,mengaili1988@126.com,lilei855x@163.com,87420811@qq.com,cyber4cn@gmail.com,28021246@qq.com,gwendol@qq.com,421292662@qq.com,btcuni@163.com,1864850@qq.com,bonnyshi@189.cn,hkyeee@126.com,cjverify@163.com
+# Js Version
+# 15 6 * * * docker exec jouleverse-mainnet /j/geth --exec 'loadScript("/data/audit_network.js");1' attach /data/mainnet/geth.ipc | mail -a "Content-Type: text/plain; charset=UTF-8" -s 'jouleverse network audit report - '`date +\%Y\%m\%d` evan@blockcoach.com,gjw00001@126.com,15916208774@163.com,ygh200@126.com,liuyihen@yeah.net,18210085831@163.com,1320058132@qq.com,mengaili1988@126.com,lilei855x@163.com,87420811@qq.com,cyber4cn@gmail.com,28021246@qq.com,gwendol@qq.com,421292662@qq.com,btcuni@163.com,1864850@qq.com,bonnyshi@189.cn,hkyeee@126.com,cjverify@163.com
+
+
+
+# Python Version
+15 6 * * * python3 /home/lighthouse/data/audit_network.py /home/lighthouse/data/mainnet/geth.ipc | mail -a "Content-Type: text/plain; charset=UTF-8" -s 'jouleverse network audit report - '`date +\%Y\%m\%d` evan@blockcoach.com,gjw00001@126.com,15916208774@163.com,ygh200@126.com,liuyihen@yeah.net,18210085831@163.com,1320058132@qq.com,mengaili1988@126.com,lilei855x@163.com,87420811@qq.com,cyber4cn@gmail.com,28021246@qq.com,gwendol@qq.com,421292662@qq.com,btcuni@163.com,1864850@qq.com,bonnyshi@189.cn,hkyeee@126.com,cjverify@163.com
