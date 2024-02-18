@@ -322,6 +322,31 @@ core_nodes = [
             'id': 'b764135d654d36f9566a35d203fe7172a1b452b644d22bee05800a5ccc74cee9',
             'enode': 'enode://d56a5ecae9b5afff1d40dba22ee132217267c76f05db004ee8df8629902c9b07ba2f3ce9243407099324137c296e7d287e852ff7d4d92f61820d23203eb631e8@111.229.136.60:30311'
             },
+
+    # 240217
+    {
+            'owner': '得葱',
+            'type': 'witness',
+            'ip': '81.68.133.122',
+            'id': 'ebd1b822d489eaf5decdd24a996ee8b0454211d32d92714665b5eb8b3441e96e',
+            'enode': 'enode://03447b508e2305219f89abd9bfbf4ac73d423dcd777394afae229f39dce51402cae9e985877db710ae55e8a5a739c6774086087595d26f0d15d71201c52c23ff@81.68.133.122:30311'
+            },
+    {
+            'owner': '岑云',
+            'type': 'miner*',
+            'ip': '129.211.15.80',
+            'id': '4a9f87d20e8d2095204c8b440f71d7786c46a7ffd490fe4ddb6eb1b31f274397',
+            'enode': 'enode://1d3d78ef5dfbc90930d7b74ba743f7e998524b2c9b8ca119699d64eOb66dd7b8b39255d6293ee1a73079849dd64a98ef8780895a9acd4870caa512ca105774ca@129.211.15.8030311'
+            },
+    {
+            'owner': '布道外部山',
+            'type': 'witness',
+            'ip': '122.51.173.77',
+            'id': '46ee255a1be96130da9f775b33cfbfcd7e5095d8a17eb7cac8e7c4c622072dc1',
+            'enode': 'enode://b23f9b6c5f6176e5a103630aa8cc4d17b8b15d93a3a611582e265938fd137eaa4eb401576ac14c1aa39288f8a1e8ede03c7c2bf8fc25e41568d0c4a2870b6a3c@122.51.173.77:30311'
+            },
+
+    
 ]
 
 ## parse command line argument /path/to/geth.ipc
