@@ -125,8 +125,8 @@ core_nodes = [
             'owner': 'Koant',
             'type': 'witness',
             'ip': '111.230.23.83', # bootnode-koant.jnsdao.com
-            'id': '6070dfa4ec231c5abeba83114eb8238d69a453e4c17d4aa6706ae320dc0aa922',
-            'enode': 'enode://6fd8e9c18272d4fb523beb44bfe9fa4d85107f530ab60a324b5e1aff23ef7f57f7bb6c4959d0b37d3645e2583c6492ec8b4125e30d97aeb10b810f29b9de2cdd@111.230.23.83:30311'
+            'id': '9ff3da439fbb25670e95f0063f7cad9409e66f3283c57fcae0a1e1af9d09cf81',
+            'enode': 'enode://b8163bedb4b8e3adf27d94bb8349892f9c8fa14602d2e48bd3083790edc76a26b0ac4d61a44c0a27b2ec46adce2a58249e77b9276530f5116028b355429a9b89@111.230.23.83:30311'
             },
     {
             'owner': 'Leo',
@@ -265,7 +265,7 @@ core_nodes = [
     {
             'owner': '火星',
             'type': 'miner',
-            'ip': '47.100.127.191',
+            'ip': '122.51.70.192',
             'id': 'eee09cee70c41c21c6ab1ae71236f3e96660d5f7a50b9cc69a276b67d375032f',
             'signer': '0x87d973cAD9fE24252F5E4bFbd43B66bF31718886',
             'enode': 'enode://1ac2352580896800012fb5461ebafcea10289d07dcf8adaf4d45bb4da57eaf71c650b58030e27d1d0c71096c638b416b70547511e22d6f9716c06236e1785a78@47.100.127.191:30311'
