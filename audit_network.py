@@ -111,8 +111,8 @@ core_nodes = [
             'owner': '岑云',
             'type': 'witness',
             'ip': '101.34.72.97',
-            'id': '0f8d5ded2922bbe42689bd91988f4415d4f81b7a0e22120edde3c30fe8b8b36f',
-            'enode': 'enode://5ac5fa3a878b63f911314311a1804732e63e7fd6dabc8d34f5dd033322d479cc5be4764d05eadea7ca70e83910129c5898d163d7454916b4a2738f510cd77b01@101.34.72.97:30311'
+            'id': 'f132b1c2c66c08a1021ce59608238a8322318c14083fbc9ef85bd40e8077d5fe',
+            'enode': 'enode://5fa7786fd0f896a680708eaacbf4f5f0f506fe24913e03048b2890abc08faa13183b1618abaa99e042caf3ebebba52aa55d0f1686d5c898d21a74a6cbc13127a@101.34.72.97:30311'
             },
     {
             'owner': '比尔盖',
@@ -240,13 +240,13 @@ core_nodes = [
             'id': '846e5a80a3ffa352be827443689bcae87fa01d47fd00edaab2b103c0d0b5a80d',
             'enode': 'enode://3732ea7ef0e0d52f83e67136a09bfc82dbcdc53ec5fab8fb3d540f55e6a966fa76908fcd06103a0fa31fe140d2fd52ca1782e5e8c0ea8b59d8bae5d650e3f93d@123.207.42.3:30311'
             },
-    {
-            'owner': 'Mr.',
-            'type': 'witness',
-            'ip': '43.136.53.179',
-            'id': 'f7f5b821da9e90caad7979373188f9488496800c94746b1955e8aaabdca0fc6d',
-            'enode': 'enode://be6a094cb5cbef591ac4dc53e82473f29df312e88f804fc110232e8d7972341149bc1bed778893940fb1c523206fbb3682b74f112d615888ec083fe1adca37b5@43.136.53.179:30311'
-            },
+    # {
+    #         'owner': 'Mr.',
+    #         'type': 'witness',
+    #         'ip': '43.136.53.179',
+    #         'id': 'f7f5b821da9e90caad7979373188f9488496800c94746b1955e8aaabdca0fc6d',
+    #         'enode': 'enode://be6a094cb5cbef591ac4dc53e82473f29df312e88f804fc110232e8d7972341149bc1bed778893940fb1c523206fbb3682b74f112d615888ec083fe1adca37b5@43.136.53.179:30311'
+    #         },
     {
             'owner': 'cijin',
             'type': 'witness',
