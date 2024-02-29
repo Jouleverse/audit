@@ -124,13 +124,13 @@ const core_nodes = [
 		id: '6070dfa4ec231c5abeba83114eb8238d69a453e4c17d4aa6706ae320dc0aa922',
 		enode: 'enode://6fd8e9c18272d4fb523beb44bfe9fa4d85107f530ab60a324b5e1aff23ef7f57f7bb6c4959d0b37d3645e2583c6492ec8b4125e30d97aeb10b810f29b9de2cdd@111.230.23.83:30311'
 	},
-	{
-		owner: 'Leo',
-		type: 'witness',
-		ip: '121.40.97.50',
-		id: '27c01da9e04d8de57b363054772e417a55706cae39f1e5c20abdffe0c3dbe6b7',
-		enode: 'enode://aac8963e6ed260be67d83275faed5cbda6880ecec31abc7e223932c12b5b131d81edc4efb7bc977572afefd6cd3dcd3b4903b44689ca57f8a4f80e935106dacd@121.40.97.50:30311'
-	},
+	// {
+	// 	owner: 'Leo',
+	// 	type: 'witness',
+	// 	ip: '121.40.97.50',
+	// 	id: '27c01da9e04d8de57b363054772e417a55706cae39f1e5c20abdffe0c3dbe6b7',
+	// 	enode: 'enode://aac8963e6ed260be67d83275faed5cbda6880ecec31abc7e223932c12b5b131d81edc4efb7bc977572afefd6cd3dcd3b4903b44689ca57f8a4f80e935106dacd@121.40.97.50:30311'
+	// },
 	{
 		owner: 'OPEN',
 		type: 'witness',
