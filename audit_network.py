@@ -346,7 +346,23 @@ core_nodes = [
             'enode': 'enode://b23f9b6c5f6176e5a103630aa8cc4d17b8b15d93a3a611582e265938fd137eaa4eb401576ac14c1aa39288f8a1e8ede03c7c2bf8fc25e41568d0c4a2870b6a3c@122.51.173.77:30311'
             },
 
-    
+# 240303
+    {
+            'owner': '剪云为裳',
+            'type': 'witness',
+            'ip': '1.14.204.34',
+            'id': '7493b5e591c0be0d64119f34932cef700bf32a7c2b99fcea1e76320b8ffa611e',
+            'enode': 'enode://9507b31e074acc737fbc56b4b80551a793c638f93229949ca999c36e0ac19c7e1e19ab7b5c17c8e018df5c1810ebdaf371ba01a8955001ced0f7dcf6b8931cc5@1.14.204.34:30311'
+            },
+
+# 240307
+    {
+            'owner': '剪云为裳',
+            'type': 'witness',
+            'ip': '49.232.139.194',
+            'id': '7335f6c346cc49185722d70a427174b4e799a72d6698a8b99a1f4f518a6b45d5',
+            'enode': 'enode://6e0ab00789fc3580e2229d31a831d778a1d32a9066cdef2950bb5867a2dc3efcef26247a870297334f37ccce0bd2c38f1129c6cbcbb3cbe8ac369d8b12a9f64a@49.232.139.194:30311'
+            },
 ]
 
 ## parse command line argument /path/to/geth.ipc
