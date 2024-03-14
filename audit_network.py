@@ -52,14 +52,14 @@ core_nodes = [
             'signer': '0x28D314d2B00EED89041843d4Cd7b9de91170f37a',
             'enode': 'enode://be96ad65107a3d520943f761d00a79a6e08bd4acc5b008b58ff8406761e5ca7e923bcb310654089b1ab364579f70ebe042f2baf9c9adbfa8482052f31c6766f1@47.94.93.119:30311'
             },
-        {
-            'owner': '一痕',
-            'type': 'miner',
-            'ip': '106.75.5.22',
-            'id': '8118c7cb3f83c1192ed5cdabf3c23798a982faaf2268c5cb2b956dd6d8ecdc2e',
-            'signer': '0xf7bB10CeDE7E8A0524526577bB4F14390965Cbfa',
-            'enode': 'enode://91ccd999fe750e950d722f71279c678cae4abdcadfe18e18e2f785871648d386c3db8d2a39fcad49488f6daea4b5d41d3d7cbbb979c31299e9387e0c9d867a37@106.75.5.22:30311'
-            },
+        # {
+        #     'owner': '一痕',
+        #     'type': 'miner',
+        #     'ip': '106.75.5.22',
+        #     'id': '8118c7cb3f83c1192ed5cdabf3c23798a982faaf2268c5cb2b956dd6d8ecdc2e',
+        #     'signer': '0xf7bB10CeDE7E8A0524526577bB4F14390965Cbfa',
+        #     'enode': 'enode://91ccd999fe750e950d722f71279c678cae4abdcadfe18e18e2f785871648d386c3db8d2a39fcad49488f6daea4b5d41d3d7cbbb979c31299e9387e0c9d867a37@106.75.5.22:30311'
+        #     },
         {
             'owner': '教链',
             'type': 'miner',
@@ -363,6 +363,39 @@ core_nodes = [
             'id': '7335f6c346cc49185722d70a427174b4e799a72d6698a8b99a1f4f518a6b45d5',
             'enode': 'enode://6e0ab00789fc3580e2229d31a831d778a1d32a9066cdef2950bb5867a2dc3efcef26247a870297334f37ccce0bd2c38f1129c6cbcbb3cbe8ac369d8b12a9f64a@49.232.139.194:30311'
             },
+# 240313
+    {
+            'owner': '花开的声音',
+            'type': 'witness',
+            'ip': '49.232.139.194',
+            'id': '7335f6c346cc49185722d70a427174b4e799a72d6698a8b99a1f4f518a6b45d5',
+            'enode': 'enode://6e0ab00789fc3580e2229d31a831d778a1d32a9066cdef2950bb5867a2dc3efcef26247a870297334f37ccce0bd2c38f1129c6cbcbb3cbe8ac369d8b12a9f64a@49.232.139.194:30311'
+            },
+    {
+            'owner': '见证节点',
+            'type': 'witness',
+            'ip': '101.42.40.244',
+            'id': '52317d959b7f78fab18d33b828a6ce597e9148a7f7514135ff50dce110c88fa5',
+            'enode': 'enode://6240ce58be19e058cd5c7c8f65db50bfb3843ad1535547b6d09c3833713b357cc0fd93a37c7a0a6ef236d0314a7f79c33b21ec1c5e20df72ce592d65f061428a@101.42.40.244:30311'
+            },
+    {
+            'owner': '米高',
+            'type': 'witness',
+            'ip': '175.24.131.36',
+            'id': 'e0c368e2a656cd268eb9dfa555bad9dc9efe58e428bdb753542804853ba161b4',
+            'enode': 'enode://0fa0d319592ee2cb959a32a583433685140aba53c3ff0ffe9b6567eab8c96797e566d7cae5a756ccc310b26fa6bf00c86e92d938fc8d27926a89417a42beea26@175.24.131.36:30311'
+            },
+    {
+            'owner': 'Ted',
+            'type': 'miner*',
+            'ip': '49.7.215.113',
+            'signer': '',
+            'id': '14980d894f82bcb4552dff587e988c5acc40d9c24f253671d1aaa0debc49540d',
+            'enode': 'enode://21bb97b3560aea63b05811283211008332c59feb165beb15af77b451ab6845f3a6fc394d771aaeb400edad8ae17126dc81eb3db9449733c33b74e5443d2ae04f@49.7.215.113:30311'
+            },
+
+
+
 ]
 
 ## parse command line argument /path/to/geth.ipc
