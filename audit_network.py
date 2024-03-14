@@ -379,22 +379,19 @@ core_nodes = [
             'enode': 'enode://6240ce58be19e058cd5c7c8f65db50bfb3843ad1535547b6d09c3833713b357cc0fd93a37c7a0a6ef236d0314a7f79c33b21ec1c5e20df72ce592d65f061428a@101.42.40.244:30311'
             },
     {
-            'owner': '米高',
+            'owner': '米高', #240314 update
             'type': 'witness',
             'ip': '175.24.131.36',
-            'id': 'e0c368e2a656cd268eb9dfa555bad9dc9efe58e428bdb753542804853ba161b4',
-            'enode': 'enode://0fa0d319592ee2cb959a32a583433685140aba53c3ff0ffe9b6567eab8c96797e566d7cae5a756ccc310b26fa6bf00c86e92d938fc8d27926a89417a42beea26@175.24.131.36:30311'
+            'id': '873df9bf006162e49b051a3edfdd9fc1d938609e6ef130687376a90645b0dd14',
+            'enode': 'enode://2b508101e03ea070e67dc39bd3662c19d3dcc31c2a7564ffe636408d421ef7dc287b7f23d7b39dd11e584cab162ced987ea056a53a1e79ff15e43033a6c9989a@175.24.131.36:30311'
             },
-    {
-            'owner': 'Ted',
-            'type': 'miner*',
+{
+            'owner': 'Ted', 
+            'type': 'witness',
             'ip': '49.7.215.113',
-            'signer': '',
             'id': '14980d894f82bcb4552dff587e988c5acc40d9c24f253671d1aaa0debc49540d',
             'enode': 'enode://21bb97b3560aea63b05811283211008332c59feb165beb15af77b451ab6845f3a6fc394d771aaeb400edad8ae17126dc81eb3db9449733c33b74e5443d2ae04f@49.7.215.113:30311'
             },
-
-
 
 ]
 
