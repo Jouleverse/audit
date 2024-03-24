@@ -392,6 +392,38 @@ core_nodes = [
             'id': '14980d894f82bcb4552dff587e988c5acc40d9c24f253671d1aaa0debc49540d',
             'enode': 'enode://21bb97b3560aea63b05811283211008332c59feb165beb15af77b451ab6845f3a6fc394d771aaeb400edad8ae17126dc81eb3db9449733c33b74e5443d2ae04f@49.7.215.113:30311'
             },
+#240319
+{
+            'owner': '团子', 
+            'type': 'witness',
+            'ip': '118.25.109.71',
+            'id': 'e4398a2875a424e127cdce2be432755bbf0052aa4d4c535e623228e03d3f938e',
+            'enode': 'enode://fe242f5be1689a20f2259842d48a2dcf8113e1ed4c726369bb2b7a35ea7039dd1c5bbdb4061df41ea05be8abe7c57b156930d0ff857a5c9f2a0846b97511da90@118.25.109.71:30311'
+            },
+{
+            'owner': 'xiangwang', 
+            'type': 'witness',
+            'ip': '150.158.119.171',
+            'id': 'f7eaaa1f5fa51766ad662fba1eca761820f5dabfb4ecad49dea8d7f60292f86e',
+            'enode': 'enode://fe242f5be1689a20f2259842d48a2dcf8113e1ed4c726369bb2b7a35ea7039dd1c5bbdb4061df41ea05be8abe7c57b156930d0ff857a5c9f2a0846b97511da90@150.158.119.171:30311'
+            },
+
+{
+            'owner': '丝路花城', 
+            'type': 'witness',
+            'ip': '49.232.85.216',
+            'id': '1b557396c9d18da6627ca9160c5c5c357cd93ce2edb464c788286475e135cd97',
+            'enode': 'enode://857b8f12aa0e1483cc53b4cf9d9095b5f8795d71dabec76118bd3856959e533f97d386a9f6407cd2a1fb09b7024edde0356a787365e7c0ae7aeb8aeb6dde5811@49.232.85.216:30311'
+            },
+
+{
+            'owner': '阿震', 
+            'type': 'witness',
+            'ip': '106.53.94.136',
+            'id': '358934bef6216ec5c9426feb5edf8cea992a7eb9302a6657a247c8ef0359d882',
+            'enode': 'enode://b4f4afa12dc5dc8d5af345be95bc2e99e134639f733be72cc4802ecb74dc36a8dc896c9e2f429371a5e714d4d06b11c9121b0ee509f1e811c87f635b43305491@106.53.94.136:30311'
+            },
+
 
 ]
 
