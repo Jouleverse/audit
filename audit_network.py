@@ -136,11 +136,11 @@ core_nodes = [
             'enode': 'enode://aac8963e6ed260be67d83275faed5cbda6880ecec31abc7e223932c12b5b131d81edc4efb7bc977572afefd6cd3dcd3b4903b44689ca57f8a4f80e935106dacd@121.40.97.50:30311'
             },
     {
-            'owner': 'OPEN',
+            'owner': 'OPEN', # last update 240331
             'type': 'witness',
-            'ip': '124.222.199.61', # bootnode-open.jnsdao.com
-            'id': '7da1b99acd6bedf5de7ae595aa3676e329b35fc3fa87a93ab0312638549de473',
-            'enode': 'enode://0a8b5aa7210ada01d9919e4f1a19860a2946f6e54ae2e0fb8c7e1b7e5482546c478260d284255da92d95d579cffd6ce06ec0bf520b7e4e71876a1efa68f7674d@124.222.199.61:30311'
+            'ip': '43.139.93.218', # bootnode-open.jnsdao.com
+            'id': 'fc1b07c32f0254e83cc1983555921c8afc660b913361306d8e91a5e25fbc8549',
+            'enode': 'enode://63715006efec64b76a909bb62c33f7afac17187305c66832bc3fcc4ba4dbd4c897e5aab283844f29fa8be1a8f952080715d8fbd6314282880f9f08f9fc26eede@43.139.93.218:30311'
             },
     {
             'owner': '谢勇',
