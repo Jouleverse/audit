@@ -372,7 +372,7 @@ core_nodes = [
             'enode': 'enode://6e0ab00789fc3580e2229d31a831d778a1d32a9066cdef2950bb5867a2dc3efcef26247a870297334f37ccce0bd2c38f1129c6cbcbb3cbe8ac369d8b12a9f64a@49.232.139.194:30311'
             },
     {
-            'owner': '见证节点',
+            'owner': '杨敦鹏', # lastupdate 240402
             'type': 'witness',
             'ip': '101.42.40.244',
             'id': '52317d959b7f78fab18d33b828a6ce597e9148a7f7514135ff50dce110c88fa5',
@@ -423,7 +423,14 @@ core_nodes = [
             'id': '358934bef6216ec5c9426feb5edf8cea992a7eb9302a6657a247c8ef0359d882',
             'enode': 'enode://b4f4afa12dc5dc8d5af345be95bc2e99e134639f733be72cc4802ecb74dc36a8dc896c9e2f429371a5e714d4d06b11c9121b0ee509f1e811c87f635b43305491@106.53.94.136:30311'
             },
-
+# 240402
+{
+            'owner': '星语欣愿', 
+            'type': 'witness',
+            'ip': '124.223.91.169',
+            'id': 'ef5afb2bcf53d9dc6c2c66717a48140e2723c665da7c27998d6d54859574b28d',
+            'enode': 'enode://eb100647b61986fc68bf3298ee2e40caefc452986487776fe9976eb5e8a04592aa162f7aede632ddc041f9ce9557e2e2b981e5a24cdade1823affac662df34f2@124.223.91.169:30311'
+            },
 
 ]
 
