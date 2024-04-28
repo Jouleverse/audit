@@ -434,6 +434,17 @@ core_nodes = [
             'since': '20240402',
             },
 
+# 20240419
+{
+            'owner': 'jay.j', 
+            'type': 'witness',
+            'ip': '118.25.144.251',
+            'id': 'ed09e8e302f717fb4af54213d63d70e6da1d6213510a8da7d79ff05365d16135',
+            'enode': 'enode://f073da6131d7f9578dc8dcf1ad4913c9a661c0f801ed6bc11431ed8679cbb8dc933be22ccb3ea9a0fc0ee9d6c467856dd73c94d8315884d529fa64277df2fa86@118.25.144.251:30311',
+            'since': '20240419',
+            },
+
+
 ]
 
 ## parse command line argument /path/to/geth.ipc
