@@ -444,6 +444,16 @@ core_nodes = [
             'since': '20240419',
             },
 
+# 20240429
+{
+            'owner': 'ucanfilm', 
+            'type': 'witness',
+            'ip': '139.129.20.205',
+            'id': '88bfd5ab83bee2a2c25e7a15911cf780cd0ccac86acd928867e784fcdf47df8c',
+            'enode': 'enode://fbb54beade25d2c70ea03422e219ea5ec0d322b6b2a3bfe94eba5bc101c5cbfeba090e5f54014ef1ffa56e537c526730ae668b6e7e0b510565eb6ff6307d4e93@139.129.20.205:30311',
+            'since': '20240429',
+            },
+
 
 ]
 
