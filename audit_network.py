@@ -453,6 +453,15 @@ core_nodes = [
             'enode': 'enode://fbb54beade25d2c70ea03422e219ea5ec0d322b6b2a3bfe94eba5bc101c5cbfeba090e5f54014ef1ffa56e537c526730ae668b6e7e0b510565eb6ff6307d4e93@139.129.20.205:30311',
             'since': '20240429',
             },
+# 20240509
+{
+            'owner': '相瑾', 
+            'type': 'witness',
+            'ip': '101.43.23.92',
+            'id': 'bda5a83e2f7c70a33d31a998f285d50da8a09448af9805a5e069d8a780407989',
+            'enode': 'enode://620113e75c0cf4a645b9bfe938a147211cbbf84b2f36405f69dfaa359e58032519e7eababe033214966a10579517a588d25060e71e6399459a227c8ef2ecda00@101.43.23.92:30311',
+            'since': '20240509',
+            },
 
 
 ]
