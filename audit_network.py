@@ -385,8 +385,8 @@ core_nodes = [
             'owner': 'Ted', 
             'type': 'witness',
             'ip': '36.137.155.244',
-            'id': '4e06295ea51278c169a82f51b9cb2b496e1ecb5ed860145625a1972e9c34d014',
-            'enode': 'enode://2bb315ef53003384679a24db1ac71d3b0d6938539aff82cdb750b5079073cbd008b09d2593a3cd0c78f280891e59e6f95eef5e15e9343ea4eb7e71c7203b42cf@36.137.155.244:30311',
+            'id': 'fc30ea97f8ec6ae17c023135d4cd1ac8bbeff37f4d19d9b7e10b26fd8a7c6789',
+            'enode': 'enode://aa85fbb8b33988f4c68e3f7155cb67d4bebba922827445b8ccaeb2ecb9ded18ee772255815f7594b2f842263f8528d0085105b49d5ddf89de8e9f88d5b943e09@36.137.155.244:30311',
             'since': '20240313',
             },
 #20240319

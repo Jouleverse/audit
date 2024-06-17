@@ -6,6 +6,12 @@ sed -ri 's/\.[0-9]+\.[0-9]+\./.*.*./g' daily-report.txt
 
 cat daily-report.txt
 
+
+# eval "$(ssh-agent -s)"
+# ssh-add /home/lighthouse/.ssh/id_rsa_bot_audit 
+
+
+
 git pull
 
 git add .
