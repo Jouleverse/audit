@@ -464,6 +464,16 @@ core_nodes = [
             },
 
 
+# 20240622
+{
+            'owner': '盛美',
+            'type': 'witness',
+            'ip': '36.212.86.15',
+            'id': '68617066980c00985b7fc331487d193e22258badbaeec6bf619d3e7cbc255ae8',
+            'enode': 'enode://9fcb694d575cac90db04e4afd4611145b21b01282ce06097bec90e806f3819656bbc4ce3ea9c41b91f62a4a6fc4300758df0e829e38b708563cf43e5a159ba31@36.212.86.15:30311',
+            'since': '20240623',
+            },
+
 ]
 
 ## parse command line argument /path/to/geth.ipc
