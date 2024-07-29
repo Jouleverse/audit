@@ -381,14 +381,16 @@ core_nodes = [
             'enode': 'enode://2b508101e03ea070e67dc39bd3662c19d3dcc31c2a7564ffe636408d421ef7dc287b7f23d7b39dd11e584cab162ced987ea056a53a1e79ff15e43033a6c9989a@175.24.131.36:30311',
             'since': '20240313',
             },
-{
-            'owner': 'Ted', 
+
+    {
+            'owner': 'Ted',
             'type': 'witness',
-            'ip': '36.137.155.244',
-            'id': 'fc30ea97f8ec6ae17c023135d4cd1ac8bbeff37f4d19d9b7e10b26fd8a7c6789',
-            'enode': 'enode://aa85fbb8b33988f4c68e3f7155cb67d4bebba922827445b8ccaeb2ecb9ded18ee772255815f7594b2f842263f8528d0085105b49d5ddf89de8e9f88d5b943e09@36.137.155.244:30311',
+            'ip': '36.134.89.81',
+            'id': '1e416260cd36231d299160e8a8c24014a02eb4ba1494ad43011d6432b02fc7ef',
+            'enode': 'enode://64e36ff9563dd1e50adbc4ebea15b564eddc557f80e4ff1f19da417413d905fc95323a1bd807c8b5108d83a9587e5ead044bb2d2e9c818d9ccc7e407b5ca56c8@36.134.89.81:30311',
             'since': '20240313',
             },
+
 #20240319
 {
             'owner': '团子', 
@@ -473,6 +475,18 @@ core_nodes = [
             'enode': 'enode://9fcb694d575cac90db04e4afd4611145b21b01282ce06097bec90e806f3819656bbc4ce3ea9c41b91f62a4a6fc4300758df0e829e38b708563cf43e5a159ba31@36.212.86.15:30311',
             'since': '20240623',
             },
+
+# 20240719
+{
+            'owner': '微尘',
+            'type': 'witness',
+            'ip': '81.70.93.66',
+            'id': '81abaac1ce9838730115e271d14da9d0a437475334a1a9efd4e1b4f1e7696f88',
+            'enode': 'enode://c4bb52660680595ffb3a1b7dd4db696c74f69bc9fa29fb93ff46e4d69f32fd6fc06b7470605fe0b1d7e19b30f54dc17170df4865fc668f19f8d842ada83f8867@81.70.93.66:30311',
+            'since': '20240719',
+            },
+
+
 
 ]
 
