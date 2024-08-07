@@ -240,7 +240,7 @@ core_nodes = [
             'enode': 'enode://662cbf6b247cd57069c219cdcc23c279af0b0b9679d1161051a999659aef4cf4d5d4f36ee921c60bd52136133d066626f9d7a91e8c2e52f4152d78464ffe9021@106.53.39.89:30311',
             'since': '20240114',
             },
-    # 20230117 
+    # 20230117
     {
             'owner': '煜歌',
             'type': 'witness',
@@ -313,8 +313,8 @@ core_nodes = [
             'owner': 'li17.eth',
             'type': 'witness',
             'ip': '111.229.136.60',
-            'id': 'b764135d654d36f9566a35d203fe7172a1b452b644d22bee05800a5ccc74cee9',
-            'enode': 'enode://d56a5ecae9b5afff1d40dba22ee132217267c76f05db004ee8df8629902c9b07ba2f3ce9243407099324137c296e7d287e852ff7d4d92f61820d23203eb631e8@111.229.136.60:30311',
+            'id': '94e08ab29e8dfcdb79e93fb9d69bad0ff7179508f76fef3d70cea901e17591d0',
+            'enode': 'enode://55b8cbf1e0776d4094e8b06b64b0545ce468290deda8c6830e6c3eeb5e06d3929a19a1f507591e3e6d985ad2f84c56327ffbd7f704ac00b84a2800b3de7277d7@111.229.136.60:30311',
             'since': '20240120',
             },
 
@@ -393,7 +393,7 @@ core_nodes = [
 
 #20240319
 {
-            'owner': '团子', 
+            'owner': '团子',
             'type': 'witness',
             'ip': '118.25.109.71',
             'id': 'e4398a2875a424e127cdce2be432755bbf0052aa4d4c535e623228e03d3f938e',
@@ -401,7 +401,7 @@ core_nodes = [
             'since': '20240319',
             },
 {
-            'owner': 'xiangwang', 
+            'owner': 'xiangwang',
             'type': 'witness',
             'ip': '150.158.119.171',
             'id': 'f7eaaa1f5fa51766ad662fba1eca761820f5dabfb4ecad49dea8d7f60292f86e',
@@ -410,7 +410,7 @@ core_nodes = [
             },
 
 {
-            'owner': '邱泳渼', 
+            'owner': '邱泳渼',
             'type': 'witness',
             'ip': '49.232.85.216',
             'id': '1b557396c9d18da6627ca9160c5c5c357cd93ce2edb464c788286475e135cd97',
@@ -419,7 +419,7 @@ core_nodes = [
             },
 
 {
-            'owner': '阿震', 
+            'owner': '阿震',
             'type': 'witness',
             'ip': '106.53.94.136',
             'id': '358934bef6216ec5c9426feb5edf8cea992a7eb9302a6657a247c8ef0359d882',
@@ -428,7 +428,7 @@ core_nodes = [
             },
 # 20240402
 {
-            'owner': '星语欣愿', 
+            'owner': '星语欣愿',
             'type': 'witness',
             'ip': '124.223.91.169',
             'id': 'ef5afb2bcf53d9dc6c2c66717a48140e2723c665da7c27998d6d54859574b28d',
@@ -438,7 +438,7 @@ core_nodes = [
 
 # 20240419
 {
-            'owner': 'jay.j', 
+            'owner': 'jay.j',
             'type': 'witness',
             'ip': '118.25.144.251',
             'id': 'ed09e8e302f717fb4af54213d63d70e6da1d6213510a8da7d79ff05365d16135',
@@ -448,7 +448,7 @@ core_nodes = [
 
 # 20240429
 {
-            'owner': 'ucanfilm', 
+            'owner': 'ucanfilm',
             'type': 'witness',
             'ip': '139.129.20.205',
             'id': '88bfd5ab83bee2a2c25e7a15911cf780cd0ccac86acd928867e784fcdf47df8c',
@@ -457,7 +457,7 @@ core_nodes = [
             },
 # 20240509
 {
-            'owner': '相瑾', 
+            'owner': '相瑾',
             'type': 'witness',
             'ip': '101.43.23.92',
             'id': 'bda5a83e2f7c70a33d31a998f285d50da8a09448af9805a5e069d8a780407989',
@@ -484,6 +484,16 @@ core_nodes = [
             'id': '81abaac1ce9838730115e271d14da9d0a437475334a1a9efd4e1b4f1e7696f88',
             'enode': 'enode://c4bb52660680595ffb3a1b7dd4db696c74f69bc9fa29fb93ff46e4d69f32fd6fc06b7470605fe0b1d7e19b30f54dc17170df4865fc668f19f8d842ada83f8867@81.70.93.66:30311',
             'since': '20240719',
+            },
+
+# 20240807
+{
+            'owner': '张恩畅',
+            'type': 'witness',
+            'ip': '118.89.117.223',
+            'id': 'e5eb6b54bcb84281de04d6c4ff2ff813402512b143381204a530c5ad8d48dff1',
+            'enode': 'enode://5d19e0757bd2a307cb425a0db5e34964b1fd3ca07797072103d450101513430eb7d82af4b900af59b75a4deea1a5bca40653877dac2799cbfeca8a7243498522@118.89.117.223:30311'
+            ,'since': '20240807',
             },
 
 
@@ -525,7 +535,7 @@ for node in core_nodes:
     elif node['id'] in all_connected_ids:
         all_nodes[node['id']]['status'] = 'connected'
     else:
-        all_nodes[node['id']]['status'] = 'disconnected' 
+        all_nodes[node['id']]['status'] = 'disconnected'
         print('disconnected. trying to add peer:', node['ip'], node['type'], node['owner'])
         w3.geth.admin.add_peer(node['enode'])
 
@@ -624,4 +634,3 @@ for (id, node) in all_nodes.items():
 for (id, node) in all_nodes.items():
     if node['type'] == 'witness' and node['block_height'] == 0:
         report(node)
-
