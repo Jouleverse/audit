@@ -495,6 +495,16 @@ core_nodes = [
             'enode': 'enode://5d19e0757bd2a307cb425a0db5e34964b1fd3ca07797072103d450101513430eb7d82af4b900af59b75a4deea1a5bca40653877dac2799cbfeca8a7243498522@118.89.117.223:30311'
             ,'since': '20240807',
             },
+# 20240825
+{
+            'owner': '蓝叶子-node',
+            'type': 'witness',
+            'ip': '1.92.122.1',
+            'id': 'bb341e65ad7fdac57853cd6e016207c99eb6ea07c758d8264fccffee63f0654a',
+            'enode': 'enode://f08af9f5fa587deee8b1adb8f14f14918d9cd21c592ab1a7975228a611839f6709d8bc4ef4839c582cc169234e599a9236fa53e7984210bbcf3a7fde691dc070@1.92.122.1:30311'
+            ,'since': '20240825',
+            },
+
 
 
 
