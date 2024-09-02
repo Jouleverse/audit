@@ -505,6 +505,15 @@ core_nodes = [
             ,'since': '20240825',
             },
 
+# 20240831
+{
+            'owner': 'sing2011',
+            'type': 'witness',
+            'ip': '101.126.79.130',
+            'id': '6b0da4e2b295d5479d6f856be3b2264bb57c443a23b568d76c40aa0f7774ae1e',
+            'enode': 'enode://d8cc45697a68aed642a2f4747d0829716d08b83c8384d3a0f9dc1705f0804efb33216afc11cfd4296b306a2ad18be1984366326d1920a584aa62d9d120896d82@101.126.79.130:30311'
+            ,'since': '20240831',
+            },
 
 
 
