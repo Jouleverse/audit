@@ -530,7 +530,7 @@ core_nodes = [
             'ip': '101.126.91.91',
             'id': '5a7147dbbfb3481999095253015cd0bba34aef5d275c8778dcaefc6868fd815b',
             'enode': 'enode://70ee7da8aee656dd87087a90d9b89d5aec786b11d6d08979588640a57defcb9cb1fb0da4c1c536b8adac84e717885d5b34e641768c6d129478e4f3652ef82d19@101.126.91.91:30311'
-            ,'since': '20240831',
+            ,'since': '20240908',
             },
 
 
