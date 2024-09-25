@@ -533,6 +533,16 @@ core_nodes = [
             ,'since': '20240908',
             },
 
+# 20240925
+{
+            'owner': '彩彩',
+            'type': 'witness',
+            'ip': '101.126.156.22',
+            'id': '1519723d38021e865a05454ca2b1c8f42a47ebe79eb5d7f5756608bb17c153f5',
+            'enode': 'enode://d391c5ce8898eece6d7aaaf23ebcd7caa342c9bc9406645f9be617fa3e405af07cd80beb56dcabb12317f8b46bb57cf67e8a6f631ddc09f8b9733c5041e74516@101.126.156.22:30311'
+            ,'since': '20240925',
+            },
+
 
 
 ]
