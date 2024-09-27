@@ -543,6 +543,14 @@ core_nodes = [
             ,'since': '20240925',
             },
 
+{
+            'owner': 'Simon',
+            'type': 'witness',
+            'ip': '139.224.209.54',
+            'id': 'b9ee64eeca1fcedad05629a41665df21e395900de11e8d84f785d773b4ccbcec',
+            'enode': 'enode://bfda1116bba6ac01a61479acf917fc45b667d9bed824f21d6e1acfc04e546c8d2ce1b629e2c924797eb43243188586544de5618f6aadc97c70916d31e10b7fff@139.224.209.54:30311',
+            'since': '20240927',
+            },
 
 
 ]
