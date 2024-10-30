@@ -322,9 +322,9 @@ core_nodes = [
     {
             'owner': '得葱',
             'type': 'witness',
-            'ip': '81.68.133.122',
-            'id': 'ebd1b822d489eaf5decdd24a996ee8b0454211d32d92714665b5eb8b3441e96e',
-            'enode': 'enode://03447b508e2305219f89abd9bfbf4ac73d423dcd777394afae229f39dce51402cae9e985877db710ae55e8a5a739c6774086087595d26f0d15d71201c52c23ff@81.68.133.122:30311',
+            'ip': '150.158.49.56',
+            'id': '9a970791e61f2c8a45010ce83c9dd332cb4a634241cbcd45d5ee8d8cf23baa54',
+            'enode': 'enode://10ac2787e47bd7472721bafa5abd96dceb91fda82953a49a55c49db585f73a2092688f6c8651531aa1d11367abf6258bd3160940ca9d572e17db69999f29ae52@150.158.49.56:30311',
             'since': '20240217',
             },
     {
