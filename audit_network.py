@@ -552,6 +552,45 @@ core_nodes = [
             'since': '20240927',
             },
 
+    # 241103
+    {
+            'owner': 'kylin',
+            'type': 'miner*',
+            'ip': '110.40.130.38',
+            'id': '4c1caaabecd77700cbe29f5ffda48370dbddaf9def2ebafdb1471736b27d1e8b',
+            'enode': 'enode://2e4104827d8fe8344b10d9ec10705e7cba11ef8476f68d0b5d7ceafe747373f03b2074e5901ba3c5d25c0436a24c03504cb75334e5503a65a1dc6929e0bd2346@110.40.130.38:30311',
+            'since': '241103',
+            },
+
+    # 241113
+    {
+            'owner': '剪云为裳',
+            'type': 'miner*',
+            'ip': '106.54.199.222',
+            'id': '4c108deb46bbe44e5960b509d1afd625cbeba13033fd92759ba8cc59b52d3a2f',
+            'enode': 'enode://2f151d76573e56ee0f57f5598176a5efe1a7fa3f154f66f5674257fe565138d0d4e80b3cba9cc12db0322a9bfd9ef1dc48e79f12cad9233d483f6c3d7d5d9b71@106.54.199.222:30311',
+            'since': '241113',
+            },
+
+    # 241115
+    {
+            'owner': '微尘',
+            'type': 'miner*',
+            'ip': '1.92.102.75',
+            'id': '5c488a3f6e2a73da519a6b761164492fd3e9881d5d2537f8ebecbc5718549014',
+            'enode': 'enode://a1224775395a3d283ac745ab6960b24dd8c432cba108be82331c7eeb8c2a8c361387446e64c4ff99c91e89fd730a0c56a7b29927771291006d02a023eabfa63b@1.92.102.75:30311',
+            'since': '241115',
+            },
+
+    # 241117
+    {
+            'owner': '煜歌',
+            'type': 'miner*',
+            'ip': '110.42.247.135',
+            'id': '40516132d629c367140578751bb341fc774c7b84e9983eb4e605e9f1bf052479',
+            'enode': 'enode://4dae7c25cc4f3d379911c3386f2a50f07142a0a8b5ba953d26ffc5ea9b3a8bd8b858ae18ab1b56887708c29b39949e9745fb65c9427de61ae6e20c74593373a2@110.42.247.135:30311',
+            'since': '241117',
+            },
 
 ]
 
