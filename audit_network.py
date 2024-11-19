@@ -110,14 +110,15 @@ core_nodes = [
             'enode': 'enode://b3eca38a3d18a789a0ca4e0e871c77fbf98fbe82cb8ed577895be8be14599abd07df88fe5fcf5fa11a63843b25bbc69b28da9a68bc0fcf42b01583329d4e0006@1.14.111.74:30311',
             'since': '20231014',
             },
-    {
-            'owner': '岑云',
-            'type': 'witness',
-            'ip': '101.34.72.97',
-            'id': 'f132b1c2c66c08a1021ce59608238a8322318c14083fbc9ef85bd40e8077d5fe',
-            'enode': 'enode://5fa7786fd0f896a680708eaacbf4f5f0f506fe24913e03048b2890abc08faa13183b1618abaa99e042caf3ebebba52aa55d0f1686d5c898d21a74a6cbc13127a@101.34.72.97:30311',
-            'since': '20230809',
-            },
+    # remove node (241119)
+    # {
+    #         'owner': '岑云',
+    #         'type': 'witness',
+    #         'ip': '101.34.72.97',
+    #         'id': 'f132b1c2c66c08a1021ce59608238a8322318c14083fbc9ef85bd40e8077d5fe',
+    #         'enode': 'enode://5fa7786fd0f896a680708eaacbf4f5f0f506fe24913e03048b2890abc08faa13183b1618abaa99e042caf3ebebba52aa55d0f1686d5c898d21a74a6cbc13127a@101.34.72.97:30311',
+    #         'since': '20230809',
+    #         },
     {
             'owner': '比尔盖',
             'type': 'witness',
