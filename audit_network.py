@@ -559,6 +559,7 @@ core_nodes = [
             'type': 'miner*',
             'ip': '110.40.130.38',
             'id': '4c1caaabecd77700cbe29f5ffda48370dbddaf9def2ebafdb1471736b27d1e8b',
+            'signer': '0x08c1938546708f0b3c6f49703d1c19f79d90ac04',
             'enode': 'enode://2e4104827d8fe8344b10d9ec10705e7cba11ef8476f68d0b5d7ceafe747373f03b2074e5901ba3c5d25c0436a24c03504cb75334e5503a65a1dc6929e0bd2346@110.40.130.38:30311',
             'since': '241103',
             },
@@ -566,9 +567,10 @@ core_nodes = [
     # 241113
     {
             'owner': '剪云为裳',
-            'type': 'miner*',
+            'type': 'miner',
             'ip': '106.54.199.222',
             'id': '4c108deb46bbe44e5960b509d1afd625cbeba13033fd92759ba8cc59b52d3a2f',
+            'signer': '0x5bC3930448cE53C970AcD41C1f80AbA6ab3c523f',
             'enode': 'enode://2f151d76573e56ee0f57f5598176a5efe1a7fa3f154f66f5674257fe565138d0d4e80b3cba9cc12db0322a9bfd9ef1dc48e79f12cad9233d483f6c3d7d5d9b71@106.54.199.222:30311',
             'since': '241113',
             },
@@ -579,6 +581,7 @@ core_nodes = [
             'type': 'miner*',
             'ip': '1.92.102.75',
             'id': '5c488a3f6e2a73da519a6b761164492fd3e9881d5d2537f8ebecbc5718549014',
+            'signer': '0xff42f7a9fd1afdeed1568805fa8dce67e3dbc188',
             'enode': 'enode://a1224775395a3d283ac745ab6960b24dd8c432cba108be82331c7eeb8c2a8c361387446e64c4ff99c91e89fd730a0c56a7b29927771291006d02a023eabfa63b@1.92.102.75:30311',
             'since': '241115',
             },
@@ -589,9 +592,29 @@ core_nodes = [
             'type': 'miner*',
             'ip': '110.42.247.135',
             'id': '40516132d629c367140578751bb341fc774c7b84e9983eb4e605e9f1bf052479',
+            'signer': '0xa3F01Afa1dDfB6D07cac35210d5AFdfe6f0982E8',
             'enode': 'enode://4dae7c25cc4f3d379911c3386f2a50f07142a0a8b5ba953d26ffc5ea9b3a8bd8b858ae18ab1b56887708c29b39949e9745fb65c9427de61ae6e20c74593373a2@110.42.247.135:30311',
             'since': '241117',
             },
+
+{
+            'owner': '富轩',
+            'type': 'witness',
+            'ip': '110.42.233.253',
+            'id': '2180a1ff8fc303c5411e4421a5bbb362424972ff4c367fc7074a165b8a32a29e',
+            'enode': 'enode://ff3e0e9c8ea5442ab3d0f2adddf1879aa8a51bd082a6718ac2289a656887c0c1f6e1fc4d08233aa33df4e6e21fef3deb90a1ae8b62bbc46dca392d570942e594@110.42.233.253:30311',
+            'since': '20241118',
+            },
+
+{
+            'owner': '佘小强',
+            'type': 'witness',
+            'ip': '119.45.93.155',
+            'id': '2c3cbf2abba1708a0b55a80ab8498339ebb1c150a89c83504923a5c241426658',
+            'enode': 'enode://e44ca285b8f72d3188ca47dffe9a83c84bd92b80dc2e7e1ee30a4474656aa815da87406c939c218be453bb329d792ff44ccd7eb6fc2ab9795bcea159d27b7a3b@119.45.93.155:30311',
+            'since': '20241121',
+            },
+
 
 ]
 
@@ -637,7 +660,8 @@ for node in core_nodes:
 ## update all_miners with information from clique.status
 clique_status = w3.provider.make_request('clique_status', [])['result']
 for (addr, n) in clique_status['sealerActivity'].items():
-    all_miners[addr.lower()]['block_rate'] = n / clique_status['numBlocks']
+    if addr.lower() in all_miners:
+        all_miners[addr.lower()]['block_rate'] = n / clique_status['numBlocks']
 
 ## get latest block info
 last_block_n = w3.eth.get_block_number()
