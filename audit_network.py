@@ -154,7 +154,7 @@ core_nodes = [
     {
             'owner': '火星',
             'type': 'witness',
-            'ip': '101.32.170.145',
+            'ip': '118.89.117.135',
             'id': '9bfbcdd542f8f7af28a9b3c50dc5dbd1bff8085311b9b216716a7106880ad6f2',
             'enode': 'enode://5fe23cce534e7a49a0a6f79203fec02e84391ada79cf8fc0dc8ef2901ddc5620beea52dbab009c6ecb2bdc127ae084a252ffbf5c9221f733d096f346d3f25cf9@101.32.170.145:30311',
             'since': '20230524',
