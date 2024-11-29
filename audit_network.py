@@ -556,7 +556,7 @@ core_nodes = [
     # 241103
     {
             'owner': 'kylin',
-            'type': 'miner*',
+            'type': 'miner',
             'ip': '110.40.130.38',
             'id': '4c1caaabecd77700cbe29f5ffda48370dbddaf9def2ebafdb1471736b27d1e8b',
             'signer': '0x08c1938546708f0b3c6f49703d1c19f79d90ac04',
@@ -578,7 +578,7 @@ core_nodes = [
     # 241115
     {
             'owner': '微尘',
-            'type': 'miner*',
+            'type': 'miner',
             'ip': '1.92.102.75',
             'id': '5c488a3f6e2a73da519a6b761164492fd3e9881d5d2537f8ebecbc5718549014',
             'signer': '0xff42f7a9fd1afdeed1568805fa8dce67e3dbc188',
@@ -589,7 +589,7 @@ core_nodes = [
     # 241117
     {
             'owner': '煜歌',
-            'type': 'miner*',
+            'type': 'miner',
             'ip': '110.42.247.135',
             'id': '40516132d629c367140578751bb341fc774c7b84e9983eb4e605e9f1bf052479',
             'signer': '0xa3F01Afa1dDfB6D07cac35210d5AFdfe6f0982E8',
