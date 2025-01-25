@@ -17,7 +17,7 @@ core_nodes = [
         {
             'owner': 'JNSDAO',
             'type': 'witness',
-            'ip': '43.134.121.187', # bootnode.jnsdao.com
+            'ip': '101.32.253.192', # bootnode.jnsdao.com
             'id': '2379e2c19b8a0e4a76d011b07e41493902c1f274abc5adce3e20fe60f0cabac6',
             'enode': 'enode://19dc6b15744e8ad73f860d6ca7bf7b1acf37497ef8a720a88d64449ec837af460535fcf01662907aaece6bde0c2ff539a9d79e353d043769134666a1586fa4e0@43.134.121.187:30311',
             'since': '20230529',
