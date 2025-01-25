@@ -694,7 +694,7 @@ count = count_miner = count_witness = 0
 for (id, node) in all_nodes.items():
     node_type = node['type']
     if node_type == 'miner':
-        node['block_rate'] = all_miners[node['signer'].lower()]['block_rate']
+        node['block_rate'] = all_miners[node['signer'].lower()].get('block_rate') or -1 
         if node['block_rate'] > 0:
             count_miner += 1
             count += 1
