@@ -694,7 +694,7 @@ count = count_miner = count_witness = 0
 for (id, node) in all_nodes.items():
     node_type = node['type']
     if node_type == 'miner':
-        node['block_rate'] = all_miners[node['signer'].lower()]['block_rate']
+        node['block_rate'] = all_miners[node['signer'].lower()].get('block_rate') or -1 
         if node['block_rate'] > 0:
             count_miner += 1
             count += 1
@@ -746,7 +746,7 @@ def report(node):
         node_activity = node['block_height']
     else:
         node_liveness = '❌'
-        node_activity = 0
+        node_activity = -1
 
     print(node['type'], node['since'], node['ip'], node['owner'], enode_connected, node['status'], node_activity, node_liveness)
 
