@@ -746,7 +746,7 @@ def report(node):
         node_activity = node['block_height']
     else:
         node_liveness = '❌'
-        node_activity = 0
+        node_activity = -1
 
     print(node['type'], node['since'], node['ip'], node['owner'], enode_connected, node['status'], node_activity, node_liveness)
 
