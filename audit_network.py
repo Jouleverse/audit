@@ -722,6 +722,9 @@ if not w3.is_connected():
 
 w3.middleware_onion.inject(geth_poa_middleware, layer=0) #otherwise cannot get_block
 
+## 创建 JVCore 合约实例
+jvcore_contract = w3.eth.contract(address=jvcore_address, abi=jvcore_abi)
+
 ## get id of this node (as audit node)
 audit_node_id = w3.geth.admin.node_info().id
 
@@ -805,7 +808,7 @@ print('Network Size: ', count, ' nodes (', count_miner, ' miners, ', count_witne
 
 ## reporting node status
 print('---------------- nodes status -----------------')
-print('TYPE', 'SINCE', 'IP', 'OWNER', 'CONNECTED', 'STATUS', 'ACTIVITY', 'LIVENESS', 'CORE-ID', 'CHECK-IN')
+print('TYPE', 'SINCE', 'IP', 'OWNER', 'CHECK-IN', 'CORE-ID', 'CONNECTED', 'STATUS', 'ACTIVITY', 'LIVENESS')
 print('-----------------------------------------------')
 ## helper: reporting func
 def report(node):
@@ -824,11 +827,12 @@ def report(node):
     core_id = node.get('coreId')  # 获取 coreId，可能为 None
     if core_id is not None:
         check_in_status = jvcore_contract.functions.isLiveness(core_id).call()
-        check_in_status_display = '👍' if check_in_status else '👎'
+        check_in_status_display = '👍' if check_in_status else '💔'
     else:
+        core_id = '--'
         check_in_status_display = '❔'  # 缺失 coreId，显示为未知状态
 
-    print(node['type'], node['since'], node['ip'], node['owner'], enode_connected, node['status'], node_activity, node_liveness, core_id, check_in_status_display)
+    print(node['type'], node['since'], node['ip'], node['owner'], check_in_status_display, core_id, enode_connected, node['status'], node_activity, node_liveness)
 
 ## reporting miner status first
 for (id, node) in all_nodes.items():
