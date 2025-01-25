@@ -13,6 +13,7 @@ from datetime import datetime, timedelta
 from web3 import Web3
 from web3.middleware import geth_poa_middleware
 
+# 核心节点信息
 core_nodes = [
         {
             'owner': 'JNSDAO',
@@ -21,6 +22,7 @@ core_nodes = [
             'id': '2379e2c19b8a0e4a76d011b07e41493902c1f274abc5adce3e20fe60f0cabac6',
             'enode': 'enode://19dc6b15744e8ad73f860d6ca7bf7b1acf37497ef8a720a88d64449ec837af460535fcf01662907aaece6bde0c2ff539a9d79e353d043769134666a1586fa4e0@43.134.121.187:30311',
             'since': '20230529',
+            'coreId': 25, # maintainer JVCore #id. 尚未获得则删去该字段.
             },
         {
             'owner': 'Jeff',
@@ -29,6 +31,7 @@ core_nodes = [
             'id': '36d1c18a197fea99e9b55b111b03ab03866367838b3017ae91984e0648e3f677',
             'enode': 'enode://f3e4e524d89b4cdb9ee390d9485cee4d6a5e9a260f5673cab118505cc3e69fe8365bc00434222d27fe4082ca798b13ad8e7e139d1315f635fd0e46dbe96fa809@43.136.53.164:30311',
             'since': '20240115',
+            'coreId': 29,
             },
         {
             'owner': 'Koant',
@@ -38,6 +41,7 @@ core_nodes = [
             'signer': '0xA23e676de107F45A2C873109b6976c1D69b4ad55',
             'enode': 'enode://dbf6ba9d689929e1f8824d53b0e7bd62ceeaff32d65821de5054dd2b48b7701458fb537345c1842c428d5e8918775cffef411e74b073c5d1ff815e78d13270fb@119.29.202.168:30311',
             'since': '20231015',
+            'coreId': 0,
             },
         {
             'owner': '谢勇', #稳清活
@@ -47,6 +51,7 @@ core_nodes = [
             'signer': '0x93196aeEb56fe0F5672d84b8F50C123b5dA50329',
             'enode': 'enode://c43fa0ea62dfc0e09906f67a8b730918cbe567a3f53322470780ecdc569efda1a2dd9e4707ac65e3b558e9bf8a025a22da33b1ad08211290211b8c5ed0ed1671@82.157.251.101:30311',
             'since': '20240119',
+            'coreId': 18,
             },
         {
             'owner': 'Jacky',
@@ -56,6 +61,7 @@ core_nodes = [
             'signer': '0x28D314d2B00EED89041843d4Cd7b9de91170f37a',
             'enode': 'enode://be96ad65107a3d520943f761d00a79a6e08bd4acc5b008b58ff8406761e5ca7e923bcb310654089b1ab364579f70ebe042f2baf9c9adbfa8482052f31c6766f1@47.94.93.119:30311',
             'since': '20230529',
+            'coreId': 9,
             },
         {
             'owner': '教链',
@@ -65,6 +71,7 @@ core_nodes = [
             'signer': '0x85db5D64BD1a2652A75C4A7e12Eeba2f43c57bC4',
             'enode': 'enode://d667d09c38706d40fa1c15cde8dc28c117087cdf55d41d402d70b0817636c6f65e6a6463e81ab178ad9a896ea93c37b479a01ff19dfe13cd4276ea2c64575c76@81.68.150.141:30311',
             'since': '20230524',
+            'coreId': 25,
             },
     {
             'owner': '比尔盖',
@@ -74,6 +81,7 @@ core_nodes = [
             'signer': '0x1323caeca07e7bd2b5bdb4bc13e67029ad56fa2f',
             'enode': 'enode://d33540329429582a6c10c917f66103a8e9ce97da24c34bf14d5fd211a8eb4640c6d5ac1a30a764cebd872e6966c04750912726359534a9d4fba5d78c837f4bf0@101.43.165.39:30311',
             'since': '20240310',
+            'coreId': 21,
             },
     {
             'owner': 'Menger',
@@ -83,6 +91,7 @@ core_nodes = [
             'signer': '0x3fc084c968e77f264803ef5af09e6d6f05228bea',
             'enode': 'enode://72ced57bb2a447947d7bf6378ee927fb04954eba69063571bec3cd3e3cf8d5e660ffb3e62a2cf073045f949a592b2a2c66a1d5bf700a00f069531239749a8382@62.234.21.37:30311',
             'since': '20231027',
+            'coreId': 5,
             },
     {
             'owner': '严光红',
@@ -92,6 +101,7 @@ core_nodes = [
             'signer': '0xcce6cc1ba66c6b9af2c7b20d78155c74ed9aad6f',
             'enode': 'enode://94b45bc3705c8abebeda0ee9b31a76188b59c0c69397362e96accd39b15a56668775204d4f2e3e7ddb2b14df0b640b5bb9cd4dcb60c252ef80268f1af815f623@106.53.60.230:30311',
             'since': '20240109',
+            'coreId': 26,
             },
     {
             'owner': 'li17',
@@ -101,6 +111,7 @@ core_nodes = [
             'signer': '0x002ed4ea787fd611f44a8277b5e204aad5c81717',
             'enode': 'enode://b7055440d2792887e10ca12192d5d30200a4d9352d9de560732589014e26e5b6c587c5ae201441597795f33b2af6afecadb31193bf6f467024e3144ba40f6d2b@47.100.5.124:30311',
             'since': '20240107',
+            'coreId': 6,
             },
     {
             'owner': '严光红',
@@ -109,6 +120,7 @@ core_nodes = [
             'id': '65e0dc09479950368c2edaa0d7f3dd30af33ebd0187b31f0ad5df55535905f01',
             'enode': 'enode://b3eca38a3d18a789a0ca4e0e871c77fbf98fbe82cb8ed577895be8be14599abd07df88fe5fcf5fa11a63843b25bbc69b28da9a68bc0fcf42b01583329d4e0006@1.14.111.74:30311',
             'since': '20231014',
+            'coreId': 26,
             },
     # remove node (241119)
     # {
@@ -126,6 +138,7 @@ core_nodes = [
             'id': 'b3af9021f81a99afb7ae6a09448973453ddab57db15a9f7cfb8db94171d3920d',
             'enode': 'enode://1c4979289156cf90ac190bd6a5f6841886c421ff017dd0d842d8e847973d751f9e13c90e880081c3ba8df5bc572969266c25dac98fc60da68ce6857dcf39da23@62.234.5.241:30311',
             'since': '20230802',
+            'coreId': 21,
             },
     {
             'owner': 'Koant',
@@ -134,6 +147,7 @@ core_nodes = [
             'id': '9ff3da439fbb25670e95f0063f7cad9409e66f3283c57fcae0a1e1af9d09cf81',
             'enode': 'enode://b8163bedb4b8e3adf27d94bb8349892f9c8fa14602d2e48bd3083790edc76a26b0ac4d61a44c0a27b2ec46adce2a58249e77b9276530f5116028b355429a9b89@111.230.23.83:30311',
             'since': '20240220',
+            'coreId': 0,
             },
     {
             'owner': 'OPEN', # last update 240331
@@ -142,6 +156,7 @@ core_nodes = [
             'id': 'fc1b07c32f0254e83cc1983555921c8afc660b913361306d8e91a5e25fbc8549',
             'enode': 'enode://63715006efec64b76a909bb62c33f7afac17187305c66832bc3fcc4ba4dbd4c897e5aab283844f29fa8be1a8f952080715d8fbd6314282880f9f08f9fc26eede@43.139.93.218:30311',
             'since': '20230529',
+            'coreId': 16,
             },
     {
             'owner': '谢勇',
@@ -150,6 +165,7 @@ core_nodes = [
             'id': 'cc99492e1e2d2f9b125b8e1faae3c8d0d47eeadc63ac3ac7e58b0767bfde2726',
             'enode': 'enode://b7908693bf2268db08c4fa868d8ea88298e9844a5892681eb63cb4a1a4b254356b5936f6a006dcc709212043b8da325ab72beb3cc2c26cc98843dc301914c961@120.26.11.88:30311',
             'since': '20240119',
+            'coreId': 18,
             },
     {
             'owner': '火星',
@@ -158,6 +174,7 @@ core_nodes = [
             'id': '9bfbcdd542f8f7af28a9b3c50dc5dbd1bff8085311b9b216716a7106880ad6f2',
             'enode': 'enode://5fe23cce534e7a49a0a6f79203fec02e84391ada79cf8fc0dc8ef2901ddc5620beea52dbab009c6ecb2bdc127ae084a252ffbf5c9221f733d096f346d3f25cf9@101.32.170.145:30311',
             'since': '20230524',
+            'coreId': 17,
             },
     {
             'owner': 'Angel',
@@ -166,6 +183,7 @@ core_nodes = [
             'id': '00be8ffef4f441c87e65315a3809f94c98197c1e9b614c65f9ca0edb9d00ccb6',
             'enode': 'enode://7d757a706f1c662f63134bfd7439efafb62f11328d0904a3b38677bb27e50632bec061c27e7cbda9eebca08b8040ae96bb04b2de14fc3d9bcb979a8e6d476bfc@115.159.194.193:30311',
             'since': '20231025',
+            'coreId': 19,
             },
     {
             'owner': '老谢',
@@ -174,6 +192,7 @@ core_nodes = [
             'id': '8e38af25891db9f7e3c5e430d4b220910685830ea33cd7a23cc0b0086474aa9e',
             'enode': 'enode://8d820aefee882f7767be1035cbe018200c4daf9030482aa5f6b25665b78b6ee31f4e041d9b439e4ea6c0a7cce5cd76b6fffa76f0bb4229ee6751d52947065dfe@1.14.106.165:30311',
             'since': '20240110',
+            'coreId': 28,
             },
     {
             'owner': '明海云',
@@ -182,6 +201,7 @@ core_nodes = [
             'id': 'ea8bcbf9ec92291e54472d3390de4c5231b03661609c46087298b5b451543b02',
             'enode': 'enode://256ec7a9357908270c02c39bec8ba1852a71a4892c9fab95de89fe1a78a6839504f2b4ab1c12e877b8f7d3f6646fbc816ff56d707cc56d49de6158e4cc39ba93@43.139.249.74:30311',
             'since': '20240111',
+            'coreId': 7,
             },
     {
             'owner': 'gwendol',
@@ -190,6 +210,7 @@ core_nodes = [
             'id': 'ef9301f5b766aa299c2b7f1a199447346772dcc5c326529ff257710530aae46e',
             'enode': 'enode://1dc186a0c401bcfc560d7188810ce3290bd7a05a76bc0fc9237a06042576cf1f1c356f8fb556da234950b88c21c08ff2ba70ab4e58564a74ea46a24511ccff7c@119.29.222.90:30311',
             'since': '20240112',
+            'coreId': 24,
             },
     {
             'owner': '狮子猫',
@@ -198,6 +219,7 @@ core_nodes = [
             'id': 'e97fcd7f8aed3881648f6d2859ed5da1a589ba9e25c43106c5ff51a14e1994e1',
             'enode': 'enode://efc01ff491d277c73394095de99e8d62d25b5b981e03a4de5419d9bbf5bf6dd1ef6b89e169d376970c1a7af4fc73c90fd2d34b954f02c5367e0150911944cc41@123.206.109.17:30311',
             'since': '20240112',
+            'coreId': 27,
             },
     {
             'owner': '元码',
@@ -206,6 +228,7 @@ core_nodes = [
             'id': 'c6b0f385fd54806b3febf12e4aea8906fad1a175773a4790f9965bdfeb674ce4',
             'enode': 'enode://bba7d137900d93f0b2b62ebcb7917055e47c77b34bba2784008b841561b81fa331a84d45f1fa227f49b18500deb9a3b324a18a7761372f8e9ab1f285a590f146@47.95.200.73:30311',
             'since': '20240110',
+            'coreId': 25,
             },
     {
             'owner': 'OPEN',
@@ -215,6 +238,7 @@ core_nodes = [
             'signer': '0xa2547655F12DF995E74fC4b9E3192De432b8b56f',
             'enode': 'enode://73cd7670e483a1d7238cf0bdd557236ea554fa343e9bed85e92f2e45cef859f3a1f4a0f7571a18f54090a206fd62132ded8d3327310a2564374cc01ecad65314@43.142.106.3:30311',
             'since': '20240113',
+            'coreId': 16,
             },
     {
             'owner': 'Jeff',
@@ -224,6 +248,7 @@ core_nodes = [
             'signer': '0x0ac52a05a4f87404b03dd58a7ac1427429522222',
             'enode': 'enode://db1d084eaf12722b04600084a9bd5dcdbbff89facedff931629354ac396acf3564082fbae5a933f1bf4332a174bf9374941dc1caa1527f32c909589a26796014@47.120.35.41:30311',
             'since': '20240113',
+            'coreId': 29,
             },
     {
             'owner': 'bonny',
@@ -240,6 +265,7 @@ core_nodes = [
             'id': '73741045125ed13335ab0440857a745473d43edc5bd5667f92f44e021aa9bf01',
             'enode': 'enode://662cbf6b247cd57069c219cdcc23c279af0b0b9679d1161051a999659aef4cf4d5d4f36ee921c60bd52136133d066626f9d7a91e8c2e52f4152d78464ffe9021@106.53.39.89:30311',
             'since': '20240114',
+            'coreId': 34,
             },
     # 20230117
     {
@@ -249,6 +275,7 @@ core_nodes = [
             'id': 'df0bc83006e72d1bafe079a6116f6724d2af319729affa4995566ae0ae382ded',
             'enode': 'enode://e209c2d53cf6756b258f5bde5463c42acfd4c972cf738520e028d8aeefe213c499a45f9aa709bbeb877d4f45cb42c953c7fe09da7a3a4af5bec8e09ccabfa8cf@43.139.56.55:30311',
             'since': '20240117',
+            'coreId': 33,
             },
     {
             'owner': '火星',
@@ -258,6 +285,7 @@ core_nodes = [
             'signer': '0x87d973cAD9fE24252F5E4bFbd43B66bF31718886',
             'enode': 'enode://1ac2352580896800012fb5461ebafcea10289d07dcf8adaf4d45bb4da57eaf71c650b58030e27d1d0c71096c638b416b70547511e22d6f9716c06236e1785a78@47.100.127.191:30311',
             'since': '20240219',
+            'coreId': 17,
             },
     {
             'owner': 'Victor',
@@ -266,6 +294,7 @@ core_nodes = [
             'id': '72d5165a01039077bd550031acd685b51757dee050ae82c079093d4c6110ae62',
             'enode': 'enode://4103ca472d846857ac82c776ce756dad92677375979d8aa88a0c513f3efdfac92c66956170b1c7a35a6b1f7fc9c6d7d69ad4cfe003de7e73d849b0620b1f17e7@82.156.203.241:30311',
             'since': '20240115',
+            'coreId': 38,
             },
     {
             'owner': '琰熙',
@@ -274,6 +303,7 @@ core_nodes = [
             'id': 'ca07c3fd5d80c85ca7666239fc8c7d5390dd603f18d7dca589a1e1b6c4d0c0cb',
             'enode': 'enode://59c87271256f37acd8b133e1e94e7b61229265abdd3f85679864fe896d487bf589c29a7deb31252240e87d67acd95fc388ce76b4f5d99be73ada267497ca7d20@81.70.96.124:30311',
             'since': '20240115',
+            'coreId': 23,
             },
     # 24018
     {
@@ -283,6 +313,7 @@ core_nodes = [
             'id': '48cb7af478e77423f197a7307e837a3f2977760306030e4d65a58053d1e0f97e',
             'enode': 'enode://62cf47bd0aebc81e5a39e08084697427c34be62cd1d9bbedb0686d5ce3dcb2f65b7b1d9342477730c57a4e19a7b50eb40fd19f25e6647e5fc4493cc3ce836cca@122.51.121.3:30311',
             'since': '20240118',
+            'coreId': 4,
             },
     {
             'owner': '王十二',
@@ -291,6 +322,7 @@ core_nodes = [
             'id': '37e7770b84e07ea53619accc35646db5bf151af9204e5432770ae718ca9bf0c5',
             'enode': 'enode://d05756439dae0a29996a33259616c6476df32d7c99273bb60514028121e9dde0d8ccb9deb4e64ed62f0468227752ac189d23508cf9345fec6aab056237782131@118.25.110.178:30311',
             'since': '20240118',
+            'coreId': 32,
             },
     {
             'owner': '明海云',
@@ -300,6 +332,7 @@ core_nodes = [
             'signer': '0xf3b67b1e625a8ffe7af9645e9e1432d145f2046a',
             'enode': 'enode://7d2f86c4a16a46aa62674c713c44d9b1c2a0bbcee4e4315c1a9eed47e87c3dfe59916f971bfe5f8b71acd2b5165a89b858569a18a8d12e51bd12273ffc485cbf@129.204.236.149:30311',
             'since': '20240118',
+            'coreId': 7,
             },
     # 240120
     {
@@ -309,6 +342,7 @@ core_nodes = [
             'id': 'bfd47c188a710f4add2d0fb6509b27bddf705e419454846a1d3bd47c10a6ba59',
             'enode': 'enode://7a140323b227854dd3fc0929bde47ba3e9c0d3b6156f699eee2a1409e43d3d9e732b0e92eb042b1de9899f519e3d6c176e89423c4e1100ff61f7a62a1c2d1af4@43.139.212.24:30311',
             'since': '20240120',
+            'coreId': 31,
             },
     {
             'owner': 'li17.eth',
@@ -317,6 +351,7 @@ core_nodes = [
             'id': '94e08ab29e8dfcdb79e93fb9d69bad0ff7179508f76fef3d70cea901e17591d0',
             'enode': 'enode://55b8cbf1e0776d4094e8b06b64b0545ce468290deda8c6830e6c3eeb5e06d3929a19a1f507591e3e6d985ad2f84c56327ffbd7f704ac00b84a2800b3de7277d7@111.229.136.60:30311',
             'since': '20240120',
+            'coreId': 6,
             },
 
     # 20240217
@@ -327,6 +362,7 @@ core_nodes = [
             'id': '9a970791e61f2c8a45010ce83c9dd332cb4a634241cbcd45d5ee8d8cf23baa54',
             'enode': 'enode://10ac2787e47bd7472721bafa5abd96dceb91fda82953a49a55c49db585f73a2092688f6c8651531aa1d11367abf6258bd3160940ca9d572e17db69999f29ae52@150.158.49.56:30311',
             'since': '20240217',
+            'coreId': 36,
             },
     {
             'owner': '岑云',
@@ -336,6 +372,7 @@ core_nodes = [
             'signer': '0xaf675845c1dfa74cc4b7686fa303c855d7883d82',
             'enode': 'enode://1d3d78ef5dfbc90930d7b74ba743f7e998524b2c9b8ca119699d64eOb66dd7b8b39255d6293ee1a73079849dd64a98ef8780895a9acd4870caa512ca105774ca@129.211.15.8030311',
             'since': '20240217',
+            'coreId': 3,
             },
     {
             'owner': '布道外部山',
@@ -344,6 +381,7 @@ core_nodes = [
             'id': '46ee255a1be96130da9f775b33cfbfcd7e5095d8a17eb7cac8e7c4c622072dc1',
             'enode': 'enode://b23f9b6c5f6176e5a103630aa8cc4d17b8b15d93a3a611582e265938fd137eaa4eb401576ac14c1aa39288f8a1e8ede03c7c2bf8fc25e41568d0c4a2870b6a3c@122.51.173.77:30311',
             'since': '20240218',
+            'coreId': 35,
             },
 
 # 20240303
@@ -354,6 +392,7 @@ core_nodes = [
             'id': '7493b5e591c0be0d64119f34932cef700bf32a7c2b99fcea1e76320b8ffa611e',
             'enode': 'enode://9507b31e074acc737fbc56b4b80551a793c638f93229949ca999c36e0ac19c7e1e19ab7b5c17c8e018df5c1810ebdaf371ba01a8955001ced0f7dcf6b8931cc5@1.14.204.34:30311',
             'since': '20240303',
+            'coreId': 37,
             },
 
 # 20240307
@@ -364,6 +403,7 @@ core_nodes = [
             'id': '7335f6c346cc49185722d70a427174b4e799a72d6698a8b99a1f4f518a6b45d5',
             'enode': 'enode://6e0ab00789fc3580e2229d31a831d778a1d32a9066cdef2950bb5867a2dc3efcef26247a870297334f37ccce0bd2c38f1129c6cbcbb3cbe8ac369d8b12a9f64a@49.232.139.194:30311',
             'since': '20240307',
+            'coreId': 39,
             },
 # 240313
     {
@@ -373,6 +413,7 @@ core_nodes = [
             'id': '52317d959b7f78fab18d33b828a6ce597e9148a7f7514135ff50dce110c88fa5',
             'enode': 'enode://6240ce58be19e058cd5c7c8f65db50bfb3843ad1535547b6d09c3833713b357cc0fd93a37c7a0a6ef236d0314a7f79c33b21ec1c5e20df72ce592d65f061428a@101.42.40.244:30311',
             'since': '20240313',
+            'coreId': 45,
             },
     {
             'owner': '米高', #240314 update
@@ -381,6 +422,7 @@ core_nodes = [
             'id': '873df9bf006162e49b051a3edfdd9fc1d938609e6ef130687376a90645b0dd14',
             'enode': 'enode://2b508101e03ea070e67dc39bd3662c19d3dcc31c2a7564ffe636408d421ef7dc287b7f23d7b39dd11e584cab162ced987ea056a53a1e79ff15e43033a6c9989a@175.24.131.36:30311',
             'since': '20240313',
+            'coreId': 42,
             },
 
     {
@@ -390,6 +432,7 @@ core_nodes = [
             'id': '1e416260cd36231d299160e8a8c24014a02eb4ba1494ad43011d6432b02fc7ef',
             'enode': 'enode://64e36ff9563dd1e50adbc4ebea15b564eddc557f80e4ff1f19da417413d905fc95323a1bd807c8b5108d83a9587e5ead044bb2d2e9c818d9ccc7e407b5ca56c8@36.134.89.81:30311',
             'since': '20240313',
+            'coreId': 43,
             },
 
 #20240319
@@ -400,6 +443,7 @@ core_nodes = [
             'id': 'e4398a2875a424e127cdce2be432755bbf0052aa4d4c535e623228e03d3f938e',
             'enode': 'enode://fe242f5be1689a20f2259842d48a2dcf8113e1ed4c726369bb2b7a35ea7039dd1c5bbdb4061df41ea05be8abe7c57b156930d0ff857a5c9f2a0846b97511da90@118.25.109.71:30311',
             'since': '20240319',
+            'coreId': 44,
             },
 {
             'owner': 'xiangwang',
@@ -408,6 +452,7 @@ core_nodes = [
             'id': 'f7eaaa1f5fa51766ad662fba1eca761820f5dabfb4ecad49dea8d7f60292f86e',
             'enode': 'enode://fe242f5be1689a20f2259842d48a2dcf8113e1ed4c726369bb2b7a35ea7039dd1c5bbdb4061df41ea05be8abe7c57b156930d0ff857a5c9f2a0846b97511da90@150.158.119.171:30311',
             'since': '20240319',
+            'coreId': 46,
             },
 
 {
@@ -417,6 +462,7 @@ core_nodes = [
             'id': '1b557396c9d18da6627ca9160c5c5c357cd93ce2edb464c788286475e135cd97',
             'enode': 'enode://857b8f12aa0e1483cc53b4cf9d9095b5f8795d71dabec76118bd3856959e533f97d386a9f6407cd2a1fb09b7024edde0356a787365e7c0ae7aeb8aeb6dde5811@49.232.85.216:30311',
             'since': '20240319',
+            'coreId': 47,
             },
 
 {
@@ -435,6 +481,7 @@ core_nodes = [
             'id': 'ef5afb2bcf53d9dc6c2c66717a48140e2723c665da7c27998d6d54859574b28d',
             'enode': 'enode://eb100647b61986fc68bf3298ee2e40caefc452986487776fe9976eb5e8a04592aa162f7aede632ddc041f9ce9557e2e2b981e5a24cdade1823affac662df34f2@124.223.91.169:30311',
             'since': '20240402',
+            'coreId': 49,
             },
 
 # 20240419 #update 20240102
@@ -445,6 +492,7 @@ core_nodes = [
             'id': 'f41b2fc240589c7b9e9061a4e86a314cfb8728b8a75fc4c99e88993ac41a2616',
             'enode': 'enode://c324f07f404da4d2e88bd503ca50194f6d9c7da43d8c726fa326310fa683b350536858a2a51a2a3a4e7953248856162250671b4afd4536e1ae4bd7befabe5e9a@118.25.144.251:30311',
             'since': '20240419',
+            'coreId': 50,
             },
 
 # 20240429
@@ -455,6 +503,7 @@ core_nodes = [
             'id': '88bfd5ab83bee2a2c25e7a15911cf780cd0ccac86acd928867e784fcdf47df8c',
             'enode': 'enode://fbb54beade25d2c70ea03422e219ea5ec0d322b6b2a3bfe94eba5bc101c5cbfeba090e5f54014ef1ffa56e537c526730ae668b6e7e0b510565eb6ff6307d4e93@139.129.20.205:30311',
             'since': '20240429',
+            'coreId': 14,
             },
 # 20240509
 {
@@ -464,6 +513,7 @@ core_nodes = [
             'id': 'bda5a83e2f7c70a33d31a998f285d50da8a09448af9805a5e069d8a780407989',
             'enode': 'enode://620113e75c0cf4a645b9bfe938a147211cbbf84b2f36405f69dfaa359e58032519e7eababe033214966a10579517a588d25060e71e6399459a227c8ef2ecda00@101.43.23.92:30311',
             'since': '20240509',
+            'coreId': 51,
             },
 
 
@@ -475,6 +525,7 @@ core_nodes = [
             'id': '68617066980c00985b7fc331487d193e22258badbaeec6bf619d3e7cbc255ae8',
             'enode': 'enode://9fcb694d575cac90db04e4afd4611145b21b01282ce06097bec90e806f3819656bbc4ce3ea9c41b91f62a4a6fc4300758df0e829e38b708563cf43e5a159ba31@36.212.86.15:30311',
             'since': '20240623',
+            'coreId': 52,
             },
 
 # 20240719
@@ -485,6 +536,7 @@ core_nodes = [
             'id': '81abaac1ce9838730115e271d14da9d0a437475334a1a9efd4e1b4f1e7696f88',
             'enode': 'enode://c4bb52660680595ffb3a1b7dd4db696c74f69bc9fa29fb93ff46e4d69f32fd6fc06b7470605fe0b1d7e19b30f54dc17170df4865fc668f19f8d842ada83f8867@81.70.93.66:30311',
             'since': '20240719',
+            'coreId': 53,
             },
 
 # 20240807
@@ -495,6 +547,7 @@ core_nodes = [
             'id': 'e5eb6b54bcb84281de04d6c4ff2ff813402512b143381204a530c5ad8d48dff1',
             'enode': 'enode://5d19e0757bd2a307cb425a0db5e34964b1fd3ca07797072103d450101513430eb7d82af4b900af59b75a4deea1a5bca40653877dac2799cbfeca8a7243498522@118.89.117.223:30311'
             ,'since': '20240807',
+            'coreId': 15,
             },
 # 20240825
 {
@@ -551,6 +604,7 @@ core_nodes = [
             'id': 'b9ee64eeca1fcedad05629a41665df21e395900de11e8d84f785d773b4ccbcec',
             'enode': 'enode://bfda1116bba6ac01a61479acf917fc45b667d9bed824f21d6e1acfc04e546c8d2ce1b629e2c924797eb43243188586544de5618f6aadc97c70916d31e10b7fff@139.224.209.54:30311',
             'since': '20240927',
+            'coreId': 54,
             },
 
     # 241103
@@ -562,6 +616,7 @@ core_nodes = [
             'signer': '0x08c1938546708f0b3c6f49703d1c19f79d90ac04',
             'enode': 'enode://2e4104827d8fe8344b10d9ec10705e7cba11ef8476f68d0b5d7ceafe747373f03b2074e5901ba3c5d25c0436a24c03504cb75334e5503a65a1dc6929e0bd2346@110.40.130.38:30311',
             'since': '20241103',
+            'coreId': 31,
             },
 
     # 241113
@@ -573,6 +628,7 @@ core_nodes = [
             'signer': '0x5bC3930448cE53C970AcD41C1f80AbA6ab3c523f',
             'enode': 'enode://2f151d76573e56ee0f57f5598176a5efe1a7fa3f154f66f5674257fe565138d0d4e80b3cba9cc12db0322a9bfd9ef1dc48e79f12cad9233d483f6c3d7d5d9b71@106.54.199.222:30311',
             'since': '20241113',
+            'coreId': 37,
             },
 
     # 241115
@@ -584,6 +640,7 @@ core_nodes = [
             'signer': '0xff42f7a9fd1afdeed1568805fa8dce67e3dbc188',
             'enode': 'enode://a1224775395a3d283ac745ab6960b24dd8c432cba108be82331c7eeb8c2a8c361387446e64c4ff99c91e89fd730a0c56a7b29927771291006d02a023eabfa63b@1.92.102.75:30311',
             'since': '20241115',
+            'coreId': 53,
             },
 
     # 241117
@@ -595,6 +652,7 @@ core_nodes = [
             'signer': '0xa3F01Afa1dDfB6D07cac35210d5AFdfe6f0982E8',
             'enode': 'enode://4dae7c25cc4f3d379911c3386f2a50f07142a0a8b5ba953d26ffc5ea9b3a8bd8b858ae18ab1b56887708c29b39949e9745fb65c9427de61ae6e20c74593373a2@110.42.247.135:30311',
             'since': '20241117',
+            'coreId': 33,
             },
 
 {
@@ -636,6 +694,20 @@ core_nodes = [
 
 
 ]
+
+# JVCore 合约 ABI
+jvcore_abi = [
+    {
+        "inputs": [{"internalType": "uint256", "name": "tokenId", "type": "uint256"}],
+        "name": "isLiveness",
+        "outputs": [{"internalType": "bool", "name": "", "type": "bool"}],
+        "stateMutability": "view",
+        "type": "function"
+    }
+]
+
+# JVCore 合约地址
+jvcore_address = "0x8d214415b9c5F5E4Cf4CbCfb4a5DEd47fb516392"
 
 ## parse command line argument /path/to/geth.ipc
 parser = argparse.ArgumentParser('audit_network')
@@ -733,7 +805,7 @@ print('Network Size: ', count, ' nodes (', count_miner, ' miners, ', count_witne
 
 ## reporting node status
 print('---------------- nodes status -----------------')
-print('TYPE', 'SINCE', 'IP', 'OWNER', 'CONNECTED', 'STATUS', 'ACTIVITY', 'LIVENESS')
+print('TYPE', 'SINCE', 'IP', 'OWNER', 'CONNECTED', 'STATUS', 'ACTIVITY', 'LIVENESS', 'CORE-ID', 'CHECK-IN')
 print('-----------------------------------------------')
 ## helper: reporting func
 def report(node):
@@ -748,7 +820,15 @@ def report(node):
         node_liveness = '❌'
         node_activity = -1
 
-    print(node['type'], node['since'], node['ip'], node['owner'], enode_connected, node['status'], node_activity, node_liveness)
+    # 获取节点的 check-in 状态
+    core_id = node.get('coreId')  # 获取 coreId，可能为 None
+    if core_id is not None:
+        check_in_status = jvcore_contract.functions.isLiveness(core_id).call()
+        check_in_status_display = '👍' if check_in_status else '👎'
+    else:
+        check_in_status_display = '❔'  # 缺失 coreId，显示为未知状态
+
+    print(node['type'], node['since'], node['ip'], node['owner'], enode_connected, node['status'], node_activity, node_liveness, core_id, check_in_status_display)
 
 ## reporting miner status first
 for (id, node) in all_nodes.items():
