@@ -335,15 +335,15 @@ core_nodes = [
             'coreId': 7,
             },
     # 240120
-    # {
-    #         'owner': 'kylin',
-    #         'type': 'witness',
-    #         'ip': '43.139.212.24',
-    #         'id': 'bfd47c188a710f4add2d0fb6509b27bddf705e419454846a1d3bd47c10a6ba59',
-    #         'enode': 'enode://7a140323b227854dd3fc0929bde47ba3e9c0d3b6156f699eee2a1409e43d3d9e732b0e92eb042b1de9899f519e3d6c176e89423c4e1100ff61f7a62a1c2d1af4@43.139.212.24:30311',
-    #         'since': '20240120',
-    #        'coreId': 31,
-    #         },
+    {
+            'owner': 'kylin',
+            'type': 'witness',
+            'ip': '43.153.19.11',
+            'id': '278adeb4cba45bbdce929d78048b016aef23569a52d0565fabdb20d8dddf08c5',
+            'enode': 'enode://a682649ff17be55986dbc9ed2cf54bb66c0fff4f5ef4c81f23adbc41e82f91d7f1590f38616c619b1151692e8373dc764edd40819bcd45cb1416b8e4c0af229e@43.153.19.11:30311',
+            'since': '20240120',
+            'coreId': 31,
+            },
     {
             'owner': 'li17.eth',
             'type': 'witness',
