@@ -181,7 +181,7 @@ core_nodes = [
             'type': 'witness',
             'ip': '115.159.194.193',
             'id': '63b1871768dfd614523b1e4b089be18dba22aaf5ac1ef2c020e7a40fd692eb46',
-            'enode': 'enode:////65805489a30f566c4afe5a5771b0f7815f269c2f7dcc1ec4cbacf02ee8386d68d150024b79ac75ae2305b141cf5097d05269fb6612e6989c312037ee38be0d47@115.159.194.193:30311',
+            'enode': 'enode://65805489a30f566c4afe5a5771b0f7815f269c2f7dcc1ec4cbacf02ee8386d68d150024b79ac75ae2305b141cf5097d05269fb6612e6989c312037ee38be0d47@115.159.194.193:30311',
             'since': '20231025',
             'coreId': 19,
             },
