@@ -557,6 +557,7 @@ core_nodes = [
             'id': 'bb341e65ad7fdac57853cd6e016207c99eb6ea07c758d8264fccffee63f0654a',
             'enode': 'enode://f08af9f5fa587deee8b1adb8f14f14918d9cd21c592ab1a7975228a611839f6709d8bc4ef4839c582cc169234e599a9236fa53e7984210bbcf3a7fde691dc070@1.92.122.1:30311'
             ,'since': '20240825',
+            'coreId': 60,
             },
 
 # 20240831
@@ -567,6 +568,7 @@ core_nodes = [
             'id': '6b0da4e2b295d5479d6f856be3b2264bb57c443a23b568d76c40aa0f7774ae1e',
             'enode': 'enode://d8cc45697a68aed642a2f4747d0829716d08b83c8384d3a0f9dc1705f0804efb33216afc11cfd4296b306a2ad18be1984366326d1920a584aa62d9d120896d82@101.126.79.130:30311'
             ,'since': '20240831',
+            'coreId': 58,
             },
 
 # 20240908
@@ -577,6 +579,7 @@ core_nodes = [
             'id': '13b01d9329bbae324a581153eee384d148170bdcb5dc0ff43e2b5749224d483e',
             'enode': 'enode://3abea1f6928c8400900c554fceb6a63a79120214e72bfde6a9ff10f60b147a616585f4b433e25cbac8b37a3efbb5eff36b0dc73961c09858ee15790a2732a3a2@162.14.111.59:30311'
             ,'since': '20240908',
+            'coreId': 57,
             },
 {
             'owner': '潇先生',
@@ -585,6 +588,7 @@ core_nodes = [
             'id': '5a7147dbbfb3481999095253015cd0bba34aef5d275c8778dcaefc6868fd815b',
             'enode': 'enode://70ee7da8aee656dd87087a90d9b89d5aec786b11d6d08979588640a57defcb9cb1fb0da4c1c536b8adac84e717885d5b34e641768c6d129478e4f3652ef82d19@101.126.91.91:30311'
             ,'since': '20240908',
+            'coreId': 59,
             },
 
 # 20240925
@@ -595,7 +599,9 @@ core_nodes = [
             'id': '1519723d38021e865a05454ca2b1c8f42a47ebe79eb5d7f5756608bb17c153f5',
             'enode': 'enode://d391c5ce8898eece6d7aaaf23ebcd7caa342c9bc9406645f9be617fa3e405af07cd80beb56dcabb12317f8b46bb57cf67e8a6f631ddc09f8b9733c5041e74516@101.126.156.22:30311'
             ,'since': '20240925',
+            'coreId': 61,
             },
+
 
 {
             'owner': 'Simon',
@@ -671,6 +677,7 @@ core_nodes = [
             'id': '2c3cbf2abba1708a0b55a80ab8498339ebb1c150a89c83504923a5c241426658',
             'enode': 'enode://e44ca285b8f72d3188ca47dffe9a83c84bd92b80dc2e7e1ee30a4474656aa815da87406c939c218be453bb329d792ff44ccd7eb6fc2ab9795bcea159d27b7a3b@119.45.93.155:30311',
             'since': '20241121',
+            'coreId': 56,
             },
 
 
@@ -690,6 +697,7 @@ core_nodes = [
             'id': 'a2d15ab7082a46867c6ce08b62c2634a4f26fb65958ba6c715e1f2eeac5acae8',
             'enode': 'enode://0c8e3ec717871091769e0a3f9f63ca91dc2d74e3648d6cae9f508127d95c0fd8cbba66c5b551ecd962a02af95171fc6b9fa78cba783c8837e4931a81dd253f9b@124.221.46.91:30311',
             'since': '20250107',
+            'coreId': 55,
             },
 
 
