@@ -281,16 +281,6 @@ core_nodes = [
             'coreId': 36,
             },
     {
-            'owner': '岑云',
-            'type': 'miner',
-            'ip': '129.211.15.80',
-            'id': '4a9f87d20e8d2095204c8b440f71d7786c46a7ffd490fe4ddb6eb1b31f274397',
-            'signer': '0xaf675845c1dfa74cc4b7686fa303c855d7883d82',
-            'enode': 'enode://1d3d78ef5dfbc90930d7b74ba743f7e998524b2c9b8ca119699d64e0b66dd7b8b39255d6293ee1a73079849dd64a98ef8780895a9acd4870caa512ca105774ca@129.211.15.80:30311',
-            'since': '20240217',
-            'coreId': 3,
-            },
-    {
             'owner': '布道外部山',
             'type': 'witness',
             'ip': '122.51.173.77',
