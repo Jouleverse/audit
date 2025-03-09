@@ -290,13 +290,13 @@ core_nodes = [
             'coreId': 35,
             },
 
-# 20240303
+# 20240303 
     {
             'owner': '剪云为裳',
             'type': 'witness',
             'ip': '1.14.204.34',
-            'id': '7493b5e591c0be0d64119f34932cef700bf32a7c2b99fcea1e76320b8ffa611e',
-            'enode': 'enode://9507b31e074acc737fbc56b4b80551a793c638f93229949ca999c36e0ac19c7e1e19ab7b5c17c8e018df5c1810ebdaf371ba01a8955001ced0f7dcf6b8931cc5@1.14.204.34:30311',
+            'id': 'd1e1dda268df19797d5de93db15689c73ee921529a4c6c52c8ca56a7f45b2517',
+            'enode': 'enode://a43404214d3037a88c0b042328f39a8e79738feb896ed0e09472a80f167132cd037c32642f706471995e7a2ee2d88a9078a41b7b352c01158fdadda691420e1e@1.14.204.34:30311',
             'since': '20240303',
             'coreId': 37,
             },
