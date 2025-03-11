@@ -605,7 +605,16 @@ core_nodes = [
             'since': '20250107',
             'coreId': 55,
             },
-
+        {
+            'owner': 'cijin', 
+            'type': 'miner*',
+            'ip': '139.155.147.177',
+            'id': '36d1c18a197fea99e9b55b111b03ab03866367838b3017ae91984e0648e3f677',
+            'signer': '0x6c1094955e6d5ffd62729f642ee78b8237f82d7c',
+            'enode': 'enode://f3e4e524d89b4cdb9ee390d9485cee4d6a5e9a260f5673cab118505cc3e69fe8365bc00434222d27fe4082ca798b13ad8e7e139d1315f635fd0e46dbe96fa809@139.155.147.177:30311',
+            'since': '20250311',
+            'coreId': 34,
+            },
 
 ]
 
