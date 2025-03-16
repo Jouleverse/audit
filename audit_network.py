@@ -305,9 +305,9 @@ core_nodes = [
     {
             'owner': '花开的声音',
             'type': 'witness',
-            'ip': '49.232.139.194',
-            'id': '7335f6c346cc49185722d70a427174b4e799a72d6698a8b99a1f4f518a6b45d5',
-            'enode': 'enode://6e0ab00789fc3580e2229d31a831d778a1d32a9066cdef2950bb5867a2dc3efcef26247a870297334f37ccce0bd2c38f1129c6cbcbb3cbe8ac369d8b12a9f64a@49.232.139.194:30311',
+            'ip': '42.192.22.155',
+            'id': 'c035d24a2ee04451b482b48aff6bd58a51ee9bdd92854487e224828a4c4dd468',
+            'enode': 'enode://187997b8ea894fb9574968d264baf0c5eab64a1104cabcf4e4d65102d7c73895e0501e4af08690a876490939e50eaf86b45370ab18f02d0a6c9e11e104a40075@42.192.22.155:30311',
             'since': '20240307',
             'coreId': 39,
             },
