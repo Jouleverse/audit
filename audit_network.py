@@ -607,7 +607,7 @@ core_nodes = [
             },
         {
             'owner': 'cijin', 
-            'type': 'miner*',
+            'type': 'miner',
             'ip': '139.155.147.177',
             'id': '36d1c18a197fea99e9b55b111b03ab03866367838b3017ae91984e0648e3f677',
             'signer': '0x6c1094955e6d5ffd62729f642ee78b8237f82d7c',
