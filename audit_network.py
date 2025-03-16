@@ -615,6 +615,15 @@ core_nodes = [
             'since': '20250311',
             'coreId': 34,
             },
+        {
+            'owner': '煜歌', 
+            'type': 'witness',
+            'ip': '42.193.109.237',
+            'id': 'c0a15305660cdb54249dc6779625e3004c74cbfa4fd369e7ce549e5b3c13208e',
+            'enode': 'enode://2ff621a918f56499f6d7c2a220b9fe5b0db61ca0360b8915f4553bdb0c7f600ff065beb5499da4ac4afaa2861144197f4d01764a679070a71edb6402f3bd6c11@42.193.109.237:30311',
+            'since': '20250316',
+            'coreId': 33,
+            },
 
 ]
 
