@@ -345,9 +345,9 @@ core_nodes = [
 {
             'owner': '团子',
             'type': 'witness',
-            'ip': '118.25.109.71',
-            'id': 'e4398a2875a424e127cdce2be432755bbf0052aa4d4c535e623228e03d3f938e',
-            'enode': 'enode://fe242f5be1689a20f2259842d48a2dcf8113e1ed4c726369bb2b7a35ea7039dd1c5bbdb4061df41ea05be8abe7c57b156930d0ff857a5c9f2a0846b97511da90@118.25.109.71:30311',
+            'ip': '49.235.152.212',
+            'id': '6fc886c96d3862531db85eb7ba62461970106c7abe543e9663e9c16ec6f0d26b',
+            'enode': 'enode://bf6a39a59f320c74dc59883f144550a3059a6b7cde84d21acb0f87b546503f014d8c893335557c8e18c940d1d3418b4b6b630c50c786ad69b1fa4fd5a638386b@49.235.152.212:30311',
             'since': '20240319',
             'coreId': 44,
             },
