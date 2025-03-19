@@ -624,7 +624,16 @@ core_nodes = [
             'since': '20250316',
             'coreId': 33,
             },
-
+        {
+            'owner': '楼兰渔夫', 
+            'type': 'miner*',
+            'ip': '110.42.225.146',
+            'id': '944ad2cd26b56cd6e5b35d9878f5efc05a713d91d1c584af63529bd1592b67f2',
+            'signer': '0x497c19a8157f2c839ec57bf6fb0f26c44fa51203',
+            'enode': 'enode://840f6fbc0650bc100daec33dd6707a3ad7672204e849de83a20c3b5b8a3a3705c974f6801e3d26af22b26c9b0194c9fcd804144dc1a4e2da2f6b10b09b707258@110.42.225.146:30311',
+            'since': '20250319',
+            'coreId': 4,
+            },
 ]
 
 # JVCore 合约 ABI
