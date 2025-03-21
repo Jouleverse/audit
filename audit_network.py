@@ -626,7 +626,7 @@ core_nodes = [
             },
         {
             'owner': '楼兰渔夫', 
-            'type': 'miner*',
+            'type': 'miner',
             'ip': '110.42.225.146',
             'id': '944ad2cd26b56cd6e5b35d9878f5efc05a713d91d1c584af63529bd1592b67f2',
             'signer': '0x497c19a8157f2c839ec57bf6fb0f26c44fa51203',
