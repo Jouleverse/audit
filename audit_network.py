@@ -315,9 +315,9 @@ core_nodes = [
     {
             'owner': '杨敦鹏', # lastupdate 240402
             'type': 'witness',
-            'ip': '101.42.40.244',
-            'id': '52317d959b7f78fab18d33b828a6ce597e9148a7f7514135ff50dce110c88fa5',
-            'enode': 'enode://6240ce58be19e058cd5c7c8f65db50bfb3843ad1535547b6d09c3833713b357cc0fd93a37c7a0a6ef236d0314a7f79c33b21ec1c5e20df72ce592d65f061428a@101.42.40.244:30311',
+            'ip': '115.159.190.129',
+            'id': 'cbeb747a862d38b8dc1a5f67a27a542f0e3bbb4b80ea9fcfa4c4b4e217728f80',
+            'enode': 'enode://34513e0eb5f5613c51f2fb8648138f2cef59bd047ae197be8c28a2808718584d284b5ab02e7a430fa7ad9a1374b23048cd91fa9ad616afa5cb2f4da70f6016bc@115.159.190.129:30311',
             'since': '20240313',
             'coreId': 45,
             },
@@ -351,22 +351,13 @@ core_nodes = [
             'since': '20240319',
             'coreId': 44,
             },
-{
-            'owner': 'xiangwang',
-            'type': 'witness',
-            'ip': '150.158.119.171',
-            'id': 'f7eaaa1f5fa51766ad662fba1eca761820f5dabfb4ecad49dea8d7f60292f86e',
-            'enode': 'enode://fe242f5be1689a20f2259842d48a2dcf8113e1ed4c726369bb2b7a35ea7039dd1c5bbdb4061df41ea05be8abe7c57b156930d0ff857a5c9f2a0846b97511da90@150.158.119.171:30311',
-            'since': '20240319',
-            'coreId': 46,
-            },
 
 {
             'owner': '邱泳渼',
             'type': 'witness',
-            'ip': '49.232.85.216',
-            'id': '1b557396c9d18da6627ca9160c5c5c357cd93ce2edb464c788286475e135cd97',
-            'enode': 'enode://857b8f12aa0e1483cc53b4cf9d9095b5f8795d71dabec76118bd3856959e533f97d386a9f6407cd2a1fb09b7024edde0356a787365e7c0ae7aeb8aeb6dde5811@49.232.85.216:30311',
+            'ip': '124.222.52.62',
+            'id': 'c5aaafa61992ef49d76c3bd84e493afac61aa082e83d49fb6d4a80834b005a76',
+            'enode': 'enode://979dcadb3ce38e9569da7e9d47c9d99869bfbe62a64e6e36f76755aacc044cacf5cdd3fea96d2863414b164271412ff966adc95b037858bf095d66952c2618e8@124.222.52.62:30311',
             'since': '20240319',
             'coreId': 47,
             },
