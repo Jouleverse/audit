@@ -352,6 +352,15 @@ core_nodes = [
             'coreId': 44,
             },
 
+        {
+            'owner': 'xiangwang',
+            'type': 'witness',
+            'ip': '129.211.62.162',
+            'id': 'dd8a74f988b7016416fa6e5bf29bfeec2a5792700174f923b4a4647ec07cf8c2',
+            'enode': 'enode://0fa16459d712d5f6ea6b5cab25a56ebb357ca4bd90733efe34db6ce44699ba175a7e43d3e2f4a814beffe6d162715851fb73d32b4d6f08f7658653adf2ec74a8@129.211.62.162:30311',
+            'since': '20240319', # 2nd, 20250326
+            'coreId': 46,
+            },
 {
             'owner': '邱泳渼',
             'type': 'witness',
