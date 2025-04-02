@@ -371,14 +371,6 @@ core_nodes = [
             'coreId': 47,
             },
 
-{
-            'owner': '阿震',
-            'type': 'witness',
-            'ip': '106.53.94.136',
-            'id': '358934bef6216ec5c9426feb5edf8cea992a7eb9302a6657a247c8ef0359d882',
-            'enode': 'enode://b4f4afa12dc5dc8d5af345be95bc2e99e134639f733be72cc4802ecb74dc36a8dc896c9e2f429371a5e714d4d06b11c9121b0ee509f1e811c87f635b43305491@106.53.94.136:30311',
-            'since': '20240319',
-            },
 # 20240402
 {
             'owner': '星语欣愿',
