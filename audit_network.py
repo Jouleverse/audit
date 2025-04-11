@@ -375,9 +375,9 @@ core_nodes = [
 {
             'owner': '星语欣愿',
             'type': 'witness',
-            'ip': '124.223.91.169',
-            'id': 'ef5afb2bcf53d9dc6c2c66717a48140e2723c665da7c27998d6d54859574b28d',
-            'enode': 'enode://eb100647b61986fc68bf3298ee2e40caefc452986487776fe9976eb5e8a04592aa162f7aede632ddc041f9ce9557e2e2b981e5a24cdade1823affac662df34f2@124.223.91.169:30311',
+            'ip': '122.51.194.8',
+            'id': '1c4e3d16f493c29a33dd7779d83780136691add1151698b740bffaf044419c7d',
+            'enode': 'enode://a1f164a376d59b7a8903fdaf1d10687523cbdacc298a625a5d31ad0a3615f0539a6f54243b2d304d66f1d3f3079ef0a1a3196342bdcaa12f034c0a83468e2f80@122.51.194.8:30311',
             'since': '20240402',
             'coreId': 49,
             },
