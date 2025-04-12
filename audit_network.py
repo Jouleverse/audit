@@ -130,15 +130,15 @@ core_nodes = [
             'since': '20240220',
             'coreId': 0,
             },
-    {
-            'owner': 'OPEN', # last update 240331
-            'type': 'witness',
-            'ip': '43.139.93.218', # bootnode-open.jnsdao.com
-            'id': 'fc1b07c32f0254e83cc1983555921c8afc660b913361306d8e91a5e25fbc8549',
-            'enode': 'enode://63715006efec64b76a909bb62c33f7afac17187305c66832bc3fcc4ba4dbd4c897e5aab283844f29fa8be1a8f952080715d8fbd6314282880f9f08f9fc26eede@43.139.93.218:30311',
-            'since': '20230529',
-            'coreId': 16,
-            },
+    # {
+    #         'owner': 'OPEN', # last update 240331
+    #         'type': 'witness',
+    #         'ip': '43.139.93.218', # bootnode-open.jnsdao.com
+    #         'id': 'fc1b07c32f0254e83cc1983555921c8afc660b913361306d8e91a5e25fbc8549',
+    #         'enode': 'enode://63715006efec64b76a909bb62c33f7afac17187305c66832bc3fcc4ba4dbd4c897e5aab283844f29fa8be1a8f952080715d8fbd6314282880f9f08f9fc26eede@43.139.93.218:30311',
+    #         'since': '20230529',
+    #         'coreId': 16,
+    #         },
     {
             'owner': '谢勇',
             'type': 'witness',
