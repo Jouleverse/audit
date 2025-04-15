@@ -35,7 +35,7 @@ core_nodes = [
             },
         {
             'owner': 'Koant',
-            'type': 'miner*',
+            'type': 'miner',
             'ip': '119.29.202.168',
             'id': '93886caf6ba2a9b4cf31527385b53f7750dd8d6a3fcfaa41cb6c59a77c049ec6',
             'signer': '0xA23e676de107F45A2C873109b6976c1D69b4ad55',
