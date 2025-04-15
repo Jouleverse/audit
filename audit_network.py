@@ -38,7 +38,7 @@ core_nodes = [
             'type': 'miner',
             'ip': '119.29.202.168',
             'id': '93886caf6ba2a9b4cf31527385b53f7750dd8d6a3fcfaa41cb6c59a77c049ec6',
-            'signer': '0xA23e676de107F45A2C873109b6976c1D69b4ad55',
+            'signer': '0x8d6a6f3d18f0d378ecb75796c4ebc8f54fba7700',
             'enode': 'enode://a475b2061e5b46e7a962541da252654d8629254c38ed4fb3410fe9a6240e40f3502c91f99ab5e82956bb91f028e76b4adf07659139736a4f19d8e19da824eba9@119.29.202.168:30311',
             'since': '20231015',
             'coreId': 0,
