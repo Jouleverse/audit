@@ -185,15 +185,6 @@ core_nodes = [
             'coreId': 7,
             },
     {
-            'owner': 'gwendol',
-            'type': 'witness',
-            'ip': '119.29.222.90',
-            'id': 'ef9301f5b766aa299c2b7f1a199447346772dcc5c326529ff257710530aae46e',
-            'enode': 'enode://1dc186a0c401bcfc560d7188810ce3290bd7a05a76bc0fc9237a06042576cf1f1c356f8fb556da234950b88c21c08ff2ba70ab4e58564a74ea46a24511ccff7c@119.29.222.90:30311',
-            'since': '20240112',
-            'coreId': 24,
-            },
-    {
             'owner': '狮子猫',
             'type': 'witness',
             'ip': '123.206.109.17',
