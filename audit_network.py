@@ -271,15 +271,6 @@ core_nodes = [
             'since': '20240217',
             'coreId': 36,
             },
-    {
-            'owner': '布道外部山',
-            'type': 'witness',
-            'ip': '122.51.173.77',
-            'id': '46ee255a1be96130da9f775b33cfbfcd7e5095d8a17eb7cac8e7c4c622072dc1',
-            'enode': 'enode://b23f9b6c5f6176e5a103630aa8cc4d17b8b15d93a3a611582e265938fd137eaa4eb401576ac14c1aa39288f8a1e8ede03c7c2bf8fc25e41568d0c4a2870b6a3c@122.51.173.77:30311',
-            'since': '20240218',
-            'coreId': 35,
-            },
 
 # 20240303 
     {
