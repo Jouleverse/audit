@@ -396,18 +396,6 @@ core_nodes = [
             'coreId': 51,
             },
 
-
-# 20240622
-{
-            'owner': '盛美',
-            'type': 'witness',
-            'ip': '36.212.86.15',
-            'id': '68617066980c00985b7fc331487d193e22258badbaeec6bf619d3e7cbc255ae8',
-            'enode': 'enode://9fcb694d575cac90db04e4afd4611145b21b01282ce06097bec90e806f3819656bbc4ce3ea9c41b91f62a4a6fc4300758df0e829e38b708563cf43e5a159ba31@36.212.86.15:30311',
-            'since': '20240623',
-            'coreId': 52,
-            },
-
 # 20240719
 {
             'owner': '微尘',
@@ -548,6 +536,7 @@ core_nodes = [
             'id': '2180a1ff8fc303c5411e4421a5bbb362424972ff4c367fc7074a165b8a32a29e',
             'enode': 'enode://ff3e0e9c8ea5442ab3d0f2adddf1879aa8a51bd082a6718ac2289a656887c0c1f6e1fc4d08233aa33df4e6e21fef3deb90a1ae8b62bbc46dca392d570942e594@110.42.233.253:30311',
             'since': '20241118',
+            'coreId': 62,
             },
 
 {
@@ -568,6 +557,7 @@ core_nodes = [
             'id': 'be70a66bda6583faeb550fd4971ea7bc8479a191006ef8d3669861e7117de12d',
             'enode': 'enode://6a3591331386ba44f0363e47d8f624a70f4ed1d1a54d1788180ca7ef2d0d70104e77a270f3c44ebeddd2b1a5c778b8952d71b972d876b0c947fbf0f683d9ef0f@124.222.176.129:30311',
             'since': '20241124',
+            'coreId': 63,
             },
 
 {
