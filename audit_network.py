@@ -663,7 +663,10 @@ for node in core_nodes:
     else:
         all_nodes[node['id']]['status'] = 'disconnected'
         print('disconnected. trying to add peer:', node['ip'], node['type'], node['owner'])
-        w3.geth.admin.add_peer(node['enode'])
+        try:
+            w3.geth.admin.add_peer(node['enode'])
+        except Exception as e:
+            print('failed to add peer:', node['ip'], node['type'], node['owner'], str(e))
 
 ## update all_miners with information from clique.status
 clique_status = w3.provider.make_request('clique_status', [])['result']
