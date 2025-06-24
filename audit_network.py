@@ -575,7 +575,7 @@ core_nodes = [
             'ip': '139.155.147.177',
             'id': 'bd872df0367eafd723691769eff10a255840ad16ebaebed534d8340be43358d8',
             'signer': '0x6c1094955e6d5ffd62729f642ee78b8237f82d7c',
-            'enode': 'enode://ddacebd479562a78171680fdfe61596d4207c8642eb8bec8c74852b4a859f139676a158cadda8f812c31596b2fa65839637b0d034987fb48c17185fdf50@139.155.147.177:30311',
+            'enode': 'enode://ddac0bd477a9562a781171680fdfe61596d4f207c8642eb8bec8c74852b4a059f139676a158cadda58f812c31596b2fa65839637b0d034987fb40c17185f8df5@139.155.147.177:30311',
             'since': '20250311',
             'coreId': 34,
             },
