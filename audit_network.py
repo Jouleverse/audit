@@ -750,7 +750,7 @@ def report(node):
         check_in_status = jvcore_contract.functions.isLiveness(core_id).call()
         check_in_status_display = '👍' if check_in_status else '❌'
         if not check_in_status and node['owner'] not in no_check_in_list:
-            no_check_in_list.appent(node['owner'])
+            no_check_in_list.append(node['owner'])
     else:
         core_id = '--'
         check_in_status_display = '❔'  # 缺失 coreId，显示为未知状态
