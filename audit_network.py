@@ -727,6 +727,10 @@ print('Network Size: ', count, ' nodes (', count_miner, ' miners, ', count_witne
 print('---------------- nodes status -----------------')
 print('TYPE', 'SINCE', 'IP', 'OWNER', 'CHECK-IN', 'CORE-ID', 'CONNECTED', 'STATUS', 'ACTIVITY', 'LIVENESS')
 print('-----------------------------------------------')
+
+no_check_in_list = []
+no_kyc_list = []
+
 ## helper: reporting func
 def report(node):
     enode_connected = '🟩' if node['status'] == 'connected' else '🟥'
@@ -744,10 +748,14 @@ def report(node):
     core_id = node.get('coreId')  # 获取 coreId，可能为 None
     if core_id is not None:
         check_in_status = jvcore_contract.functions.isLiveness(core_id).call()
-        check_in_status_display = '👍' if check_in_status else '💔'
+        check_in_status_display = '👍' if check_in_status else '❌'
+        if not check_in_status and node['owner'] not in no_check_in_list:
+            no_check_in_list.appent(node['owner'])
     else:
         core_id = '--'
         check_in_status_display = '❔'  # 缺失 coreId，显示为未知状态
+        if node['owner'] not in no_kyc_list:
+            no_kyc_list.append(node['owner'])
 
     print(node['type'], node['since'], node['ip'], node['owner'], check_in_status_display, core_id, enode_connected, node['status'], node_activity, node_liveness)
 
@@ -773,3 +781,21 @@ for (id, node) in all_nodes.items():
 for (id, node) in all_nodes.items():
     if node['type'] == 'witness' and node['block_height'] == 0:
         report(node)
+
+
+if no_check_in_list or no_kyc_list:
+    print('---------------- notice -----------------')
+
+    if no_check_in_list:
+        print("❌ NO CHECK-IN:", ','.join(no_check_in_list))
+
+    if no_kyc_list:
+        print("❓ NO KYC: ", ','.join(no_kyc_list))
+
+
+
+
+
+
+
+
