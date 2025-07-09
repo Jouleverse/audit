@@ -790,7 +790,7 @@ if no_check_in_list or no_kyc_list:
         print("❌ NO CHECK-IN:", ','.join(no_check_in_list))
 
     if no_kyc_list:
-        print("❓ NO KYC: ", ','.join(no_kyc_list))
+        print("❓ NO KYC:", ','.join(no_kyc_list))
 
 
 
