@@ -753,7 +753,7 @@ def report(node):
             no_check_in_list.append(node['owner'])
     else:
         core_id = '--'
-        check_in_status_display = '❔'  # 缺失 coreId，显示为未知状态
+        check_in_status_display = '❓'  # 缺失 coreId，显示为未知状态
         if node['owner'] not in no_kyc_list:
             no_kyc_list.append(node['owner'])
 
