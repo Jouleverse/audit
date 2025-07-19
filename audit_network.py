@@ -377,7 +377,7 @@ core_nodes = [
 
 # 20240429
 {
-            'owner': 'ucanfilm',
+            'owner': 'ucanfilm (机构) ',
             'type': 'witness',
             'ip': '139.129.20.205',
             'id': '88bfd5ab83bee2a2c25e7a15911cf780cd0ccac86acd928867e784fcdf47df8c',
