@@ -9,6 +9,7 @@
 
 import argparse
 import functools
+import base64
 from datetime import datetime, timedelta
 from web3 import Web3
 from web3.middleware import geth_poa_middleware
@@ -617,7 +618,26 @@ jvcore_abi = [
         "outputs": [{"internalType": "bool", "name": "", "type": "bool"}],
         "stateMutability": "view",
         "type": "function"
-    }
+    },
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenURI",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
 ]
 
 # JVCore 合约地址
@@ -731,6 +751,19 @@ print('-----------------------------------------------')
 no_check_in_list = []
 no_kyc_list = []
 
+def formatTokenURI(data_str):
+    import json
+    if 'application/json;base64' in data_str and ',' in data_str:
+        data_str = data_str.split(',')[1]
+        json_str = base64.b64decode(data_str).decode('utf-8')
+        data_obj = json.loads(json_str)
+        return data_obj
+    return None
+
+def get_month_start():
+    now = datetime.now()
+    return int(datetime(now.year, now.month, 1).timestamp())
+
 ## helper: reporting func
 def report(node):
     enode_connected = '🟩' if node['status'] == 'connected' else '🟥'
@@ -747,8 +780,22 @@ def report(node):
     # 获取节点的 check-in 状态
     core_id = node.get('coreId')  # 获取 coreId，可能为 None
     if core_id is not None:
-        check_in_status = jvcore_contract.functions.isLiveness(core_id).call()
-        check_in_status_display = '👍' if check_in_status else '❌'
+        
+        # check_in_status = jvcore_contract.functions.isLiveness(core_id).call()
+        # check_in_status_display = '👍' if check_in_status else '❌'
+        
+        check_in_status = False 
+        check_in_status_display = '❌' 
+        token_info = jvcore_contract.functions.tokenURI(core_id).call()
+        if token_info:
+            token_info = formatTokenURI(token_info)
+            if token_info:
+                month_start_timestamp = get_month_start() 
+                last_checkin_time = int(token_info['lastCheckInTime'] or 0)
+                if last_checkin_time and last_checkin_time > month_start_timestamp:
+                    check_in_status = True
+                    check_in_status_display = '👍' 
+                
         if not check_in_status and node['owner'] not in no_check_in_list:
             no_check_in_list.append(node['owner'])
     else:
