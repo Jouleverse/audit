@@ -509,11 +509,11 @@ core_nodes = [
     {
             'owner': '微尘',
             'type': 'miner',
-            'ip': '1.92.102.75',
+            'ip': '47.94.33.72',
             'id': '5c488a3f6e2a73da519a6b761164492fd3e9881d5d2537f8ebecbc5718549014',
             'signer': '0xff42f7a9fd1afdeed1568805fa8dce67e3dbc188',
             'enode': 'enode://a1224775395a3d283ac745ab6960b24dd8c432cba108be82331c7eeb8c2a8c361387446e64c4ff99c91e89fd730a0c56a7b29927771291006d02a023eabfa63b@1.92.102.75:30311',
-            'since': '20241115',
+            'since': '20241115', # update 250817
             'coreId': 53,
             },
 
