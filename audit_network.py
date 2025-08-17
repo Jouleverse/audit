@@ -112,15 +112,15 @@ core_nodes = [
             'since': '20231014',
             'coreId': 26,
             },
-    {
-            'owner': '比尔盖',
-            'type': 'witness',
-            'ip': '62.234.5.241', # bootnode-biergai.jnsdao.com
-            'id': 'b3af9021f81a99afb7ae6a09448973453ddab57db15a9f7cfb8db94171d3920d',
-            'enode': 'enode://1c4979289156cf90ac190bd6a5f6841886c421ff017dd0d842d8e847973d751f9e13c90e880081c3ba8df5bc572969266c25dac98fc60da68ce6857dcf39da23@62.234.5.241:30311',
-            'since': '20230802',
-            'coreId': 21,
-            },
+    # {
+    #         'owner': '比尔盖',
+    #         'type': 'witness',
+    #         'ip': '62.234.5.241', # bootnode-biergai.jnsdao.com
+    #         'id': 'b3af9021f81a99afb7ae6a09448973453ddab57db15a9f7cfb8db94171d3920d',
+    #         'enode': 'enode://1c4979289156cf90ac190bd6a5f6841886c421ff017dd0d842d8e847973d751f9e13c90e880081c3ba8df5bc572969266c25dac98fc60da68ce6857dcf39da23@62.234.5.241:30311',
+    #         'since': '20230802',
+    #         'coreId': 21,
+    #         },
     {
             'owner': 'Koant',
             'type': 'witness',
