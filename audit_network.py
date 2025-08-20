@@ -608,6 +608,15 @@ core_nodes = [
             'since': '20250403',
             'coreId': 64,
             },
+        {
+            'owner': 'gwendol', 
+            'type': 'witness',
+            'ip': '119.29.222.90',
+            'id': 'f633f834ce3f7593d6a67fc3c8b333ec165c7c6e003700d538d1bc8e89c4e817',
+            'enode': 'enode://0ee2ca0d4a0ba11221077b4ce05be53d0604e2540414b5e1d266bd6203ca44b32e4ebd76b8df194878f37d69de76e7008007a4b1cea6d761c5847c0ee4a9929f@119.29.222.90:30311',
+            'since': '20250820',
+            'coreId': 24,
+            },
 ]
 
 # JVCore 合约 ABI
