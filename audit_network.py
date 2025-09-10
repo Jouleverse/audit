@@ -444,7 +444,7 @@ core_nodes = [
 {
             'owner': 'TIGER',
             'type': 'witness',
-            'ip': '162.14.111.59',
+            'ip': '117.72.152.237',
             'id': '13b01d9329bbae324a581153eee384d148170bdcb5dc0ff43e2b5749224d483e',
             'enode': 'enode://3abea1f6928c8400900c554fceb6a63a79120214e72bfde6a9ff10f60b147a616585f4b433e25cbac8b37a3efbb5eff36b0dc73961c09858ee15790a2732a3a2@162.14.111.59:30311'
             ,'since': '20240908',
@@ -453,7 +453,7 @@ core_nodes = [
 {
             'owner': '潇先生',
             'type': 'witness',
-            'ip': '101.126.91.91',
+            'ip': '117.72.157.230',
             'id': '5a7147dbbfb3481999095253015cd0bba34aef5d275c8778dcaefc6868fd815b',
             'enode': 'enode://70ee7da8aee656dd87087a90d9b89d5aec786b11d6d08979588640a57defcb9cb1fb0da4c1c536b8adac84e717885d5b34e641768c6d129478e4f3652ef82d19@101.126.91.91:30311'
             ,'since': '20240908',
