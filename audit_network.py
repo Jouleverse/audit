@@ -366,15 +366,15 @@ core_nodes = [
             },
 
 # 20240419 #update 20240102
-{
-            'owner': 'jay.j',
-            'type': 'witness',
-            'ip': '118.25.144.251',
-            'id': 'f41b2fc240589c7b9e9061a4e86a314cfb8728b8a75fc4c99e88993ac41a2616',
-            'enode': 'enode://c324f07f404da4d2e88bd503ca50194f6d9c7da43d8c726fa326310fa683b350536858a2a51a2a3a4e7953248856162250671b4afd4536e1ae4bd7befabe5e9a@118.25.144.251:30311',
-            'since': '20240419',
-            'coreId': 50,
-            },
+# {
+#             'owner': 'jay.j',
+#             'type': 'witness',
+#             'ip': '118.25.144.251',
+#             'id': 'f41b2fc240589c7b9e9061a4e86a314cfb8728b8a75fc4c99e88993ac41a2616',
+#             'enode': 'enode://c324f07f404da4d2e88bd503ca50194f6d9c7da43d8c726fa326310fa683b350536858a2a51a2a3a4e7953248856162250671b4afd4536e1ae4bd7befabe5e9a@118.25.144.251:30311',
+#             'since': '20240419',
+#             'coreId': 50,
+#             },
 
 # 20240429
 {
@@ -617,6 +617,17 @@ core_nodes = [
             'since': '20250820',
             'coreId': 24,
             },
+        {
+            'owner': '盛美',
+            'type': 'witness',
+            'ip': '117.72.113.123',
+            'id': '68617066980c00985b7fc331487d193e22258badbaeec6bf619d3e7cbc255ae8',
+            'enode': 'enode://9fcb694d575cac90db04e4afd4611145b21b01282ce06097bec90e806f3819656bbc4ce3ea9c41b91f62a4a6fc4300758df0e829e38b708563cf43e5a159ba31@117.72.113.123:30311',
+            'since': '20240623',
+            'coreId': 52,
+            },
+
+
 ]
 
 # JVCore 合约 ABI
