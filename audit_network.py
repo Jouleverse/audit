@@ -765,7 +765,7 @@ print('Network Size: ', count, ' nodes (', count_miner, ' miners, ', count_witne
 
 ## reporting node status
 print('---------------- nodes status -----------------')
-print('TYPE', 'SINCE', 'IP', 'OWNER', 'CHECK-IN', 'CORE-ID', 'CONNECTED', 'STATUS', 'ACTIVITY', 'LIVENESS')
+print('TYPE', 'SINCE', 'IP', 'CONNECTED', 'STATUS', 'ACTIVITY', 'LIVENESS', 'CORE-ID', 'OWNER', 'CHECK-IN')
 print('-----------------------------------------------')
 
 no_check_in_list = []
@@ -786,15 +786,15 @@ def get_month_start():
 
 ## helper: reporting func
 def report(node):
-    enode_connected = '🟩' if node['status'] == 'connected' else '🟥'
+    enode_connected = '🟢' if node['status'] == 'connected' else '🟡'
     if node['type'] == 'miner' and node['block_rate'] > 0:
-        node_liveness = '🟢'
+        node_liveness = '🟩'
         node_activity = node['block_rate']
     elif node['type'] in ['witness', 'witness(a)'] and node['block_height'] > 0:
-        node_liveness = '🟢'
+        node_liveness = '🟩'
         node_activity = node['block_height']
     else:
-        node_liveness = '🔴'
+        node_liveness = '🟥'
         node_activity = -1
 
     # 获取节点的 check-in 状态
@@ -824,7 +824,9 @@ def report(node):
         if node['owner'] not in no_kyc_list:
             no_kyc_list.append(node['owner'])
 
-    print(node['type'], node['since'], node['ip'], node['owner'], check_in_status_display, core_id, enode_connected, node['status'], node_activity, node_liveness)
+    core_id_display = f'J-{core_id}'
+    owner_display = f'"{node["owner"]}"'
+    print(node['type'], node['since'], node['ip'], enode_connected, node['status'], node_activity, node_liveness, core_id_display, owner_display, check_in_status_display)
 
 ## reporting miner status first
 for (id, node) in all_nodes.items():
