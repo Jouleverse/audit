@@ -1,0 +1,8 @@
+# Core dependencies for audit scripts and contract deployment
+
+# Web3 stack (Python 3.8+)
+web3>=6.5.0,<7
+eth-account>=0.9.0,<0.10
+
+# Solidity compiler via Python
+py-solc-x>=2.0.0
