@@ -1,61 +1,10 @@
 pragma solidity ^0.8.20;
 
-// Minimal inline implementations to avoid external imports
-abstract contract Ownable2StepLite {
-    address private _owner;
-    address private _pendingOwner;
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/access/Ownable2Step.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
 
-    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
-    event OwnershipTransferStarted(address indexed previousOwner, address indexed newOwner);
-
-    modifier onlyOwner() {
-        require(msg.sender == _owner, "Ownable: caller is not the owner");
-        _;
-    }
-
-    function owner() public view returns (address) { return _owner; }
-    function pendingOwner() public view returns (address) { return _pendingOwner; }
-
-    function _setInitialOwner(address initialOwner) internal {
-        require(_owner == address(0), "Ownable: initialized");
-        _owner = initialOwner;
-        emit OwnershipTransferred(address(0), initialOwner);
-    }
-
-    function transferOwnership(address newOwner) public onlyOwner {
-        require(newOwner != address(0), "Ownable: new is zero");
-        _pendingOwner = newOwner;
-        emit OwnershipTransferStarted(_owner, newOwner);
-    }
-
-    function acceptOwnership() public {
-        require(msg.sender == _pendingOwner, "Ownable: not pending");
-        address prev = _owner;
-        _owner = _pendingOwner;
-        _pendingOwner = address(0);
-        emit OwnershipTransferred(prev, _owner);
-    }
-}
-
-abstract contract PausableLite {
-    bool private _paused;
-    event Paused(address account);
-    event Unpaused(address account);
-
-    modifier whenNotPaused() {
-        require(!_paused, "Pausable: paused");
-        _;
-    }
-    modifier whenPaused() {
-        require(_paused, "Pausable: not paused");
-        _;
-    }
-    function paused() public view returns (bool) { return _paused; }
-    function _pause() internal whenNotPaused { _paused = true; emit Paused(msg.sender); }
-    function _unpause() internal whenPaused { _paused = false; emit Unpaused(msg.sender); }
-}
-
-contract AuditPoints is Ownable2StepLite, PausableLite {
+contract AuditPoints is Ownable2Step, Pausable {
     struct DailyRecord {
         bool exists;
         bool liveness;
@@ -69,6 +18,10 @@ contract AuditPoints is Ownable2StepLite, PausableLite {
     }
 
     address public operator;
+    // 批量大小上限（可配置）：避免超长批次导致 gas 过高或意外风险
+    uint256 public maxBatchSize = 200;
+    // 每月索引容量上限（可配置）：防止月度索引无限增长
+    uint256 public maxMonthIndexSize = 10000;
 
     mapping(uint256 => mapping(uint32 => DailyRecord)) private records;
     mapping(uint256 => mapping(uint32 => uint256)) private monthlyPoints;
@@ -100,14 +53,15 @@ contract AuditPoints is Ownable2StepLite, PausableLite {
         uint32 indexed monthKey
     );
     event OperatorUpdated(address indexed previousOperator, address indexed newOperator);
+    event MaxBatchSizeUpdated(uint256 oldValue, uint256 newValue);
+    event MaxMonthIndexSizeUpdated(uint256 oldValue, uint256 newValue);
 
     modifier onlyOperator() {
         require(msg.sender == operator, "not operator");
         _;
     }
 
-    constructor(address initialOperator) {
-        _setInitialOwner(msg.sender);
+    constructor(address initialOperator) Ownable(msg.sender) {
         operator = initialOperator == address(0) ? msg.sender : initialOperator;
         emit OperatorUpdated(address(0), operator);
     }
@@ -125,6 +79,22 @@ contract AuditPoints is Ownable2StepLite, PausableLite {
 
     function unpause() external onlyOwner {
         _unpause();
+    }
+
+    // 配置：批量大小上限
+    function setMaxBatchSize(uint256 newSize) external onlyOwner {
+        require(newSize > 0 && newSize <= 10000, "bad maxBatchSize");
+        uint256 old = maxBatchSize;
+        maxBatchSize = newSize;
+        emit MaxBatchSizeUpdated(old, newSize);
+    }
+
+    // 配置：每月索引容量上限
+    function setMaxMonthIndexSize(uint256 newSize) external onlyOwner {
+        require(newSize > 0 && newSize <= 1000000, "bad maxMonthIndexSize");
+        uint256 old = maxMonthIndexSize;
+        maxMonthIndexSize = newSize;
+        emit MaxMonthIndexSizeUpdated(old, newSize);
     }
 
     function getDaily(uint256 tokenId, uint32 date)
@@ -153,6 +123,43 @@ contract AuditPoints is Ownable2StepLite, PausableLite {
         return yyyy * 100 + mm;
     }
 
+    // 日期校验：拆到独立函数以减少调用方局部变量并避免 "stack too deep"
+    function _validateDate(uint32 date) internal pure {
+        require(date >= 20000101 && date <= 99991231, "bad date");
+        uint32 mm = (date / 100) % 100;
+        uint32 dd = date % 100;
+        require(mm >= 1 && mm <= 12 && dd >= 1 && dd <= 31, "bad date");
+    }
+
+    // 批次去重校验：禁止同一批次中重复的 (tokenId, date) 对，避免误覆盖
+    function _checkNoDuplicatePairs(uint256[] calldata tokenIds, uint32[] calldata dates) internal pure {
+        uint256 len = tokenIds.length;
+        for (uint256 i = 0; i < len; i++) {
+            uint256 tid = tokenIds[i];
+            uint32 d = dates[i];
+            for (uint256 j = i + 1; j < len; j++) {
+                if (tokenIds[j] == tid && dates[j] == d) {
+                    revert("duplicate in batch");
+                }
+            }
+        }
+    }
+
+    // 内部：批处理单项，进一步缩短 recordBatch 的局部变量生命周期，缓解栈压力
+    function _recordBatchItem(
+        uint256 tokenId,
+        uint32 date,
+        bool liveness,
+        bool checkin,
+        uint16 minerBP,
+        uint16 witnessBP
+    ) internal {
+        _validateDate(date);
+        require(minerBP <= 100 && witnessBP <= 100, "BP role limit");
+        require(minerBP + witnessBP <= 200, "BP sum limit");
+        _recordDaily(tokenId, date, liveness, checkin, minerBP, witnessBP, _monthKey(date));
+    }
+
     // 记录每日：支持传入角色积分拆分
     function recordDaily(
         uint256 tokenId,
@@ -163,15 +170,18 @@ contract AuditPoints is Ownable2StepLite, PausableLite {
         uint16 witnessBP
     ) external onlyOperator whenNotPaused returns (bool updated) {
         // 日期与 BP 上限校验
-        require(date >= 20000101 && date <= 99991231, "bad date");
-        uint32 mm = (date / 100) % 100;
-        uint32 dd = date % 100;
-        require(mm >= 1 && mm <= 12 && dd >= 1 && dd <= 31, "bad date");
+        _validateDate(date);
         require(minerBP <= 100 && witnessBP <= 100, "BP role limit");
         require(minerBP + witnessBP <= 200, "BP sum limit");
-        uint32 monthKey = _monthKey(date);
-        uint16 pointsBP = minerBP + witnessBP;
-        return _recordDaily(tokenId, date, liveness, checkin, minerBP, witnessBP, pointsBP, monthKey);
+        return _recordDaily(
+            tokenId,
+            date,
+            liveness,
+            checkin,
+            minerBP,
+            witnessBP,
+            _monthKey(date)
+        );
     }
 
     // 内部：记录含角色积分拆分（标准实现）
@@ -182,10 +192,10 @@ contract AuditPoints is Ownable2StepLite, PausableLite {
         bool checkin,
         uint16 minerBP,
         uint16 witnessBP,
-        uint16 pointsBP,
         uint32 monthKey
     ) internal returns (bool updated) {
         DailyRecord storage r = records[tokenId][date];
+        uint16 pointsBP = minerBP + witnessBP;
         uint256 prev = monthlyPoints[tokenId][monthKey];
         if (r.exists) {
             if (
@@ -200,6 +210,7 @@ contract AuditPoints is Ownable2StepLite, PausableLite {
             monthlyPoints[tokenId][monthKey] = prev + pointsBP - r.pointsBP;
             uint256 newVal = monthlyPoints[tokenId][monthKey];
             if (prev == 0 && newVal > 0 && !monthIndexed[tokenId][monthKey]) {
+                require(monthIndex[monthKey].length < maxMonthIndexSize, "month index full");
                 monthIndex[monthKey].push(tokenId);
                 monthIndexed[tokenId][monthKey] = true;
             }
@@ -233,6 +244,7 @@ contract AuditPoints is Ownable2StepLite, PausableLite {
             monthlyPoints[tokenId][monthKey] += pointsBP;
             uint256 newVal = monthlyPoints[tokenId][monthKey];
             if (prev == 0 && newVal > 0 && !monthIndexed[tokenId][monthKey]) {
+                require(monthIndex[monthKey].length < maxMonthIndexSize, "month index full");
                 monthIndex[monthKey].push(tokenId);
                 monthIndexed[tokenId][monthKey] = true;
             }
@@ -250,6 +262,7 @@ contract AuditPoints is Ownable2StepLite, PausableLite {
         uint16[] calldata minerBPs,
         uint16[] calldata witnessBPs
     ) external onlyOperator whenNotPaused {
+        require(tokenIds.length <= maxBatchSize, "batch too large");
         require(
             tokenIds.length == dates.length &&
                 dates.length == livenesses.length &&
@@ -258,20 +271,16 @@ contract AuditPoints is Ownable2StepLite, PausableLite {
                 minerBPs.length == witnessBPs.length,
             "length mismatch"
         );
+        _checkNoDuplicatePairs(tokenIds, dates);
         for (uint256 i = 0; i < tokenIds.length;) {
-            uint32 d = dates[i];
-            // 日期与 BP 上限校验
-            require(d >= 20000101 && d <= 99991231, "bad date");
-            uint32 mm = (d / 100) % 100;
-            uint32 dd = d % 100;
-            require(mm >= 1 && mm <= 12 && dd >= 1 && dd <= 31, "bad date");
-            uint16 m = minerBPs[i];
-            uint16 w = witnessBPs[i];
-            require(m <= 100 && w <= 100, "BP role limit");
-            require(m + w <= 200, "BP sum limit");
-            uint32 mk = _monthKey(d);
-            uint16 sumBP = m + w;
-            _recordDaily(tokenIds[i], d, livenesses[i], checkins[i], m, w, sumBP, mk);
+            _recordBatchItem(
+                tokenIds[i],
+                dates[i],
+                livenesses[i],
+                checkins[i],
+                minerBPs[i],
+                witnessBPs[i]
+            );
             unchecked { i++; }
         }
     }
