@@ -262,17 +262,6 @@ core_nodes = [
             'coreId': 6,
             },
 
-    # 20240217
-    {
-            'owner': '得葱',
-            'type': 'witness',
-            'ip': '150.158.49.56',
-            'id': '9a970791e61f2c8a45010ce83c9dd332cb4a634241cbcd45d5ee8d8cf23baa54',
-            'enode': 'enode://10ac2787e47bd7472721bafa5abd96dceb91fda82953a49a55c49db585f73a2092688f6c8651531aa1d11367abf6258bd3160940ca9d572e17db69999f29ae52@150.158.49.56:30311',
-            'since': '20240217',
-            'coreId': 36,
-            },
-
 # 20240303 
     {
             'owner': '剪云为裳',
