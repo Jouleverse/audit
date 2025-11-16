@@ -5,14 +5,15 @@ import "@openzeppelin/contracts/access/Ownable2Step.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 
 contract AuditPoints is Ownable2Step, Pausable {
+    enum NodeType { MINER, WITNESS }
+
     struct DailyRecord {
         bool exists;
+        uint32 coreId;
+        NodeType nodeType;
         bool liveness;
         bool checkin;
-        uint16 pointsBP;
-        // 角色积分拆分：记账(miner)与见证(witness)
-        uint16 minerBP;
-        uint16 witnessBP;
+        uint256 points;
         uint32 date;
         uint256 blockTimestamp;
     }
@@ -20,41 +21,33 @@ contract AuditPoints is Ownable2Step, Pausable {
     address public operator;
     // 批量大小上限（可配置）：避免超长批次导致 gas 过高或意外风险
     uint256 public maxBatchSize = 200;
-    // 每月索引容量上限（可配置）：防止月度索引无限增长
-    uint256 public maxMonthIndexSize = 10000;
+    
 
-    mapping(uint256 => mapping(uint32 => DailyRecord)) private records;
-    mapping(uint256 => mapping(uint32 => uint256)) private monthlyPoints;
-    // 索引每月参与积分的 tokenId；用于月度明细查询（不移除，0 分可由调用方过滤）
-    mapping(uint32 => uint256[]) private monthIndex;
-    // 标记是否已加入索引，避免重复加入
-    mapping(uint256 => mapping(uint32 => bool)) private monthIndexed;
+    mapping(uint32 => mapping(NodeType => mapping(uint32 => DailyRecord))) private records; // coreId => nodeType => date => DailyRecord
 
-    // 记录事件（包含角色积分拆分）
+    // 记录事件
     event DailyRecorded(
-        uint256 indexed tokenId,
+        uint32 indexed coreId,
         uint32 indexed date,
+        NodeType indexed nodeType,
         bool liveness,
         bool checkin,
-        uint16 minerBP,
-        uint16 witnessBP,
-        uint16 pointsBP,
-        uint32 indexed monthKey
+        uint256 points
     );
     event DailyOverridden(
-        uint256 indexed tokenId,
+        uint32 indexed coreId,
         uint32 indexed date,
-        uint16 oldMinerBP,
-        uint16 oldWitnessBP,
-        uint16 newMinerBP,
-        uint16 newWitnessBP,
-        uint16 oldPointsBP,
-        uint16 newPointsBP,
-        uint32 indexed monthKey
+        NodeType nodeType,
+        bool oldLiveness,
+        bool newLiveness,
+        bool oldCheckin,
+        bool newCheckin,
+        uint256 oldPoints,
+        uint256 newPoints
     );
     event OperatorUpdated(address indexed previousOperator, address indexed newOperator);
     event MaxBatchSizeUpdated(uint256 oldValue, uint256 newValue);
-    event MaxMonthIndexSizeUpdated(uint256 oldValue, uint256 newValue);
+    
 
     modifier onlyOperator() {
         require(msg.sender == operator, "not operator");
@@ -89,39 +82,31 @@ contract AuditPoints is Ownable2Step, Pausable {
         emit MaxBatchSizeUpdated(old, newSize);
     }
 
-    // 配置：每月索引容量上限
-    function setMaxMonthIndexSize(uint256 newSize) external onlyOwner {
-        require(newSize > 0 && newSize <= 1000000, "bad maxMonthIndexSize");
-        uint256 old = maxMonthIndexSize;
-        maxMonthIndexSize = newSize;
-        emit MaxMonthIndexSizeUpdated(old, newSize);
-    }
+    
 
-    function getDaily(uint256 tokenId, uint32 date)
+    function getDaily(uint32 coreId, NodeType nodeType, uint32 date)
         external
         view
         returns (
             bool exists,
+            uint32 storedCoreId,
+            NodeType storedNodeType,
             bool liveness,
             bool checkin,
-            uint16 pointsBP,
+            uint256 points,
             uint32 storedDate,
             uint256 blockTimestamp
         )
     {
-        DailyRecord storage r = records[tokenId][date];
-        return (r.exists, r.liveness, r.checkin, r.pointsBP, r.date, r.blockTimestamp);
+        DailyRecord storage r = records[coreId][nodeType][date];
+        return (r.exists, r.coreId, r.nodeType, r.liveness, r.checkin, r.points, r.date, r.blockTimestamp);
     }
 
-    function getMonthlyPoints(uint256 tokenId, uint32 monthKey) external view returns (uint256) {
-        return monthlyPoints[tokenId][monthKey];
-    }
+    
 
-    function _monthKey(uint32 date) internal pure returns (uint32) {
-        uint32 yyyy = date / 10000;
-        uint32 mm = (date / 100) % 100;
-        return yyyy * 100 + mm;
-    }
+    
+
+    
 
     // 日期校验：拆到独立函数以减少调用方局部变量并避免 "stack too deep"
     function _validateDate(uint32 date) internal pure {
@@ -131,14 +116,19 @@ contract AuditPoints is Ownable2Step, Pausable {
         require(mm >= 1 && mm <= 12 && dd >= 1 && dd <= 31, "bad date");
     }
 
-    // 批次去重校验：禁止同一批次中重复的 (tokenId, date) 对，避免误覆盖
-    function _checkNoDuplicatePairs(uint256[] calldata tokenIds, uint32[] calldata dates) internal pure {
-        uint256 len = tokenIds.length;
+    // 批次去重校验：禁止同一批次中重复的 (coreId, nodeType, date) 对，避免误覆盖
+    function _checkNoDuplicatePairs(
+        uint32[] calldata coreIds,
+        NodeType[] calldata nodeTypes,
+        uint32[] calldata dates
+    ) internal pure {
+        uint256 len = coreIds.length;
         for (uint256 i = 0; i < len; i++) {
-            uint256 tid = tokenIds[i];
+            uint32 cid = coreIds[i];
+            NodeType nt = nodeTypes[i];
             uint32 d = dates[i];
             for (uint256 j = i + 1; j < len; j++) {
-                if (tokenIds[j] == tid && dates[j] == d) {
+                if (coreIds[j] == cid && nodeTypes[j] == nt && dates[j] == d) {
                     revert("duplicate in batch");
                 }
             }
@@ -147,194 +137,164 @@ contract AuditPoints is Ownable2Step, Pausable {
 
     // 内部：批处理单项，进一步缩短 recordBatch 的局部变量生命周期，缓解栈压力
     function _recordBatchItem(
-        uint256 tokenId,
+        uint32 coreId,
         uint32 date,
+        NodeType nodeType,
         bool liveness,
         bool checkin,
-        uint16 minerBP,
-        uint16 witnessBP
+        uint256 points
     ) internal {
         _validateDate(date);
-        require(minerBP <= 100 && witnessBP <= 100, "BP role limit");
-        require(minerBP + witnessBP <= 200, "BP sum limit");
-        _recordDaily(tokenId, date, liveness, checkin, minerBP, witnessBP, _monthKey(date));
+        _recordDaily(coreId, date, nodeType, liveness, checkin, points);
     }
 
-    // 记录每日：支持传入角色积分拆分
+    // 记录每日
     function recordDaily(
-        uint256 tokenId,
+        uint32 coreId,
         uint32 date,
+        NodeType nodeType,
         bool liveness,
         bool checkin,
-        uint16 minerBP,
-        uint16 witnessBP
+        uint256 points
     ) external onlyOperator whenNotPaused returns (bool updated) {
-        // 日期与 BP 上限校验
+        // 日期校验
         _validateDate(date);
-        require(minerBP <= 100 && witnessBP <= 100, "BP role limit");
-        require(minerBP + witnessBP <= 200, "BP sum limit");
+        require(coreId > 0, "invalid coreId");
+        require(nodeType == NodeType.MINER || nodeType == NodeType.WITNESS, "invalid nodeType");
         return _recordDaily(
-            tokenId,
+            coreId,
             date,
+            nodeType,
             liveness,
             checkin,
-            minerBP,
-            witnessBP,
-            _monthKey(date)
+            points
         );
     }
 
-    // 内部：记录含角色积分拆分（标准实现）
+    // 内部：记录每日数据（标准实现）
     function _recordDaily(
-        uint256 tokenId,
+        uint32 coreId,
         uint32 date,
+        NodeType nodeType,
         bool liveness,
         bool checkin,
-        uint16 minerBP,
-        uint16 witnessBP,
-        uint32 monthKey
+        uint256 points
     ) internal returns (bool updated) {
-        DailyRecord storage r = records[tokenId][date];
-        uint16 pointsBP = minerBP + witnessBP;
-        uint256 prev = monthlyPoints[tokenId][monthKey];
+        DailyRecord storage r = records[coreId][nodeType][date];
         if (r.exists) {
             if (
-                r.pointsBP == pointsBP &&
+                r.nodeType == nodeType &&
                 r.liveness == liveness &&
                 r.checkin == checkin &&
-                r.minerBP == minerBP &&
-                r.witnessBP == witnessBP
+                r.points == points
             ) {
                 return false;
             }
-            monthlyPoints[tokenId][monthKey] = prev + pointsBP - r.pointsBP;
-            uint256 newVal = monthlyPoints[tokenId][monthKey];
-            if (prev == 0 && newVal > 0 && !monthIndexed[tokenId][monthKey]) {
-                require(monthIndex[monthKey].length < maxMonthIndexSize, "month index full");
-                monthIndex[monthKey].push(tokenId);
-                monthIndexed[tokenId][monthKey] = true;
-            }
             emit DailyOverridden(
-                tokenId,
+                coreId,
                 date,
-                r.minerBP,
-                r.witnessBP,
-                minerBP,
-                witnessBP,
-                r.pointsBP,
-                pointsBP,
-                monthKey
+                nodeType,
+                r.liveness,
+                liveness,
+                r.checkin,
+                checkin,
+                r.points,
+                points
             );
+            r.coreId = coreId;
+            r.nodeType = nodeType;
             r.liveness = liveness;
             r.checkin = checkin;
-            r.pointsBP = pointsBP;
-            r.minerBP = minerBP;
-            r.witnessBP = witnessBP;
+            r.points = points;
             r.blockTimestamp = block.timestamp;
             return true;
         } else {
             r.exists = true;
+            r.coreId = coreId;
+            r.nodeType = nodeType;
             r.liveness = liveness;
             r.checkin = checkin;
-            r.pointsBP = pointsBP;
-            r.minerBP = minerBP;
-            r.witnessBP = witnessBP;
+            r.points = points;
             r.date = date;
             r.blockTimestamp = block.timestamp;
-            monthlyPoints[tokenId][monthKey] += pointsBP;
-            uint256 newVal = monthlyPoints[tokenId][monthKey];
-            if (prev == 0 && newVal > 0 && !monthIndexed[tokenId][monthKey]) {
-                require(monthIndex[monthKey].length < maxMonthIndexSize, "month index full");
-                monthIndex[monthKey].push(tokenId);
-                monthIndexed[tokenId][monthKey] = true;
-            }
-            emit DailyRecorded(tokenId, date, liveness, checkin, minerBP, witnessBP, pointsBP, monthKey);
+            emit DailyRecorded(coreId, date, nodeType, liveness, checkin, points);
             return true;
         }
     }
 
-    // 批量记录：角色拆分积分
+    // 批量记录
     function recordBatch(
-        uint256[] calldata tokenIds,
+        uint32[] calldata coreIds,
         uint32[] calldata dates,
+        NodeType[] calldata nodeTypes,
         bool[] calldata livenesses,
         bool[] calldata checkins,
-        uint16[] calldata minerBPs,
-        uint16[] calldata witnessBPs
+        uint256[] calldata points
     ) external onlyOperator whenNotPaused {
-        require(tokenIds.length <= maxBatchSize, "batch too large");
+        require(coreIds.length <= maxBatchSize, "batch too large");
         require(
-            tokenIds.length == dates.length &&
-                dates.length == livenesses.length &&
+            coreIds.length == dates.length &&
+                dates.length == nodeTypes.length &&
+                nodeTypes.length == livenesses.length &&
                 livenesses.length == checkins.length &&
-                checkins.length == minerBPs.length &&
-                minerBPs.length == witnessBPs.length,
+                checkins.length == points.length,
             "length mismatch"
         );
-        _checkNoDuplicatePairs(tokenIds, dates);
-        for (uint256 i = 0; i < tokenIds.length;) {
+        _checkNoDuplicatePairs(coreIds, nodeTypes, dates);
+        for (uint256 i = 0; i < coreIds.length;) {
+            require(coreIds[i] > 0, "invalid coreId");
+            require(nodeTypes[i] == NodeType.MINER || nodeTypes[i] == NodeType.WITNESS, "invalid nodeType");
             _recordBatchItem(
-                tokenIds[i],
+                coreIds[i],
                 dates[i],
+                nodeTypes[i],
                 livenesses[i],
                 checkins[i],
-                minerBPs[i],
-                witnessBPs[i]
+                points[i]
             );
             unchecked { i++; }
         }
     }
 
-    // 月度积分明细：返回该月涉及的 tokenId 及其积分；可能包含积分为 0 的条目（调用方可过滤）
-    function getMonthlyDetail(uint32 monthKey)
+    
+
+    // 查询：每日记录详细信息
+    function getDailyBreakdown(uint32 coreId, NodeType nodeType, uint32 date)
         external
         view
-        returns (uint256[] memory tokenIds, uint256[] memory points)
+        returns (bool liveness, bool checkin, uint256 points)
     {
-        uint256 len = monthIndex[monthKey].length;
-        tokenIds = new uint256[](len);
-        points = new uint256[](len);
-        for (uint256 i = 0; i < len; i++) {
-            uint256 tid = monthIndex[monthKey][i];
-            tokenIds[i] = tid;
-            points[i] = monthlyPoints[tid][monthKey];
-        }
+        DailyRecord storage r = records[coreId][nodeType][date];
+        return (r.liveness, r.checkin, r.points);
     }
 
-    // 月度索引计数：用于前端分页或合约端分批读取
-    function getMonthlyDetailCount(uint32 monthKey) external view returns (uint256) {
-        return monthIndex[monthKey].length;
-    }
-
-    // 月度分页查询：返回从 offset 开始的最多 limit 条（limit 可大于剩余条数）
-    function getMonthlyDetailPaged(uint32 monthKey, uint256 offset, uint256 limit)
+    // 查询一个coreId在某个日期的所有节点记录
+    function getCoreDailyRecords(uint32 coreId, uint32 date)
         external
         view
-        returns (uint256[] memory tokenIds, uint256[] memory points)
+        returns (
+            bool minerExists,
+            bool minerLiveness,
+            bool minerCheckin,
+            uint256 minerPoints,
+            bool witnessExists,
+            bool witnessLiveness,
+            bool witnessCheckin,
+            uint256 witnessPoints
+        )
     {
-        uint256 total = monthIndex[monthKey].length;
-        require(offset <= total, "offset out of range");
-        uint256 end = offset + limit;
-        if (end > total) {
-            end = total;
-        }
-        uint256 len = end > offset ? end - offset : 0;
-        tokenIds = new uint256[](len);
-        points = new uint256[](len);
-        for (uint256 i = 0; i < len; i++) {
-            uint256 tid = monthIndex[monthKey][offset + i];
-            tokenIds[i] = tid;
-            points[i] = monthlyPoints[tid][monthKey];
-        }
-    }
+        DailyRecord storage minerRecord = records[coreId][NodeType.MINER][date];
+        DailyRecord storage witnessRecord = records[coreId][NodeType.WITNESS][date];
 
-    // 查询：每日积分角色拆分
-    function getDailyBreakdown(uint256 tokenId, uint32 date)
-        external
-        view
-        returns (uint16 minerBP, uint16 witnessBP)
-    {
-        DailyRecord storage r = records[tokenId][date];
-        return (r.minerBP, r.witnessBP);
+        return (
+            minerRecord.exists,
+            minerRecord.liveness,
+            minerRecord.checkin,
+            minerRecord.points,
+            witnessRecord.exists,
+            witnessRecord.liveness,
+            witnessRecord.checkin,
+            witnessRecord.points
+        );
     }
 }
