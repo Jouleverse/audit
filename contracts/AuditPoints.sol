@@ -8,14 +8,14 @@ contract AuditPoints is Ownable2Step, Pausable {
     enum NodeType { MINER, WITNESS }
 
     struct DailyRecord {
-        bool exists;
+        uint256 points;
+        uint64 blockTimestamp;
         uint32 coreId;
+        uint32 date;
         NodeType nodeType;
+        bool exists;
         bool liveness;
         bool checkin;
-        uint256 points;
-        uint32 date;
-        uint256 blockTimestamp;
     }
 
     address public operator;
@@ -117,23 +117,7 @@ contract AuditPoints is Ownable2Step, Pausable {
     }
 
     // 批次去重校验：禁止同一批次中重复的 (coreId, nodeType, date) 对，避免误覆盖
-    function _checkNoDuplicatePairs(
-        uint32[] calldata coreIds,
-        NodeType[] calldata nodeTypes,
-        uint32[] calldata dates
-    ) internal pure {
-        uint256 len = coreIds.length;
-        for (uint256 i = 0; i < len; i++) {
-            uint32 cid = coreIds[i];
-            NodeType nt = nodeTypes[i];
-            uint32 d = dates[i];
-            for (uint256 j = i + 1; j < len; j++) {
-                if (coreIds[j] == cid && nodeTypes[j] == nt && dates[j] == d) {
-                    revert("duplicate in batch");
-                }
-            }
-        }
-    }
+
 
     // 内部：批处理单项，进一步缩短 recordBatch 的局部变量生命周期，缓解栈压力
     function _recordBatchItem(
@@ -206,7 +190,7 @@ contract AuditPoints is Ownable2Step, Pausable {
             r.liveness = liveness;
             r.checkin = checkin;
             r.points = points;
-            r.blockTimestamp = block.timestamp;
+            r.blockTimestamp = uint64(block.timestamp);
             return true;
         } else {
             r.exists = true;
@@ -216,7 +200,7 @@ contract AuditPoints is Ownable2Step, Pausable {
             r.checkin = checkin;
             r.points = points;
             r.date = date;
-            r.blockTimestamp = block.timestamp;
+            r.blockTimestamp = uint64(block.timestamp);
             emit DailyRecorded(coreId, date, nodeType, liveness, checkin, points);
             return true;
         }
@@ -240,7 +224,7 @@ contract AuditPoints is Ownable2Step, Pausable {
                 checkins.length == points.length,
             "length mismatch"
         );
-        _checkNoDuplicatePairs(coreIds, nodeTypes, dates);
+
         for (uint256 i = 0; i < coreIds.length;) {
             require(coreIds[i] > 0, "invalid coreId");
             require(nodeTypes[i] == NodeType.MINER || nodeTypes[i] == NodeType.WITNESS, "invalid nodeType");
