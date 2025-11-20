@@ -159,15 +159,6 @@ core_nodes = [
             'coreId': 17,
             },
     {
-            'owner': 'Angel',
-            'type': 'witness',
-            'ip': '115.159.194.193',
-            'id': '63b1871768dfd614523b1e4b089be18dba22aaf5ac1ef2c020e7a40fd692eb46',
-            'enode': 'enode://65805489a30f566c4afe5a5771b0f7815f269c2f7dcc1ec4cbacf02ee8386d68d150024b79ac75ae2305b141cf5097d05269fb6612e6989c312037ee38be0d47@115.159.194.193:30311',
-            'since': '20231025',
-            'coreId': 19,
-            },
-    {
             'owner': '老谢',
             'type': 'witness',
             'ip': '1.14.106.165',
@@ -397,16 +388,6 @@ core_nodes = [
             'coreId': 53,
             },
 
-# 20240807
-{
-            'owner': '张恩畅',
-            'type': 'witness',
-            'ip': '118.89.117.223',
-            'id': 'e5eb6b54bcb84281de04d6c4ff2ff813402512b143381204a530c5ad8d48dff1',
-            'enode': 'enode://5d19e0757bd2a307cb425a0db5e34964b1fd3ca07797072103d450101513430eb7d82af4b900af59b75a4deea1a5bca40653877dac2799cbfeca8a7243498522@118.89.117.223:30311'
-            ,'since': '20240807',
-            'coreId': 15,
-            },
 # 20240825
 {
             'owner': '蓝叶子-node',
