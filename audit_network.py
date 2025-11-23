@@ -511,17 +511,6 @@ core_nodes = [
             },
 
 {
-            'owner': '佘小强',
-            'type': 'witness',
-            'ip': '119.45.93.155',
-            'id': '2c3cbf2abba1708a0b55a80ab8498339ebb1c150a89c83504923a5c241426658',
-            'enode': 'enode://e44ca285b8f72d3188ca47dffe9a83c84bd92b80dc2e7e1ee30a4474656aa815da87406c939c218be453bb329d792ff44ccd7eb6fc2ab9795bcea159d27b7a3b@119.45.93.155:30311',
-            'since': '20241121',
-            'coreId': 56,
-            },
-
-
-{
             'owner': '尧垚',
             'type': 'witness',
             'ip': '124.222.176.129',
