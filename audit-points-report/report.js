@@ -1,6 +1,6 @@
 async function loadMonthList() {
   try {
-    const res = await fetch('months.json');
+    const res = await fetch(`months.json?cb=${Date.now()}`, { cache: 'no-store' });
     if (!res.ok) return [];
     return await res.json();
   } catch { return []; }
@@ -9,12 +9,12 @@ async function loadMonthList() {
 async function loadReport(month) {
   const name = month ? `report_${month}.json` : 'report.json';
   try {
-    const res = await fetch(name);
+    const res = await fetch(`${name}?cb=${Date.now()}`, { cache: 'no-store' });
     if (!res.ok) throw new Error();
     return await res.json();
   } catch {
     try {
-      const res = await fetch('report.json');
+      const res = await fetch(`report.json?cb=${Date.now()}`, { cache: 'no-store' });
       return await res.json();
     } catch (e) {
       const meta = document.getElementById('meta');
@@ -27,6 +27,7 @@ async function loadReport(month) {
 async function load(initialMonth) {
   const months = await loadMonthList();
   const monthSel = document.getElementById('month');
+  const refreshBtn = document.getElementById('refresh');
   const now = new Date();
   const curMonth = Number(`${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}`);
   const defaultMonth = months.includes(curMonth) ? curMonth : (months[months.length-1]||null);
@@ -49,6 +50,13 @@ async function load(initialMonth) {
   const sortBtn = document.getElementById('sortTotal');
   monthSel.onchange = async () => {
     const d = await loadReport(Number(monthSel.value));
+    rows = d.cores.slice();
+    const sum = (d.cores||[]).reduce((s,c)=>s+Number(c.totalPoints||0),0);
+    meta.textContent = `Month ${d.month} · ${new Date(d.generatedAt).toLocaleString()} · cores=${(d.cores||[]).length} · total=${sum}`;
+    render(rows);
+  };
+  refreshBtn.onclick = async () => {
+    const d = await loadReport(Number(monthSel.value||targetMonth));
     rows = d.cores.slice();
     const sum = (d.cores||[]).reduce((s,c)=>s+Number(c.totalPoints||0),0);
     meta.textContent = `Month ${d.month} · ${new Date(d.generatedAt).toLocaleString()} · cores=${(d.cores||[]).length} · total=${sum}`;

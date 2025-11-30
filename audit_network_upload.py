@@ -4,7 +4,7 @@
 # $ python3 audit_network_upload.py ~/data/mainnet/geth.ipc --score_contract <addr> --send
 #
 # - 默认干跑（dry-run），仅打印上链载荷；加上 --send 才会真正发送交易。
-# - 调度建议：UTC+8 每日 00:05–00:30（推荐 00:10）执行，写入“昨日(UTC+8)”的业务日期。
+# - 调度建议：UTC+8 每日 00:05–00:30（推荐 00:10）执行，写入“当日(UTC+8)”的业务日期。
 
 import argparse
 import os
@@ -56,6 +56,44 @@ def _month_key_from_date(date_yyyymmdd: int) -> int:
     yyyy = date_yyyymmdd // 10000
     mm = (date_yyyymmdd // 100) % 100
     return int(yyyy * 100 + mm)
+
+# 链上去重：当天是否已有记录
+def _dedup_already_recorded(w3: Web3, contract_addr: str, target_date: int) -> bool:
+    try:
+        abi_path = os.path.join(os.path.dirname(__file__), 'contracts', 'AuditPoints.abi.json')
+        if not os.path.exists(abi_path):
+            # 兼容仓库结构（上级目录）
+            abi_path = os.path.join(os.path.dirname(__file__), 'contracts', 'AuditPoints.abi.json')
+        # 优先尝试上级路径
+        if not os.path.exists(abi_path):
+            abi_path = os.path.join(os.path.dirname(__file__), '../contracts/AuditPoints.abi.json')
+        with open(abi_path, 'r', encoding='utf-8') as f:
+            full_abi = json.load(f)
+        ap_full = w3.eth.contract(address=Web3.to_checksum_address(contract_addr), abi=full_abi)
+        ev_from = args.from_block if args.from_block is not None else 0
+        ev_to = args.to_block if args.to_block is not None else 'latest'
+        logs = ap_full.events.DailyRecorded().get_logs(from_block=ev_from, to_block=ev_to, argument_filters={'date': target_date})
+        if len(logs) > 0:
+            print('Dedup: found', len(logs), 'DailyRecorded events for', target_date)
+            return True
+        return False
+    except Exception as e:
+        print('Dedup: event scan failed, fallback to sampling via getCoreDailyRecords. Reason:', str(e))
+        # 退化：用 per_person 的 coreId 集合采样查询一天是否有记录
+        try:
+            ap_min = w3.eth.contract(address=Web3.to_checksum_address(contract_addr), abi=audit_points_abi)
+            for cid in per_person.keys():
+                try:
+                    r = ap_min.functions.getCoreDailyRecords(int(cid), target_date).call()
+                    if bool(r[0]) or bool(r[4]):
+                        print('Dedup: found records via sampling for coreId', cid, 'date', target_date)
+                        return True
+                except Exception:
+                    continue
+            return False
+        except Exception:
+            return False
+
 
 def _biz_dt_from_chain_ts(chain_ts: int) -> datetime:
     # 以链上 UTC 时间为基准，加 8 小时得到业务日的本地时间（UTC+8）
@@ -167,9 +205,12 @@ else:
 parser = argparse.ArgumentParser('audit_network_upload')
 parser.add_argument('geth_ipc', help='path to geth.ipc file to be attached to')
 parser.add_argument('--score_contract', help='AuditPoints contract address to record daily points', default=None)
-parser.add_argument('--date', help='target biz date (UTC+8) in YYYYMMDD (default: yesterday in UTC+8)', default=None)
-parser.add_argument('--today', help='use current biz date (UTC+8) at counting moment', action='store_true')
+parser.add_argument('--date', help='target biz date (UTC+8) in YYYYMMDD (default: today in UTC+8)', default=None)
+parser.add_argument('--today', help='use current biz date (UTC+8) at counting moment (default)', action='store_true')
 parser.add_argument('--send', help='actually send recordBatch tx (default: dry-run)', action='store_true')
+parser.add_argument('--force', help='force execute even if records exist today', action='store_true')
+parser.add_argument('--from-block', help='start block for dedup event scan', type=int, default=None)
+parser.add_argument('--to-block', help='end block for dedup event scan', type=int, default=None)
 args = parser.parse_args()
 
 _load_dotenv()
@@ -193,17 +234,14 @@ last_block_t = datetime.fromtimestamp(last_block.timestamp)
 current_t = datetime.now()
 diff_t = current_t - last_block_t
 
-# 目标日期：默认写入“昨日(UTC+8)”
+# 目标日期：默认写入“当日(UTC+8)”
 if args.date:
     try:
         target_date_int = int(args.date)
     except Exception:
         raise Exception('invalid --date, expecting YYYYMMDD')
 else:
-    if args.today:
-        target_date_int = _fmt_date_yyyymmdd(biz_dt)
-    else:
-        target_date_int = _fmt_date_yyyymmdd(biz_dt - timedelta(days=1))
+    target_date_int = _fmt_date_yyyymmdd(biz_dt)
 
 if not _validate_yyyymmdd(target_date_int):
     raise Exception('invalid target date: ' + str(target_date_int))
@@ -394,7 +432,7 @@ NODE_WITNESS = 1
 per_person = {}
 for (_, node) in all_nodes.items():
     core_id = node.get('coreId')
-    if not core_id:
+    if core_id is None:
         continue
     entry = per_person.get(core_id)
     if not entry:
@@ -471,6 +509,12 @@ else:
         audit_points_address = Web3.to_checksum_address(args.score_contract)
     except Exception:
         raise Exception('invalid --score_contract address')
+
+    # 去重检查
+    if not args.force:
+        if _dedup_already_recorded(w3, audit_points_address, target_date_int):
+            print('Dedup: records exist for', target_date_int, 'skip execution (use --force to override).')
+            exit(0)
 
     if len(core_ids) == 0:
         print('No eligible entries to record (missing coreId). Skip sending.')
