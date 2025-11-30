@@ -19,6 +19,36 @@ from eth_account import Account
 # 业务时区：UTC+8 的日期口径与月度边界
 UTC8_OFFSET_SECS = 8 * 3600
 
+def _load_env_file(path: str):
+    try:
+        if not os.path.exists(path):
+            return False
+        with open(path, 'r', encoding='utf-8') as f:
+            for raw in f:
+                line = raw.strip()
+                if not line or line.startswith('#'):
+                    continue
+                if '=' not in line:
+                    continue
+                k, v = line.split('=', 1)
+                k = k.strip()
+                if k.startswith('export '):
+                    k = k[len('export '):].strip()
+                v = v.strip()
+                if (v.startswith('"') and v.endswith('"')) or (v.startswith("'") and v.endswith("'")):
+                    v = v[1:-1]
+                if k and (k not in os.environ):
+                    os.environ[k] = v
+        return True
+    except Exception:
+        return False
+
+def _load_dotenv():
+    cwd_env = os.path.join(os.getcwd(), '.env')
+    script_env = os.path.join(os.path.dirname(__file__), '.env')
+    if not _load_env_file(cwd_env):
+        _load_env_file(script_env)
+
 def _fmt_date_yyyymmdd(dt: datetime) -> int:
     return int(dt.strftime('%Y%m%d'))
 
@@ -141,6 +171,8 @@ parser.add_argument('--date', help='target biz date (UTC+8) in YYYYMMDD (default
 parser.add_argument('--today', help='use current biz date (UTC+8) at counting moment', action='store_true')
 parser.add_argument('--send', help='actually send recordBatch tx (default: dry-run)', action='store_true')
 args = parser.parse_args()
+
+_load_dotenv()
 
 geth_ipc = args.geth_ipc
 w3 = Web3(Web3.IPCProvider(geth_ipc))
@@ -458,3 +490,4 @@ else:
             signed = acct.sign_transaction(tx)
             tx_hash = w3.eth.send_raw_transaction(signed.rawTransaction)
             print('Submitted recordBatch tx:', tx_hash.hex())
+
