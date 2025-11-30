@@ -160,15 +160,6 @@
     "coreId": 27
   },
   {
-    "owner": "元码",
-    "type": "witness",
-    "ip": "47.95.200.73",
-    "id": "c6b0f385fd54806b3febf12e4aea8906fad1a175773a4790f9965bdfeb674ce4",
-    "enode": "enode://bba7d137900d93f0b2b62ebcb7917055e47c77b34bba2784008b841561b81fa331a84d45f1fa227f49b18500deb9a3b324a18a7761372f8e9ab1f285a590f146@47.95.200.73:30311",
-    "since": "20240110",
-    "coreId": 25
-  },
-  {
     "owner": "Jeff",
     "type": "miner",
     "ip": "47.120.35.41",
@@ -224,15 +215,6 @@
     "enode": "enode://55b8cbf1e0776d4094e8b06b64b0545ce468290deda8c6830e6c3eeb5e06d3929a19a1f507591e3e6d985ad2f84c56327ffbd7f704ac00b84a2800b3de7277d7@111.229.136.60:30311",
     "since": "20240120",
     "coreId": 6
-  },
-  {
-    "owner": "得葱",
-    "type": "witness",
-    "ip": "150.158.49.56",
-    "id": "9a970791e61f2c8a45010ce83c9dd332cb4a634241cbcd45d5ee8d8cf23baa54",
-    "enode": "enode://10ac2787e47bd7472721bafa5abd96dceb91fda82953a49a55c49db585f73a2092688f6c8651531aa1d11367abf6258bd3160940ca9d572e17db69999f29ae52@150.158.49.56:30311",
-    "since": "20240217",
-    "coreId": 36
   },
   {
     "owner": "剪云为裳",
@@ -343,15 +325,6 @@
     "coreId": 53
   },
   {
-    "owner": "张恩畅",
-    "type": "witness",
-    "ip": "118.89.117.223",
-    "id": "e5eb6b54bcb84281de04d6c4ff2ff813402512b143381204a530c5ad8d48dff1",
-    "enode": "enode://5d19e0757bd2a307cb425a0db5e34964b1fd3ca07797072103d450101513430eb7d82af4b900af59b75a4deea1a5bca40653877dac2799cbfeca8a7243498522@118.89.117.223:30311",
-    "since": "20240807",
-    "coreId": 15
-  },
-  {
     "owner": "蓝叶子-node",
     "type": "witness",
     "ip": "1.92.122.1",
@@ -444,24 +417,6 @@
     "enode": "enode://4dae7c25cc4f3d379911c3386f2a50f07142a0a8b5ba953d26ffc5ea9b3a8bd8b858ae18ab1b56887708c29b39949e9745fb65c9427de61ae6e20c74593373a2@110.42.247.135:30311",
     "since": "20241117",
     "coreId": 33
-  },
-  {
-    "owner": "富轩",
-    "type": "witness",
-    "ip": "110.42.233.253",
-    "id": "2180a1ff8fc303c5411e4421a5bbb362424972ff4c367fc7074a165b8a32a29e",
-    "enode": "enode://ff3e0e9c8ea5442ab3d0f2adddf1879aa8a51bd082a6718ac2289a656887c0c1f6e1fc4d08233aa33df4e6e21fef3deb90a1ae8b62bbc46dca392d570942e594@110.42.233.253:30311",
-    "since": "20241118",
-    "coreId": 62
-  },
-  {
-    "owner": "佘小强",
-    "type": "witness",
-    "ip": "119.45.93.155",
-    "id": "2c3cbf2abba1708a0b55a80ab8498339ebb1c150a89c83504923a5c241426658",
-    "enode": "enode://e44ca285b8f72d3188ca47dffe9a83c84bd92b80dc2e7e1ee30a4474656aa815da87406c939c218be453bb329d792ff44ccd7eb6fc2ab9795bcea159d27b7a3b@119.45.93.155:30311",
-    "since": "20241121",
-    "coreId": 56
   },
   {
     "owner": "尧垚",
