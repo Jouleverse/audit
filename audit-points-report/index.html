@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audit Points Report</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Audit Points Report</h1>
+    <div class="controls">
+      <select id="month"></select>
+      <input id="search" placeholder="Search coreId">
+      <button id="sortTotal">Sort by Total</button>
+      <span id="meta"></span>
+    </div>
+    <table id="main">
+      <thead>
+        <tr>
+          <th>coreId</th>
+          <th>total</th>
+          <th>miner</th>
+          <th>witness</th>
+          <th>days</th>
+          <th>detail</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script src="report.js"></script>
+</body>
+<style>
+</style>
+</html>
