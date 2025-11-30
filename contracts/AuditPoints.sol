@@ -2,16 +2,16 @@ pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/access/Ownable2Step.sol";
-import "@openzeppelin/contracts/security/Pausable.sol";
+import "@openzeppelin/contracts/utils/Pausable.sol";
 
 contract AuditPoints is Ownable2Step, Pausable {
     enum NodeType { MINER, WITNESS }
 
     struct DailyRecord {
-        uint256 points;
         uint64 blockTimestamp;
         uint32 coreId;
         uint32 date;
+        uint16 points;
         NodeType nodeType;
         bool exists;
         bool liveness;
@@ -54,7 +54,7 @@ contract AuditPoints is Ownable2Step, Pausable {
         _;
     }
 
-    constructor(address initialOperator) Ownable(msg.sender) {
+    constructor(address initialOperator) Ownable(msg.sender) Ownable2Step() Pausable() {
         operator = initialOperator == address(0) ? msg.sender : initialOperator;
         emit OperatorUpdated(address(0), operator);
     }
@@ -76,7 +76,7 @@ contract AuditPoints is Ownable2Step, Pausable {
 
     // 配置：批量大小上限
     function setMaxBatchSize(uint256 newSize) external onlyOwner {
-        require(newSize > 0 && newSize <= 10000, "bad maxBatchSize");
+        require(newSize > 0 && newSize <= 1000, "bad maxBatchSize");
         uint256 old = maxBatchSize;
         maxBatchSize = newSize;
         emit MaxBatchSizeUpdated(old, newSize);
@@ -102,12 +102,6 @@ contract AuditPoints is Ownable2Step, Pausable {
         return (r.exists, r.coreId, r.nodeType, r.liveness, r.checkin, r.points, r.date, r.blockTimestamp);
     }
 
-    
-
-    
-
-    
-
     // 日期校验：拆到独立函数以减少调用方局部变量并避免 "stack too deep"
     function _validateDate(uint32 date) internal pure {
         require(date >= 20000101 && date <= 99991231, "bad date");
@@ -115,9 +109,6 @@ contract AuditPoints is Ownable2Step, Pausable {
         uint32 dd = date % 100;
         require(mm >= 1 && mm <= 12 && dd >= 1 && dd <= 31, "bad date");
     }
-
-    // 批次去重校验：禁止同一批次中重复的 (coreId, nodeType, date) 对，避免误覆盖
-
 
     // 内部：批处理单项，进一步缩短 recordBatch 的局部变量生命周期，缓解栈压力
     function _recordBatchItem(
@@ -189,7 +180,7 @@ contract AuditPoints is Ownable2Step, Pausable {
             r.nodeType = nodeType;
             r.liveness = liveness;
             r.checkin = checkin;
-            r.points = points;
+            r.points = uint16(points);
             r.blockTimestamp = uint64(block.timestamp);
             return true;
         } else {
@@ -198,7 +189,7 @@ contract AuditPoints is Ownable2Step, Pausable {
             r.nodeType = nodeType;
             r.liveness = liveness;
             r.checkin = checkin;
-            r.points = points;
+            r.points = uint16(points);
             r.date = date;
             r.blockTimestamp = uint64(block.timestamp);
             emit DailyRecorded(coreId, date, nodeType, liveness, checkin, points);
@@ -228,7 +219,8 @@ contract AuditPoints is Ownable2Step, Pausable {
         for (uint256 i = 0; i < coreIds.length;) {
             require(coreIds[i] > 0, "invalid coreId");
             require(nodeTypes[i] == NodeType.MINER || nodeTypes[i] == NodeType.WITNESS, "invalid nodeType");
-            _recordBatchItem(
+            _validateDate(dates[i]);
+            _recordDaily(
                 coreIds[i],
                 dates[i],
                 nodeTypes[i],
