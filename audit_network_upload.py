@@ -417,6 +417,12 @@ checkins = []
 points = []
 
 for core_id, entry in per_person.items():
+    try:
+        cid = int(core_id)
+    except Exception:
+        continue
+    if cid < 0 or cid > 0xFFFFFFFF:
+        continue
     is_checkin = False
     try:
         token_info = jvcore_contract.functions.tokenURI(core_id).call()
@@ -432,7 +438,7 @@ for core_id, entry in per_person.items():
     witness_bp = role_bp(entry['witnessAlive'], is_checkin)
 
     # MINER 记录
-    core_ids.append(int(core_id))
+    core_ids.append(cid)
     dates.append(int(target_date_int))
     node_types.append(NODE_MINER)
     livenesses.append(bool(entry['minerAlive']))
@@ -440,7 +446,7 @@ for core_id, entry in per_person.items():
     points.append(int(miner_bp))
 
     # WITNESS 记录
-    core_ids.append(int(core_id))
+    core_ids.append(cid)
     dates.append(int(target_date_int))
     node_types.append(NODE_WITNESS)
     livenesses.append(bool(entry['witnessAlive']))
@@ -490,4 +496,10 @@ else:
             signed = acct.sign_transaction(tx)
             tx_hash = w3.eth.send_raw_transaction(signed.rawTransaction)
             print('Submitted recordBatch tx:', tx_hash.hex())
-
+            try:
+                receipt = w3.eth.wait_for_transaction_receipt(tx_hash, timeout=120)
+                print('Tx status:', receipt.status, 'gasUsed:', receipt.gasUsed)
+                if receipt.status != 1:
+                    print('Tx failed (likely revert). Check operator/coreId constraints.')
+            except Exception as e:
+                print('Waiting for receipt failed:', str(e))

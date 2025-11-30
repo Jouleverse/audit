@@ -134,7 +134,6 @@ contract AuditPoints is Ownable2Step, Pausable {
     ) external onlyOperator whenNotPaused returns (bool updated) {
         // 日期校验
         _validateDate(date);
-        require(coreId > 0, "invalid coreId");
         require(nodeType == NodeType.MINER || nodeType == NodeType.WITNESS, "invalid nodeType");
         return _recordDaily(
             coreId,
@@ -217,7 +216,6 @@ contract AuditPoints is Ownable2Step, Pausable {
         );
 
         for (uint256 i = 0; i < coreIds.length;) {
-            require(coreIds[i] > 0, "invalid coreId");
             require(nodeTypes[i] == NodeType.MINER || nodeTypes[i] == NodeType.WITNESS, "invalid nodeType");
             _validateDate(dates[i]);
             _recordDaily(

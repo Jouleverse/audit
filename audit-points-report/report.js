@@ -13,8 +13,14 @@ async function loadReport(month) {
     if (!res.ok) throw new Error();
     return await res.json();
   } catch {
-    const res = await fetch('report.json');
-    return await res.json();
+    try {
+      const res = await fetch('report.json');
+      return await res.json();
+    } catch (e) {
+      const meta = document.getElementById('meta');
+      if (meta) meta.textContent = `Failed to load ${name} and fallback report.json`;
+      return { month: month || '', generatedAt: new Date().toISOString(), cores: [] };
+    }
   }
 }
 
@@ -36,18 +42,29 @@ async function load(initialMonth) {
   const data = await loadReport(targetMonth);
   const tbody = document.querySelector('#main tbody');
   const meta = document.getElementById('meta');
-  meta.textContent = `Month ${data.month} · ${new Date(data.generatedAt).toLocaleString()}`;
+  const totalSum = (data.cores||[]).reduce((s,c)=>s+Number(c.totalPoints||0),0);
+  meta.textContent = `Month ${data.month} · ${new Date(data.generatedAt).toLocaleString()} · cores=${(data.cores||[]).length} · total=${totalSum}`;
   let rows = data.cores.slice();
   const search = document.getElementById('search');
   const sortBtn = document.getElementById('sortTotal');
   monthSel.onchange = async () => {
     const d = await loadReport(Number(monthSel.value));
     rows = d.cores.slice();
-    meta.textContent = `Month ${d.month} · ${new Date(d.generatedAt).toLocaleString()}`;
+    const sum = (d.cores||[]).reduce((s,c)=>s+Number(c.totalPoints||0),0);
+    meta.textContent = `Month ${d.month} · ${new Date(d.generatedAt).toLocaleString()} · cores=${(d.cores||[]).length} · total=${sum}`;
     render(rows);
   };
   function render(list) {
     tbody.innerHTML = '';
+    if (!list || list.length === 0) {
+      const tr = document.createElement('tr');
+      const td = document.createElement('td');
+      td.colSpan = 6;
+      td.textContent = 'No data';
+      tr.appendChild(td);
+      tbody.appendChild(tr);
+      return;
+    }
     for (const c of list) {
       const tr = document.createElement('tr');
       tr.innerHTML = `<td>${c.coreId}</td><td>${c.totalPoints}</td><td>${c.minerTotal}</td><td>${c.witnessTotal}</td><td>${c.days}</td><td><button data-core="${c.coreId}">Detail</button></td>`;
