@@ -594,7 +594,15 @@ core_nodes = [
             'since': '20251201',
             'coreId': 4,
             },
-
+        {
+            'owner': '王伟龙',
+            'type': 'witness',
+            'ip': '118.25.157.8',
+            'id': '06117bc75a4e81a3557089dac3efe879ff2c0bd5c7e21a535512ea120ed6ebbb',
+            'enode': 'enode://85c7c5a7ab42e587bcf53d2f8e7e1ba84ec568d461da7651b5861f0aeb82ea9f249eb2613c377388d24eb66dad1019f516c49bf058b92145c42f85683587333a@118.25.157.8:30311',
+            'since': '20251201',
+            # 'coreId': 4,
+            },
 
 ]
 
