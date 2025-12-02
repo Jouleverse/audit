@@ -585,6 +585,15 @@ core_nodes = [
             'since': '20240623',
             'coreId': 52,
             },
+        {
+            'owner': '楼兰渔夫',
+            'type': 'witness',
+            'ip': '43.138.211.245',
+            'id': '5a61991be2c59c55e9f3b38eb4c0e0e732274728e5afedb185a6019c686ae016',
+            'enode': 'enode://43437ed005d29afed89efe87be782f7565286d5b26b7d91566b69b0324bf158cf926315b7393a2976347fe018831fe626557fb62629c4692c63abed4a5866f83@43.138.211.245:30311',
+            'since': '20251201',
+            'coreId': 4,
+            },
 
 
 ]
