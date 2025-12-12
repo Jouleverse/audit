@@ -501,16 +501,6 @@ core_nodes = [
             },
 
 {
-            'owner': '富轩',
-            'type': 'witness',
-            'ip': '110.42.233.253',
-            'id': '2180a1ff8fc303c5411e4421a5bbb362424972ff4c367fc7074a165b8a32a29e',
-            'enode': 'enode://ff3e0e9c8ea5442ab3d0f2adddf1879aa8a51bd082a6718ac2289a656887c0c1f6e1fc4d08233aa33df4e6e21fef3deb90a1ae8b62bbc46dca392d570942e594@110.42.233.253:30311',
-            'since': '20241118',
-            'coreId': 62,
-            },
-
-{
             'owner': '尧垚',
             'type': 'witness',
             'ip': '124.222.176.129',
