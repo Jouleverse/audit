@@ -113,15 +113,6 @@ core_nodes = [
             'since': '20231014',
             'coreId': 26,
             },
-    # {
-    #         'owner': '比尔盖',
-    #         'type': 'witness',
-    #         'ip': '62.234.5.241', # bootnode-biergai.jnsdao.com
-    #         'id': 'b3af9021f81a99afb7ae6a09448973453ddab57db15a9f7cfb8db94171d3920d',
-    #         'enode': 'enode://1c4979289156cf90ac190bd6a5f6841886c421ff017dd0d842d8e847973d751f9e13c90e880081c3ba8df5bc572969266c25dac98fc60da68ce6857dcf39da23@62.234.5.241:30311',
-    #         'since': '20230802',
-    #         'coreId': 21,
-    #         },
     {
             'owner': 'Koant',
             'type': 'witness',
@@ -131,15 +122,6 @@ core_nodes = [
             'since': '20240220',
             'coreId': 0,
             },
-    # {
-    #         'owner': 'OPEN', # last update 240331
-    #         'type': 'witness',
-    #         'ip': '43.139.93.218', # bootnode-open.jnsdao.com
-    #         'id': 'fc1b07c32f0254e83cc1983555921c8afc660b913361306d8e91a5e25fbc8549',
-    #         'enode': 'enode://63715006efec64b76a909bb62c33f7afac17187305c66832bc3fcc4ba4dbd4c897e5aab283844f29fa8be1a8f952080715d8fbd6314282880f9f08f9fc26eede@43.139.93.218:30311',
-    #         'since': '20230529',
-    #         'coreId': 16,
-    #         },
     {
             'owner': '谢勇',
             'type': 'witness',
@@ -185,15 +167,6 @@ core_nodes = [
             'since': '20240112',
             'coreId': 27,
             },
-    # {
-    #         'owner': '元码',
-    #         'type': 'witness',
-    #         'ip': '47.95.200.73',
-    #         'id': 'c6b0f385fd54806b3febf12e4aea8906fad1a175773a4790f9965bdfeb674ce4',
-    #         'enode': 'enode://bba7d137900d93f0b2b62ebcb7917055e47c77b34bba2784008b841561b81fa331a84d45f1fa227f49b18500deb9a3b324a18a7761372f8e9ab1f285a590f146@47.95.200.73:30311',
-    #         'since': '20240110',
-    #         'coreId': 25,
-    #         },
     {
             'owner': 'Jeff',
             'type': 'miner',
@@ -344,18 +317,6 @@ core_nodes = [
             'since': '20240402',
             'coreId': 49,
             },
-
-# 20240419 #update 20240102
-# {
-#             'owner': 'jay.j',
-#             'type': 'witness',
-#             'ip': '118.25.144.251',
-#             'id': 'f41b2fc240589c7b9e9061a4e86a314cfb8728b8a75fc4c99e88993ac41a2616',
-#             'enode': 'enode://c324f07f404da4d2e88bd503ca50194f6d9c7da43d8c726fa326310fa683b350536858a2a51a2a3a4e7953248856162250671b4afd4536e1ae4bd7befabe5e9a@118.25.144.251:30311',
-#             'since': '20240419',
-#             'coreId': 50,
-#             },
-
 # 20240429
 {
             'owner': 'ucanfilm (机构) ',
@@ -591,7 +552,7 @@ core_nodes = [
             'id': '06117bc75a4e81a3557089dac3efe879ff2c0bd5c7e21a535512ea120ed6ebbb',
             'enode': 'enode://85c7c5a7ab42e587bcf53d2f8e7e1ba84ec568d461da7651b5861f0aeb82ea9f249eb2613c377388d24eb66dad1019f516c49bf058b92145c42f85683587333a@118.25.157.8:30311',
             'since': '20251201',
-            # 'coreId': 4,
+            'coreId': 65
             },
 
 ]
