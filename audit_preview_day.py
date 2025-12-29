@@ -7,7 +7,7 @@ from web3 import Web3
 from web3.middleware import geth_poa_middleware
 
 jvcore_address = "0x8d214415b9c5F5E4Cf4CbCfb4a5DEd47fb516392"
-score_contract_default = "0x03b179D085499f01c042F4E381FA9fDabb492877"
+score_contract_default = "0xa1759e40313F07696Bc0F7974EE7454E7C58cc95"
 
 jvcore_abi = [
     {
