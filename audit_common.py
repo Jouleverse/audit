@@ -7,6 +7,42 @@ UTC8_OFFSET_SECS = 8 * 3600
 NODE_MINER = 0
 NODE_WITNESS = 1
 
+def _load_env_file(path: str):
+    import os
+    try:
+        if not os.path.exists(path):
+            return False
+        with open(path, 'r', encoding='utf-8') as f:
+            for raw in f:
+                line = raw.strip()
+                if not line or line.startswith('#') or '=' not in line:
+                    continue
+                k, v = line.split('=', 1)
+                k = k.strip()
+                if k.startswith('export '):
+                    k = k[len('export '):].strip()
+                v = v.strip()
+                if (v.startswith('"') and v.endswith('"')) or (v.startswith("'") and v.endswith("'")):
+                    v = v[1:-1]
+                if k and (k not in os.environ):
+                    os.environ[k] = v
+        return True
+    except Exception:
+        return False
+
+def load_dotenv(cwd_first: bool = True):
+    import os
+    paths = []
+    if cwd_first:
+        paths.append(os.path.join(os.getcwd(), '.env'))
+        paths.append(os.path.join(os.path.dirname(__file__), '.env'))
+    else:
+        paths.append(os.path.join(os.path.dirname(__file__), '.env'))
+        paths.append(os.path.join(os.getcwd(), '.env'))
+    for p in paths:
+        if _load_env_file(p):
+            break
+
 def load_core_nodes(base_dir: str, override_path: str = None):
     if override_path:
         path = override_path

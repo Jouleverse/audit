@@ -16,7 +16,7 @@ from web3 import Web3
 from web3.middleware import geth_poa_middleware
 from core_nodes_config import core_nodes
 from eth_account import Account
-from audit_common import role_bp, month_start_ts_utc8_from_chain_ts, fmt_date_yyyymmdd, dedup_already_recorded, NODE_MINER, NODE_WITNESS
+from audit_common import role_bp, month_start_ts_utc8_from_chain_ts, fmt_date_yyyymmdd, dedup_already_recorded, NODE_MINER, NODE_WITNESS, load_dotenv
 
 # JVCore 合约 ABI
 jvcore_abi = [
@@ -57,6 +57,7 @@ parser = argparse.ArgumentParser('audit_network')
 parser.add_argument('geth_ipc', help='path to geth.ipc file to be attached to')
 args = parser.parse_args()
 geth_ipc = args.geth_ipc
+load_dotenv()
 
 ## try to attach
 w3 = Web3(Web3.IPCProvider(geth_ipc))
@@ -385,6 +386,5 @@ else:
                 print('Tx failed (likely revert).')
         except Exception as e:
             print('Waiting for receipt failed:', str(e))
-
 
 
