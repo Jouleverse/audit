@@ -1,0 +1,627 @@
+[
+	{
+		"inputs": [],
+		"name": "acceptOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "initialOperator",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "EnforcedPause",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "ExpectedPause",
+		"type": "error"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "OwnableInvalidOwner",
+		"type": "error"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "OwnableUnauthorizedAccount",
+		"type": "error"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint32",
+				"name": "coreId",
+				"type": "uint32"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint32",
+				"name": "date",
+				"type": "uint32"
+			},
+			{
+				"indexed": true,
+				"internalType": "enum AuditPoints.NodeType",
+				"name": "nodeType",
+				"type": "uint8"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "oldLiveness",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "newLiveness",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "oldCheckin",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "newCheckin",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "oldPoints",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newPoints",
+				"type": "uint256"
+			}
+		],
+		"name": "DailyOverridden",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint32",
+				"name": "coreId",
+				"type": "uint32"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint32",
+				"name": "date",
+				"type": "uint32"
+			},
+			{
+				"indexed": true,
+				"internalType": "enum AuditPoints.NodeType",
+				"name": "nodeType",
+				"type": "uint8"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "liveness",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "checkin",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "points",
+				"type": "uint256"
+			}
+		],
+		"name": "DailyRecorded",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "oldValue",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "newValue",
+				"type": "uint256"
+			}
+		],
+		"name": "MaxBatchSizeUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOperator",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOperator",
+				"type": "address"
+			}
+		],
+		"name": "OperatorUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferStarted",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "pause",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "Paused",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint32[]",
+				"name": "coreIds",
+				"type": "uint32[]"
+			},
+			{
+				"internalType": "uint32[]",
+				"name": "dates",
+				"type": "uint32[]"
+			},
+			{
+				"internalType": "enum AuditPoints.NodeType[]",
+				"name": "nodeTypes",
+				"type": "uint8[]"
+			},
+			{
+				"internalType": "bool[]",
+				"name": "livenesses",
+				"type": "bool[]"
+			},
+			{
+				"internalType": "bool[]",
+				"name": "checkins",
+				"type": "bool[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "points",
+				"type": "uint256[]"
+			}
+		],
+		"name": "recordBatch",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint32",
+				"name": "coreId",
+				"type": "uint32"
+			},
+			{
+				"internalType": "uint32",
+				"name": "date",
+				"type": "uint32"
+			},
+			{
+				"internalType": "enum AuditPoints.NodeType",
+				"name": "nodeType",
+				"type": "uint8"
+			},
+			{
+				"internalType": "bool",
+				"name": "liveness",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "checkin",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "points",
+				"type": "uint256"
+			}
+		],
+		"name": "recordDaily",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "updated",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "newSize",
+				"type": "uint256"
+			}
+		],
+		"name": "setMaxBatchSize",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOperator",
+				"type": "address"
+			}
+		],
+		"name": "setOperator",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "unpause",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "Unpaused",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint32",
+				"name": "coreId",
+				"type": "uint32"
+			},
+			{
+				"internalType": "uint32",
+				"name": "date",
+				"type": "uint32"
+			}
+		],
+		"name": "getCoreDailyRecords",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "minerExists",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "minerLiveness",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "minerCheckin",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "minerPoints",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "witnessExists",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "witnessLiveness",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "witnessCheckin",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "witnessPoints",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint32",
+				"name": "coreId",
+				"type": "uint32"
+			},
+			{
+				"internalType": "enum AuditPoints.NodeType",
+				"name": "nodeType",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint32",
+				"name": "date",
+				"type": "uint32"
+			}
+		],
+		"name": "getDaily",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "exists",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint32",
+				"name": "storedCoreId",
+				"type": "uint32"
+			},
+			{
+				"internalType": "enum AuditPoints.NodeType",
+				"name": "storedNodeType",
+				"type": "uint8"
+			},
+			{
+				"internalType": "bool",
+				"name": "liveness",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "checkin",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "points",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint32",
+				"name": "storedDate",
+				"type": "uint32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "blockTimestamp",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint32",
+				"name": "coreId",
+				"type": "uint32"
+			},
+			{
+				"internalType": "enum AuditPoints.NodeType",
+				"name": "nodeType",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint32",
+				"name": "date",
+				"type": "uint32"
+			}
+		],
+		"name": "getDailyBreakdown",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "liveness",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "checkin",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "points",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "maxBatchSize",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "operator",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "paused",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "pendingOwner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
