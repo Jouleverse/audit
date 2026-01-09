@@ -463,7 +463,7 @@ core_nodes = [
         'id': '0a5ddcd05a822247b7ee9646a0aa848b0c797c2235df373507b99519224fdece',
         'enode': 'enode://f1a9cd810cacbf9d0729e4f816a86ec1cbd48faa0c122690bd05b4513d53a903cef78797fd9cd13e3dcc6ac1b3d11cab6ca2091c52939d39d92212201618c426@49.233.62.105',
         'since': '20250403',
-        'coreId': 64
+        'coreId': 66
     },
     {
         'owner': 'gwendol',
