@@ -471,15 +471,6 @@ core_nodes = [
             'coreId': 63,
             },
 
-{
-            'owner': '蓝色经典',
-            'type': 'witness',
-            'ip': '124.221.46.91',
-            'id': 'a2d15ab7082a46867c6ce08b62c2634a4f26fb65958ba6c715e1f2eeac5acae8',
-            'enode': 'enode://0c8e3ec717871091769e0a3f9f63ca91dc2d74e3648d6cae9f508127d95c0fd8cbba66c5b551ecd962a02af95171fc6b9fa78cba783c8837e4931a81dd253f9b@124.221.46.91:30311',
-            'since': '20250107',
-            'coreId': 55,
-            },
         {
             'owner': 'cijin', 
             'type': 'miner',
