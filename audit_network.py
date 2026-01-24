@@ -210,9 +210,9 @@ core_nodes = [
     {
             'owner': 'kylin',
             'type': 'witness',
-            'ip': '43.153.19.11',
+            'ip': '39.104.90.26',
             'id': '278adeb4cba45bbdce929d78048b016aef23569a52d0565fabdb20d8dddf08c5',
-            'enode': 'enode://a682649ff17be55986dbc9ed2cf54bb66c0fff4f5ef4c81f23adbc41e82f91d7f1590f38616c619b1151692e8373dc764edd40819bcd45cb1416b8e4c0af229e@43.153.19.11:30311',
+            'enode': 'enode://a682649ff17be55986dbc9ed2cf54bb66c0fff4f5ef4c81f23adbc41e82f91d7f1590f38616c619b1151692e8373dc764edd40819bcd45cb1416b8e4c0af229e@39.104.90.26:30311',
             'since': '20240120',
             'coreId': 31,
             },
