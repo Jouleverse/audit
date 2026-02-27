@@ -141,15 +141,6 @@ core_nodes = [
             'coreId': 17,
             },
     {
-            'owner': '老谢',
-            'type': 'witness',
-            'ip': '1.14.106.165',
-            'id': '8e38af25891db9f7e3c5e430d4b220910685830ea33cd7a23cc0b0086474aa9e',
-            'enode': 'enode://8d820aefee882f7767be1035cbe018200c4daf9030482aa5f6b25665b78b6ee31f4e041d9b439e4ea6c0a7cce5cd76b6fffa76f0bb4229ee6751d52947065dfe@1.14.106.165:30311',
-            'since': '20240110',
-            'coreId': 28,
-            },
-    {
             'owner': '明海云',
             'type': 'witness',
             'ip': '43.139.249.74',
