@@ -734,7 +734,7 @@ for (id, node) in all_nodes.items():
         report(node)
 
 ## reporting this audit node
-report(all_nodes[audit_node_id])
+# report(all_nodes[audit_node_id])
 
 ## reporting miner*
 for (id, node) in all_nodes.items():
@@ -743,7 +743,7 @@ for (id, node) in all_nodes.items():
 
 ## reporting witness alive
 for (id, node) in all_nodes.items():
-    if node['type'] == 'witness' and node['block_height'] > 0:
+    if (node['type'] == 'witness' or node['type'] == 'witness(a)') and node['block_height'] > 0:
         report(node)
 
 ## reporting witness suspicious to not alive anymore
