@@ -17,24 +17,6 @@ from web3.middleware import geth_poa_middleware
 # 核心节点信息
 core_nodes = [
         {
-            'owner': 'JNSDAO',
-            'type': 'witness',
-            'ip': '101.32.253.192', # bootnode.jnsdao.com
-            'id': '2379e2c19b8a0e4a76d011b07e41493902c1f274abc5adce3e20fe60f0cabac6',
-            'enode': 'enode://19dc6b15744e8ad73f860d6ca7bf7b1acf37497ef8a720a88d64449ec837af460535fcf01662907aaece6bde0c2ff539a9d79e353d043769134666a1586fa4e0@43.134.121.187:30311',
-            'since': '20230529',
-            'coreId': 25, # maintainer JVCore #id. 尚未获得则删去该字段.
-            },
-        {
-            'owner': 'Jeff',
-            'type': 'witness',
-            'ip': '43.136.53.164', # bootnode-jeff.jnsdao.com
-            'id': '36d1c18a197fea99e9b55b111b03ab03866367838b3017ae91984e0648e3f677',
-            'enode': 'enode://f3e4e524d89b4cdb9ee390d9485cee4d6a5e9a260f5673cab118505cc3e69fe8365bc00434222d27fe4082ca798b13ad8e7e139d1315f635fd0e46dbe96fa809@43.136.53.164:30311',
-            'since': '20240115',
-            'coreId': 29,
-            },
-        {
             'owner': 'Koant',
             'type': 'miner',
             'ip': '119.29.202.168',
@@ -45,34 +27,14 @@ core_nodes = [
             'coreId': 0,
             },
         {
-            'owner': '谢勇', #稳清活
+            'owner': '楼兰渔夫', 
             'type': 'miner',
-            'ip': '82.157.251.101',
-            'id': '6f0ef352cc2536d91f0a55efbec480c8e2b76a11fc5c30830167e026327f0a18',
-            'signer': '0x93196aeEb56fe0F5672d84b8F50C123b5dA50329',
-            'enode': 'enode://c43fa0ea62dfc0e09906f67a8b730918cbe567a3f53322470780ecdc569efda1a2dd9e4707ac65e3b558e9bf8a025a22da33b1ad08211290211b8c5ed0ed1671@82.157.251.101:30311',
-            'since': '20240119',
-            'coreId': 18,
-            },
-        {
-            'owner': 'Jacky',
-            'type': 'miner',
-            'ip': '47.94.93.119',
-            'id': 'e88e333abc2dce665fd9c35bef4a0383249b1670955cefac4c582092fa34fbcb',
-            'signer': '0x28D314d2B00EED89041843d4Cd7b9de91170f37a',
-            'enode': 'enode://be96ad65107a3d520943f761d00a79a6e08bd4acc5b008b58ff8406761e5ca7e923bcb310654089b1ab364579f70ebe042f2baf9c9adbfa8482052f31c6766f1@47.94.93.119:30311',
-            'since': '20230529',
-            'coreId': 9,
-            },
-        {
-            'owner': '教链',
-            'type': 'miner',
-            'ip': '82.157.210.13',
-            'id': '61cb546c70e6a470e8ee64c4ff5fbef138d9afe116fb24147636802d6ffac30b',
-            'signer': '0x85db5D64BD1a2652A75C4A7e12Eeba2f43c57bC4',
-            'enode': 'enode://d667d09c38706d40fa1c15cde8dc28c117087cdf55d41d402d70b0817636c6f65e6a6463e81ab178ad9a896ea93c37b479a01ff19dfe13cd4276ea2c64575c76@81.68.150.141:30311',
-            'since': '20230524',
-            'coreId': 25,
+            'ip': '110.42.225.146',
+            'id': '944ad2cd26b56cd6e5b35d9878f5efc05a713d91d1c584af63529bd1592b67f2',
+            'signer': '0x497c19a8157f2c839ec57bf6fb0f26c44fa51203',
+            'enode': 'enode://840f6fbc0650bc100daec33dd6707a3ad7672204e849de83a20c3b5b8a3a3705c974f6801e3d26af22b26c9b0194c9fcd804144dc1a4e2da2f6b10b09b707258@110.42.225.146:30311',
+            'since': '20250319',
+            'coreId': 4,
             },
     {
             'owner': 'Menger',
@@ -85,16 +47,6 @@ core_nodes = [
             'coreId': 5,
             },
     {
-            'owner': '严光红',
-            'type': 'miner',
-            'ip': '106.53.60.230',
-            'id': 'f92367cc2a9b02c68d6f024b7630bdfa6060d0ce70fc676696633a59eef3ae39',
-            'signer': '0xcce6cc1ba66c6b9af2c7b20d78155c74ed9aad6f',
-            'enode': 'enode://94b45bc3705c8abebeda0ee9b31a76188b59c0c69397362e96accd39b15a56668775204d4f2e3e7ddb2b14df0b640b5bb9cd4dcb60c252ef80268f1af815f623@106.53.60.230:30311',
-            'since': '20240109',
-            'coreId': 26,
-            },
-    {
             'owner': 'li17',
             'type': 'miner',
             'ip': '47.100.5.124',
@@ -103,89 +55,6 @@ core_nodes = [
             'enode': 'enode://b7055440d2792887e10ca12192d5d30200a4d9352d9de560732589014e26e5b6c587c5ae201441597795f33b2af6afecadb31193bf6f467024e3144ba40f6d2b@47.100.5.124:30311',
             'since': '20240107',
             'coreId': 6,
-            },
-    {
-            'owner': '严光红',
-            'type': 'witness',
-            'ip': '1.14.111.74', # bootnode-ygh.jnsdao.com
-            'id': '65e0dc09479950368c2edaa0d7f3dd30af33ebd0187b31f0ad5df55535905f01',
-            'enode': 'enode://b3eca38a3d18a789a0ca4e0e871c77fbf98fbe82cb8ed577895be8be14599abd07df88fe5fcf5fa11a63843b25bbc69b28da9a68bc0fcf42b01583329d4e0006@1.14.111.74:30311',
-            'since': '20231014',
-            'coreId': 26,
-            },
-    {
-            'owner': 'Koant',
-            'type': 'witness',
-            'ip': '111.230.23.83', # bootnode-koant.jnsdao.com
-            'id': '9ff3da439fbb25670e95f0063f7cad9409e66f3283c57fcae0a1e1af9d09cf81',
-            'enode': 'enode://b8163bedb4b8e3adf27d94bb8349892f9c8fa14602d2e48bd3083790edc76a26b0ac4d61a44c0a27b2ec46adce2a58249e77b9276530f5116028b355429a9b89@111.230.23.83:30311',
-            'since': '20240220',
-            'coreId': 0,
-            },
-    {
-            'owner': '谢勇',
-            'type': 'witness',
-            'ip': '120.26.11.88', # bootnode-wenqinghuo.jnsdao.com
-            'id': 'cc99492e1e2d2f9b125b8e1faae3c8d0d47eeadc63ac3ac7e58b0767bfde2726',
-            'enode': 'enode://b7908693bf2268db08c4fa868d8ea88298e9844a5892681eb63cb4a1a4b254356b5936f6a006dcc709212043b8da325ab72beb3cc2c26cc98843dc301914c961@120.26.11.88:30311',
-            'since': '20240119',
-            'coreId': 18,
-            },
-    {
-            'owner': '火星',
-            'type': 'witness',
-            'ip': '118.89.117.135',
-            'id': '9bfbcdd542f8f7af28a9b3c50dc5dbd1bff8085311b9b216716a7106880ad6f2',
-            'enode': 'enode://5fe23cce534e7a49a0a6f79203fec02e84391ada79cf8fc0dc8ef2901ddc5620beea52dbab009c6ecb2bdc127ae084a252ffbf5c9221f733d096f346d3f25cf9@101.32.170.145:30311',
-            'since': '20230524',
-            'coreId': 17,
-            },
-    {
-            'owner': '明海云',
-            'type': 'witness',
-            'ip': '43.139.249.74',
-            'id': 'ea8bcbf9ec92291e54472d3390de4c5231b03661609c46087298b5b451543b02',
-            'enode': 'enode://256ec7a9357908270c02c39bec8ba1852a71a4892c9fab95de89fe1a78a6839504f2b4ab1c12e877b8f7d3f6646fbc816ff56d707cc56d49de6158e4cc39ba93@43.139.249.74:30311',
-            'since': '20240111',
-            'coreId': 7,
-            },
-    {
-            'owner': '狮子猫',
-            'type': 'witness',
-            'ip': '123.206.109.17',
-            'id': 'e97fcd7f8aed3881648f6d2859ed5da1a589ba9e25c43106c5ff51a14e1994e1',
-            'enode': 'enode://efc01ff491d277c73394095de99e8d62d25b5b981e03a4de5419d9bbf5bf6dd1ef6b89e169d376970c1a7af4fc73c90fd2d34b954f02c5367e0150911944cc41@123.206.109.17:30311',
-            'since': '20240112',
-            'coreId': 27,
-            },
-    {
-            'owner': 'Jeff',
-            'type': 'miner',
-            'ip': '47.120.35.41',
-            'id': '58871675d4f24d7c916b4c3ccad303b3b862abfe125b1650b0177bd8be09e896',
-            'signer': '0x0ac52a05a4f87404b03dd58a7ac1427429522222',
-            'enode': 'enode://db1d084eaf12722b04600084a9bd5dcdbbff89facedff931629354ac396acf3564082fbae5a933f1bf4332a174bf9374941dc1caa1527f32c909589a26796014@47.120.35.41:30311',
-            'since': '20240113',
-            'coreId': 29,
-            },
-    {
-            'owner': 'cijin',
-            'type': 'witness',
-            'ip': '106.53.39.89',
-            'id': '73741045125ed13335ab0440857a745473d43edc5bd5667f92f44e021aa9bf01',
-            'enode': 'enode://662cbf6b247cd57069c219cdcc23c279af0b0b9679d1161051a999659aef4cf4d5d4f36ee921c60bd52136133d066626f9d7a91e8c2e52f4152d78464ffe9021@106.53.39.89:30311',
-            'since': '20240114',
-            'coreId': 34,
-            },
-    {
-            'owner': '火星',
-            'type': 'miner',
-            'ip': '122.51.70.192',
-            'id': 'eee09cee70c41c21c6ab1ae71236f3e96660d5f7a50b9cc69a276b67d375032f',
-            'signer': '0x87d973cAD9fE24252F5E4bFbd43B66bF31718886',
-            'enode': 'enode://1ac2352580896800012fb5461ebafcea10289d07dcf8adaf4d45bb4da57eaf71c650b58030e27d1d0c71096c638b416b70547511e22d6f9716c06236e1785a78@47.100.127.191:30311',
-            'since': '20240219',
-            'coreId': 17,
             },
     {
             'owner': '明海云',
@@ -197,6 +66,235 @@ core_nodes = [
             'since': '20240118',
             'coreId': 7,
             },
+        {
+            'owner': 'Jacky',
+            'type': 'miner',
+            'ip': '47.94.93.119',
+            'id': 'e88e333abc2dce665fd9c35bef4a0383249b1670955cefac4c582092fa34fbcb',
+            'signer': '0x28D314d2B00EED89041843d4Cd7b9de91170f37a',
+            'enode': 'enode://be96ad65107a3d520943f761d00a79a6e08bd4acc5b008b58ff8406761e5ca7e923bcb310654089b1ab364579f70ebe042f2baf9c9adbfa8482052f31c6766f1@47.94.93.119:30311',
+            'since': '20230529',
+            'coreId': 9,
+            },
+    {
+            'owner': '火星',
+            'type': 'miner',
+            'ip': '122.51.70.192',
+            'id': 'eee09cee70c41c21c6ab1ae71236f3e96660d5f7a50b9cc69a276b67d375032f',
+            'signer': '0x87d973cAD9fE24252F5E4bFbd43B66bF31718886',
+            'enode': 'enode://1ac2352580896800012fb5461ebafcea10289d07dcf8adaf4d45bb4da57eaf71c650b58030e27d1d0c71096c638b416b70547511e22d6f9716c06236e1785a78@47.100.127.191:30311',
+            'since': '20240219',
+            'coreId': 17,
+            },
+        {
+            'owner': '谢勇', #稳清活
+            'type': 'miner',
+            'ip': '82.157.251.101',
+            'id': '6f0ef352cc2536d91f0a55efbec480c8e2b76a11fc5c30830167e026327f0a18',
+            'signer': '0x93196aeEb56fe0F5672d84b8F50C123b5dA50329',
+            'enode': 'enode://c43fa0ea62dfc0e09906f67a8b730918cbe567a3f53322470780ecdc569efda1a2dd9e4707ac65e3b558e9bf8a025a22da33b1ad08211290211b8c5ed0ed1671@82.157.251.101:30311',
+            'since': '20240119',
+            'coreId': 18,
+            },
+        {
+            'owner': '教链',
+            'type': 'miner',
+            'ip': '82.157.210.13',
+            'id': '61cb546c70e6a470e8ee64c4ff5fbef138d9afe116fb24147636802d6ffac30b',
+            'signer': '0x85db5D64BD1a2652A75C4A7e12Eeba2f43c57bC4',
+            'enode': 'enode://d667d09c38706d40fa1c15cde8dc28c117087cdf55d41d402d70b0817636c6f65e6a6463e81ab178ad9a896ea93c37b479a01ff19dfe13cd4276ea2c64575c76@81.68.150.141:30311',
+            'since': '20230524',
+            'coreId': 25,
+            },
+    {
+            'owner': '严光红',
+            'type': 'miner',
+            'ip': '106.53.60.230',
+            'id': 'f92367cc2a9b02c68d6f024b7630bdfa6060d0ce70fc676696633a59eef3ae39',
+            'signer': '0xcce6cc1ba66c6b9af2c7b20d78155c74ed9aad6f',
+            'enode': 'enode://94b45bc3705c8abebeda0ee9b31a76188b59c0c69397362e96accd39b15a56668775204d4f2e3e7ddb2b14df0b640b5bb9cd4dcb60c252ef80268f1af815f623@106.53.60.230:30311',
+            'since': '20240109',
+            'coreId': 26,
+            },
+    {
+            'owner': 'Jeff',
+            'type': 'miner',
+            'ip': '47.120.35.41',
+            'id': '58871675d4f24d7c916b4c3ccad303b3b862abfe125b1650b0177bd8be09e896',
+            'signer': '0x0ac52a05a4f87404b03dd58a7ac1427429522222',
+            'enode': 'enode://db1d084eaf12722b04600084a9bd5dcdbbff89facedff931629354ac396acf3564082fbae5a933f1bf4332a174bf9374941dc1caa1527f32c909589a26796014@47.120.35.41:30311',
+            'since': '20240113',
+            'coreId': 29,
+            },
+
+    # 241103
+    {
+            'owner': 'kylin',
+            'type': 'miner',
+            'ip': '110.40.130.38',
+            'id': '4c1caaabecd77700cbe29f5ffda48370dbddaf9def2ebafdb1471736b27d1e8b',
+            'signer': '0x08c1938546708f0b3c6f49703d1c19f79d90ac04',
+            'enode': 'enode://2e4104827d8fe8344b10d9ec10705e7cba11ef8476f68d0b5d7ceafe747373f03b2074e5901ba3c5d25c0436a24c03504cb75334e5503a65a1dc6929e0bd2346@110.40.130.38:30311',
+            'since': '20241103',
+            'coreId': 31,
+            },
+
+    # 241117
+    {
+            'owner': '煜歌',
+            'type': 'miner',
+            'ip': '110.42.247.135',
+            'id': '40516132d629c367140578751bb341fc774c7b84e9983eb4e605e9f1bf052479',
+            'signer': '0xa3F01Afa1dDfB6D07cac35210d5AFdfe6f0982E8',
+            'enode': 'enode://4dae7c25cc4f3d379911c3386f2a50f07142a0a8b5ba953d26ffc5ea9b3a8bd8b858ae18ab1b56887708c29b39949e9745fb65c9427de61ae6e20c74593373a2@110.42.247.135:30311',
+            'since': '20241117',
+            'coreId': 33,
+            },
+
+        {
+            'owner': 'cijin', 
+            'type': 'miner',
+            'ip': '43.136.103.133',
+            'id': 'bd872df0367eafd723691769eff10a255840ad16ebaebed534d8340be43358d8',
+            'signer': '0x6c1094955e6d5ffd62729f642ee78b8237f82d7c',
+            'enode': 'enode://ddac0bd477a9562a781171680fdfe61596d4f207c8642eb8bec8c74852b4a059f139676a158cadda58f812c31596b2fa65839637b0d034987fb40c17185f8df5@43.136.103.133:30311',
+            'since': '20250311',
+            'coreId': 34,
+            },
+
+    # 241113
+    {
+            'owner': '剪云为裳',
+            'type': 'miner',
+            'ip': '106.54.199.222',
+            'id': '4c108deb46bbe44e5960b509d1afd625cbeba13033fd92759ba8cc59b52d3a2f',
+            'signer': '0x5bC3930448cE53C970AcD41C1f80AbA6ab3c523f',
+            'enode': 'enode://2f151d76573e56ee0f57f5598176a5efe1a7fa3f154f66f5674257fe565138d0d4e80b3cba9cc12db0322a9bfd9ef1dc48e79f12cad9233d483f6c3d7d5d9b71@106.54.199.222:30311',
+            'since': '20241113',
+            'coreId': 37,
+            },
+
+    # 241115
+    {
+            'owner': '微尘',
+            'type': 'miner',
+            'ip': '47.94.33.72',
+            'id': '5c488a3f6e2a73da519a6b761164492fd3e9881d5d2537f8ebecbc5718549014',
+            'signer': '0xff42f7a9fd1afdeed1568805fa8dce67e3dbc188',
+            'enode': 'enode://a1224775395a3d283ac745ab6960b24dd8c432cba108be82331c7eeb8c2a8c361387446e64c4ff99c91e89fd730a0c56a7b29927771291006d02a023eabfa63b@1.92.102.75:30311',
+            'since': '20241115', # update 250817
+            'coreId': 53,
+            },
+    {
+            'owner': 'Koant',
+            'type': 'witness',
+            'ip': '111.230.23.83', # bootnode-koant.jnsdao.com
+            'id': '9ff3da439fbb25670e95f0063f7cad9409e66f3283c57fcae0a1e1af9d09cf81',
+            'enode': 'enode://b8163bedb4b8e3adf27d94bb8349892f9c8fa14602d2e48bd3083790edc76a26b0ac4d61a44c0a27b2ec46adce2a58249e77b9276530f5116028b355429a9b89@111.230.23.83:30311',
+            'since': '20240220',
+            'coreId': 0,
+            },
+        {
+            'owner': '楼兰渔夫',
+            'type': 'witness',
+            'ip': '43.138.211.245',
+            'id': '5a61991be2c59c55e9f3b38eb4c0e0e732274728e5afedb185a6019c686ae016',
+            'enode': 'enode://43437ed005d29afed89efe87be782f7565286d5b26b7d91566b69b0324bf158cf926315b7393a2976347fe018831fe626557fb62629c4692c63abed4a5866f83@43.138.211.245:30311',
+            'since': '20251201',
+            'coreId': 4,
+            },
+    {
+            'owner': 'li17.eth',
+            'type': 'witness',
+            'ip': '111.229.136.60',
+            'id': '94e08ab29e8dfcdb79e93fb9d69bad0ff7179508f76fef3d70cea901e17591d0',
+            'enode': 'enode://55b8cbf1e0776d4094e8b06b64b0545ce468290deda8c6830e6c3eeb5e06d3929a19a1f507591e3e6d985ad2f84c56327ffbd7f704ac00b84a2800b3de7277d7@111.229.136.60:30311',
+            'since': '20240120',
+            'coreId': 6,
+            },
+    {
+            'owner': '明海云',
+            'type': 'witness',
+            'ip': '43.139.249.74',
+            'id': 'ea8bcbf9ec92291e54472d3390de4c5231b03661609c46087298b5b451543b02',
+            'enode': 'enode://256ec7a9357908270c02c39bec8ba1852a71a4892c9fab95de89fe1a78a6839504f2b4ab1c12e877b8f7d3f6646fbc816ff56d707cc56d49de6158e4cc39ba93@43.139.249.74:30311',
+            'since': '20240111',
+            'coreId': 7,
+            },
+# 20240429
+{
+            'owner': 'ucanfilm (机构) ',
+            'type': 'witness',
+            'ip': '139.129.20.205',
+            'id': '88bfd5ab83bee2a2c25e7a15911cf780cd0ccac86acd928867e784fcdf47df8c',
+            'enode': 'enode://fbb54beade25d2c70ea03422e219ea5ec0d322b6b2a3bfe94eba5bc101c5cbfeba090e5f54014ef1ffa56e537c526730ae668b6e7e0b510565eb6ff6307d4e93@139.129.20.205:30311',
+            'since': '20240429',
+            'coreId': 14,
+            },
+    {
+            'owner': '火星',
+            'type': 'witness',
+            'ip': '118.89.117.135',
+            'id': '9bfbcdd542f8f7af28a9b3c50dc5dbd1bff8085311b9b216716a7106880ad6f2',
+            'enode': 'enode://5fe23cce534e7a49a0a6f79203fec02e84391ada79cf8fc0dc8ef2901ddc5620beea52dbab009c6ecb2bdc127ae084a252ffbf5c9221f733d096f346d3f25cf9@101.32.170.145:30311',
+            'since': '20230524',
+            'coreId': 17,
+            },
+    {
+            'owner': '谢勇',
+            'type': 'witness',
+            'ip': '120.26.11.88', # bootnode-wenqinghuo.jnsdao.com
+            'id': 'cc99492e1e2d2f9b125b8e1faae3c8d0d47eeadc63ac3ac7e58b0767bfde2726',
+            'enode': 'enode://b7908693bf2268db08c4fa868d8ea88298e9844a5892681eb63cb4a1a4b254356b5936f6a006dcc709212043b8da325ab72beb3cc2c26cc98843dc301914c961@120.26.11.88:30311',
+            'since': '20240119',
+            'coreId': 18,
+            },
+        {
+            'owner': 'gwendol', 
+            'type': 'witness',
+            'ip': '119.29.222.90',
+            'id': 'f633f834ce3f7593d6a67fc3c8b333ec165c7c6e003700d538d1bc8e89c4e817',
+            'enode': 'enode://0ee2ca0d4a0ba11221077b4ce05be53d0604e2540414b5e1d266bd6203ca44b32e4ebd76b8df194878f37d69de76e7008007a4b1cea6d761c5847c0ee4a9929f@119.29.222.90:30311',
+            'since': '20250820',
+            'coreId': 24,
+            },
+
+        {
+            'owner': 'JNSDAO',
+            'type': 'witness',
+            'ip': '101.32.253.192', # bootnode.jnsdao.com
+            'id': '2379e2c19b8a0e4a76d011b07e41493902c1f274abc5adce3e20fe60f0cabac6',
+            'enode': 'enode://19dc6b15744e8ad73f860d6ca7bf7b1acf37497ef8a720a88d64449ec837af460535fcf01662907aaece6bde0c2ff539a9d79e353d043769134666a1586fa4e0@43.134.121.187:30311',
+            'since': '20230529',
+            'coreId': 25, # maintainer JVCore #id. 尚未获得则删去该字段.
+            },
+    {
+            'owner': '严光红',
+            'type': 'witness',
+            'ip': '1.14.111.74', # bootnode-ygh.jnsdao.com
+            'id': '65e0dc09479950368c2edaa0d7f3dd30af33ebd0187b31f0ad5df55535905f01',
+            'enode': 'enode://b3eca38a3d18a789a0ca4e0e871c77fbf98fbe82cb8ed577895be8be14599abd07df88fe5fcf5fa11a63843b25bbc69b28da9a68bc0fcf42b01583329d4e0006@1.14.111.74:30311',
+            'since': '20231014',
+            'coreId': 26,
+            },
+    {
+            'owner': '狮子猫',
+            'type': 'witness',
+            'ip': '123.206.109.17',
+            'id': 'e97fcd7f8aed3881648f6d2859ed5da1a589ba9e25c43106c5ff51a14e1994e1',
+            'enode': 'enode://efc01ff491d277c73394095de99e8d62d25b5b981e03a4de5419d9bbf5bf6dd1ef6b89e169d376970c1a7af4fc73c90fd2d34b954f02c5367e0150911944cc41@123.206.109.17:30311',
+            'since': '20240112',
+            'coreId': 27,
+            },
+        {
+            'owner': 'Jeff',
+            'type': 'witness',
+            'ip': '43.136.53.164', # bootnode-jeff.jnsdao.com
+            'id': '36d1c18a197fea99e9b55b111b03ab03866367838b3017ae91984e0648e3f677',
+            'enode': 'enode://f3e4e524d89b4cdb9ee390d9485cee4d6a5e9a260f5673cab118505cc3e69fe8365bc00434222d27fe4082ca798b13ad8e7e139d1315f635fd0e46dbe96fa809@43.136.53.164:30311',
+            'since': '20240115',
+            'coreId': 29,
+            },
     # 240120
     {
             'owner': 'kylin',
@@ -207,14 +305,23 @@ core_nodes = [
             'since': '20240120',
             'coreId': 31,
             },
-    {
-            'owner': 'li17.eth',
+        {
+            'owner': '煜歌', 
             'type': 'witness',
-            'ip': '111.229.136.60',
-            'id': '94e08ab29e8dfcdb79e93fb9d69bad0ff7179508f76fef3d70cea901e17591d0',
-            'enode': 'enode://55b8cbf1e0776d4094e8b06b64b0545ce468290deda8c6830e6c3eeb5e06d3929a19a1f507591e3e6d985ad2f84c56327ffbd7f704ac00b84a2800b3de7277d7@111.229.136.60:30311',
-            'since': '20240120',
-            'coreId': 6,
+            'ip': '42.193.109.237',
+            'id': 'c0a15305660cdb54249dc6779625e3004c74cbfa4fd369e7ce549e5b3c13208e',
+            'enode': 'enode://2ff621a918f56499f6d7c2a220b9fe5b0db61ca0360b8915f4553bdb0c7f600ff065beb5499da4ac4afaa2861144197f4d01764a679070a71edb6402f3bd6c11@42.193.109.237:30311',
+            'since': '20250316',
+            'coreId': 33,
+            },
+    {
+            'owner': 'cijin',
+            'type': 'witness',
+            'ip': '106.53.39.89',
+            'id': '73741045125ed13335ab0440857a745473d43edc5bd5667f92f44e021aa9bf01',
+            'enode': 'enode://662cbf6b247cd57069c219cdcc23c279af0b0b9679d1161051a999659aef4cf4d5d4f36ee921c60bd52136133d066626f9d7a91e8c2e52f4152d78464ffe9021@106.53.39.89:30311',
+            'since': '20240114',
+            'coreId': 34,
             },
 
 # 20240303 
@@ -237,16 +344,6 @@ core_nodes = [
             'enode': 'enode://187997b8ea894fb9574968d264baf0c5eab64a1104cabcf4e4d65102d7c73895e0501e4af08690a876490939e50eaf86b45370ab18f02d0a6c9e11e104a40075@42.192.22.155:30311',
             'since': '20240307',
             'coreId': 39,
-            },
-# 240313
-    {
-            'owner': '杨敦鹏', # lastupdate 240402
-            'type': 'witness',
-            'ip': '115.159.190.129',
-            'id': 'cbeb747a862d38b8dc1a5f67a27a542f0e3bbb4b80ea9fcfa4c4b4e217728f80',
-            'enode': 'enode://34513e0eb5f5613c51f2fb8648138f2cef59bd047ae197be8c28a2808718584d284b5ab02e7a430fa7ad9a1374b23048cd91fa9ad616afa5cb2f4da70f6016bc@115.159.190.129:30311',
-            'since': '20240313',
-            'coreId': 45,
             },
     {
             'owner': '米高', #240314 update
@@ -278,6 +375,16 @@ core_nodes = [
             'since': '20240319',
             'coreId': 44,
             },
+# 240313
+    {
+            'owner': '杨敦鹏', # lastupdate 240402
+            'type': 'witness',
+            'ip': '115.159.190.129',
+            'id': 'cbeb747a862d38b8dc1a5f67a27a542f0e3bbb4b80ea9fcfa4c4b4e217728f80',
+            'enode': 'enode://34513e0eb5f5613c51f2fb8648138f2cef59bd047ae197be8c28a2808718584d284b5ab02e7a430fa7ad9a1374b23048cd91fa9ad616afa5cb2f4da70f6016bc@115.159.190.129:30311',
+            'since': '20240313',
+            'coreId': 45,
+            },
 
         {
             'owner': 'xiangwang',
@@ -308,16 +415,6 @@ core_nodes = [
             'since': '20240402',
             'coreId': 49,
             },
-# 20240429
-{
-            'owner': 'ucanfilm (机构) ',
-            'type': 'witness',
-            'ip': '139.129.20.205',
-            'id': '88bfd5ab83bee2a2c25e7a15911cf780cd0ccac86acd928867e784fcdf47df8c',
-            'enode': 'enode://fbb54beade25d2c70ea03422e219ea5ec0d322b6b2a3bfe94eba5bc101c5cbfeba090e5f54014ef1ffa56e537c526730ae668b6e7e0b510565eb6ff6307d4e93@139.129.20.205:30311',
-            'since': '20240429',
-            'coreId': 14,
-            },
 # 20240509
 {
             'owner': '相瑾',
@@ -327,6 +424,15 @@ core_nodes = [
             'enode': 'enode://620113e75c0cf4a645b9bfe938a147211cbbf84b2f36405f69dfaa359e58032519e7eababe033214966a10579517a588d25060e71e6399459a227c8ef2ecda00@101.43.23.92:30311',
             'since': '20240509',
             'coreId': 51,
+            },
+        {
+            'owner': '盛美',
+            'type': 'witness',
+            'ip': '117.72.113.123',
+            'id': '68617066980c00985b7fc331487d193e22258badbaeec6bf619d3e7cbc255ae8',
+            'enode': 'enode://9fcb694d575cac90db04e4afd4611145b21b01282ce06097bec90e806f3819656bbc4ce3ea9c41b91f62a4a6fc4300758df0e829e38b708563cf43e5a159ba31@117.72.113.123:30311',
+            'since': '20240623',
+            'coreId': 52,
             },
 
 # 20240719
@@ -340,26 +446,15 @@ core_nodes = [
             'coreId': 53,
             },
 
-# 20240825
-{
-            'owner': '蓝叶子-node',
-            'type': 'witness',
-            'ip': '1.92.122.1',
-            'id': 'bb341e65ad7fdac57853cd6e016207c99eb6ea07c758d8264fccffee63f0654a',
-            'enode': 'enode://f08af9f5fa587deee8b1adb8f14f14918d9cd21c592ab1a7975228a611839f6709d8bc4ef4839c582cc169234e599a9236fa53e7984210bbcf3a7fde691dc070@1.92.122.1:30311'
-            ,'since': '20240825',
-            'coreId': 60,
-            },
 
-# 20240831
 {
-            'owner': 'sing2011',
+            'owner': 'Simon',
             'type': 'witness',
-            'ip': '117.72.147.245',
-            'id': '6b0da4e2b295d5479d6f856be3b2264bb57c443a23b568d76c40aa0f7774ae1e',
-            'enode': 'enode://d8cc45697a68aed642a2f4747d0829716d08b83c8384d3a0f9dc1705f0804efb33216afc11cfd4296b306a2ad18be1984366326d1920a584aa62d9d120896d82@101.126.79.130:30311'
-            ,'since': '20240831',
-            'coreId': 58,
+            'ip': '139.224.209.54',
+            'id': 'b9ee64eeca1fcedad05629a41665df21e395900de11e8d84f785d773b4ccbcec',
+            'enode': 'enode://bfda1116bba6ac01a61479acf917fc45b667d9bed824f21d6e1acfc04e546c8d2ce1b629e2c924797eb43243188586544de5618f6aadc97c70916d31e10b7fff@139.224.209.54:30311',
+            'since': '20240927',
+            'coreId': 54,
             },
 
 # 20240908
@@ -372,6 +467,17 @@ core_nodes = [
             ,'since': '20240908',
             'coreId': 57,
             },
+
+# 20240831
+{
+            'owner': 'sing2011',
+            'type': 'witness',
+            'ip': '117.72.147.245',
+            'id': '6b0da4e2b295d5479d6f856be3b2264bb57c443a23b568d76c40aa0f7774ae1e',
+            'enode': 'enode://d8cc45697a68aed642a2f4747d0829716d08b83c8384d3a0f9dc1705f0804efb33216afc11cfd4296b306a2ad18be1984366326d1920a584aa62d9d120896d82@101.126.79.130:30311'
+            ,'since': '20240831',
+            'coreId': 58,
+            },
 {
             'owner': '潇先生',
             'type': 'witness',
@@ -380,6 +486,17 @@ core_nodes = [
             'enode': 'enode://70ee7da8aee656dd87087a90d9b89d5aec786b11d6d08979588640a57defcb9cb1fb0da4c1c536b8adac84e717885d5b34e641768c6d129478e4f3652ef82d19@101.126.91.91:30311'
             ,'since': '20240908',
             'coreId': 59,
+            },
+
+# 20240825
+{
+            'owner': '蓝叶子-node',
+            'type': 'witness',
+            'ip': '1.92.122.1',
+            'id': 'bb341e65ad7fdac57853cd6e016207c99eb6ea07c758d8264fccffee63f0654a',
+            'enode': 'enode://f08af9f5fa587deee8b1adb8f14f14918d9cd21c592ab1a7975228a611839f6709d8bc4ef4839c582cc169234e599a9236fa53e7984210bbcf3a7fde691dc070@1.92.122.1:30311'
+            ,'since': '20240825',
+            'coreId': 60,
             },
 
 # 20240925
@@ -392,104 +509,14 @@ core_nodes = [
             ,'since': '20240925',
             'coreId': 61,
             },
-
-
-{
-            'owner': 'Simon',
-            'type': 'witness',
-            'ip': '139.224.209.54',
-            'id': 'b9ee64eeca1fcedad05629a41665df21e395900de11e8d84f785d773b4ccbcec',
-            'enode': 'enode://bfda1116bba6ac01a61479acf917fc45b667d9bed824f21d6e1acfc04e546c8d2ce1b629e2c924797eb43243188586544de5618f6aadc97c70916d31e10b7fff@139.224.209.54:30311',
-            'since': '20240927',
-            'coreId': 54,
-            },
-
-    # 241103
-    {
-            'owner': 'kylin',
-            'type': 'miner',
-            'ip': '110.40.130.38',
-            'id': '4c1caaabecd77700cbe29f5ffda48370dbddaf9def2ebafdb1471736b27d1e8b',
-            'signer': '0x08c1938546708f0b3c6f49703d1c19f79d90ac04',
-            'enode': 'enode://2e4104827d8fe8344b10d9ec10705e7cba11ef8476f68d0b5d7ceafe747373f03b2074e5901ba3c5d25c0436a24c03504cb75334e5503a65a1dc6929e0bd2346@110.40.130.38:30311',
-            'since': '20241103',
-            'coreId': 31,
-            },
-
-    # 241113
-    {
-            'owner': '剪云为裳',
-            'type': 'miner',
-            'ip': '106.54.199.222',
-            'id': '4c108deb46bbe44e5960b509d1afd625cbeba13033fd92759ba8cc59b52d3a2f',
-            'signer': '0x5bC3930448cE53C970AcD41C1f80AbA6ab3c523f',
-            'enode': 'enode://2f151d76573e56ee0f57f5598176a5efe1a7fa3f154f66f5674257fe565138d0d4e80b3cba9cc12db0322a9bfd9ef1dc48e79f12cad9233d483f6c3d7d5d9b71@106.54.199.222:30311',
-            'since': '20241113',
-            'coreId': 37,
-            },
-
-    # 241115
-    {
-            'owner': '微尘',
-            'type': 'miner',
-            'ip': '47.94.33.72',
-            'id': '5c488a3f6e2a73da519a6b761164492fd3e9881d5d2537f8ebecbc5718549014',
-            'signer': '0xff42f7a9fd1afdeed1568805fa8dce67e3dbc188',
-            'enode': 'enode://a1224775395a3d283ac745ab6960b24dd8c432cba108be82331c7eeb8c2a8c361387446e64c4ff99c91e89fd730a0c56a7b29927771291006d02a023eabfa63b@1.92.102.75:30311',
-            'since': '20241115', # update 250817
-            'coreId': 53,
-            },
-
-    # 241117
-    {
-            'owner': '煜歌',
-            'type': 'miner',
-            'ip': '110.42.247.135',
-            'id': '40516132d629c367140578751bb341fc774c7b84e9983eb4e605e9f1bf052479',
-            'signer': '0xa3F01Afa1dDfB6D07cac35210d5AFdfe6f0982E8',
-            'enode': 'enode://4dae7c25cc4f3d379911c3386f2a50f07142a0a8b5ba953d26ffc5ea9b3a8bd8b858ae18ab1b56887708c29b39949e9745fb65c9427de61ae6e20c74593373a2@110.42.247.135:30311',
-            'since': '20241117',
-            'coreId': 33,
-            },
-
-{
-            'owner': '尧垚',
-            'type': 'witness',
-            'ip': '124.222.176.129',
-            'id': 'be70a66bda6583faeb550fd4971ea7bc8479a191006ef8d3669861e7117de12d',
-            'enode': 'enode://6a3591331386ba44f0363e47d8f624a70f4ed1d1a54d1788180ca7ef2d0d70104e77a270f3c44ebeddd2b1a5c778b8952d71b972d876b0c947fbf0f683d9ef0f@124.222.176.129:30311',
-            'since': '20241124',
-            'coreId': 63,
-            },
-
         {
-            'owner': 'cijin', 
-            'type': 'miner',
-            'ip': '43.136.103.133',
-            'id': 'bd872df0367eafd723691769eff10a255840ad16ebaebed534d8340be43358d8',
-            'signer': '0x6c1094955e6d5ffd62729f642ee78b8237f82d7c',
-            'enode': 'enode://ddac0bd477a9562a781171680fdfe61596d4f207c8642eb8bec8c74852b4a059f139676a158cadda58f812c31596b2fa65839637b0d034987fb40c17185f8df5@43.136.103.133:30311',
-            'since': '20250311',
-            'coreId': 34,
-            },
-        {
-            'owner': '煜歌', 
+            'owner': '王伟龙',
             'type': 'witness',
-            'ip': '42.193.109.237',
-            'id': 'c0a15305660cdb54249dc6779625e3004c74cbfa4fd369e7ce549e5b3c13208e',
-            'enode': 'enode://2ff621a918f56499f6d7c2a220b9fe5b0db61ca0360b8915f4553bdb0c7f600ff065beb5499da4ac4afaa2861144197f4d01764a679070a71edb6402f3bd6c11@42.193.109.237:30311',
-            'since': '20250316',
-            'coreId': 33,
-            },
-        {
-            'owner': '楼兰渔夫', 
-            'type': 'miner',
-            'ip': '110.42.225.146',
-            'id': '944ad2cd26b56cd6e5b35d9878f5efc05a713d91d1c584af63529bd1592b67f2',
-            'signer': '0x497c19a8157f2c839ec57bf6fb0f26c44fa51203',
-            'enode': 'enode://840f6fbc0650bc100daec33dd6707a3ad7672204e849de83a20c3b5b8a3a3705c974f6801e3d26af22b26c9b0194c9fcd804144dc1a4e2da2f6b10b09b707258@110.42.225.146:30311',
-            'since': '20250319',
-            'coreId': 4,
+            'ip': '118.25.157.8',
+            'id': '06117bc75a4e81a3557089dac3efe879ff2c0bd5c7e21a535512ea120ed6ebbb',
+            'enode': 'enode://85c7c5a7ab42e587bcf53d2f8e7e1ba84ec568d461da7651b5861f0aeb82ea9f249eb2613c377388d24eb66dad1019f516c49bf058b92145c42f85683587333a@118.25.157.8:30311',
+            'since': '20251201',
+            'coreId': 65
             },
         {
             'owner': '元神道（机构）', 
@@ -499,42 +526,6 @@ core_nodes = [
             'enode': 'enode://625a60ec8b7a5c66ef44419b5c76cc63661f62ea2f06c48f8a38adfd60f2fe5305e90421bb7cea6ccb62138894383b7cec0456a218c7264909d78815d0ce5b16@49.233.62.105:30311',
             'since': '20250403',
             'coreId': 66,
-            },
-        {
-            'owner': 'gwendol', 
-            'type': 'witness',
-            'ip': '119.29.222.90',
-            'id': 'f633f834ce3f7593d6a67fc3c8b333ec165c7c6e003700d538d1bc8e89c4e817',
-            'enode': 'enode://0ee2ca0d4a0ba11221077b4ce05be53d0604e2540414b5e1d266bd6203ca44b32e4ebd76b8df194878f37d69de76e7008007a4b1cea6d761c5847c0ee4a9929f@119.29.222.90:30311',
-            'since': '20250820',
-            'coreId': 24,
-            },
-        {
-            'owner': '盛美',
-            'type': 'witness',
-            'ip': '117.72.113.123',
-            'id': '68617066980c00985b7fc331487d193e22258badbaeec6bf619d3e7cbc255ae8',
-            'enode': 'enode://9fcb694d575cac90db04e4afd4611145b21b01282ce06097bec90e806f3819656bbc4ce3ea9c41b91f62a4a6fc4300758df0e829e38b708563cf43e5a159ba31@117.72.113.123:30311',
-            'since': '20240623',
-            'coreId': 52,
-            },
-        {
-            'owner': '楼兰渔夫',
-            'type': 'witness',
-            'ip': '43.138.211.245',
-            'id': '5a61991be2c59c55e9f3b38eb4c0e0e732274728e5afedb185a6019c686ae016',
-            'enode': 'enode://43437ed005d29afed89efe87be782f7565286d5b26b7d91566b69b0324bf158cf926315b7393a2976347fe018831fe626557fb62629c4692c63abed4a5866f83@43.138.211.245:30311',
-            'since': '20251201',
-            'coreId': 4,
-            },
-        {
-            'owner': '王伟龙',
-            'type': 'witness',
-            'ip': '118.25.157.8',
-            'id': '06117bc75a4e81a3557089dac3efe879ff2c0bd5c7e21a535512ea120ed6ebbb',
-            'enode': 'enode://85c7c5a7ab42e587bcf53d2f8e7e1ba84ec568d461da7651b5861f0aeb82ea9f249eb2613c377388d24eb66dad1019f516c49bf058b92145c42f85683587333a@118.25.157.8:30311',
-            'since': '20251201',
-            'coreId': 65
             },
 
 ]
