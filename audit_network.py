@@ -354,45 +354,6 @@ core_nodes = [
             'coreId': 43,
             },
 
-#20240319
-{
-            'owner': '团子',
-            'type': 'witness',
-            'ip': '49.235.152.212',
-            'id': '6fc886c96d3862531db85eb7ba62461970106c7abe543e9663e9c16ec6f0d26b',
-            'enode': 'enode://bf6a39a59f320c74dc59883f144550a3059a6b7cde84d21acb0f87b546503f014d8c893335557c8e18c940d1d3418b4b6b630c50c786ad69b1fa4fd5a638386b@49.235.152.212:30311',
-            'since': '20240319',
-            'coreId': 44,
-            },
-# 240313
-    {
-            'owner': '杨敦鹏', # lastupdate 240402
-            'type': 'witness',
-            'ip': '115.159.190.129',
-            'id': 'cbeb747a862d38b8dc1a5f67a27a542f0e3bbb4b80ea9fcfa4c4b4e217728f80',
-            'enode': 'enode://34513e0eb5f5613c51f2fb8648138f2cef59bd047ae197be8c28a2808718584d284b5ab02e7a430fa7ad9a1374b23048cd91fa9ad616afa5cb2f4da70f6016bc@115.159.190.129:30311',
-            'since': '20240313',
-            'coreId': 45,
-            },
-
-        {
-            'owner': 'xiangwang',
-            'type': 'witness',
-            'ip': '129.211.62.162',
-            'id': 'dd8a74f988b7016416fa6e5bf29bfeec2a5792700174f923b4a4647ec07cf8c2',
-            'enode': 'enode://0fa16459d712d5f6ea6b5cab25a56ebb357ca4bd90733efe34db6ce44699ba175a7e43d3e2f4a814beffe6d162715851fb73d32b4d6f08f7658653adf2ec74a8@129.211.62.162:30311',
-            'since': '20240319', # 2nd, 20250326
-            'coreId': 46,
-            },
-{
-            'owner': '邱泳渼',
-            'type': 'witness',
-            'ip': '124.222.52.62',
-            'id': 'c5aaafa61992ef49d76c3bd84e493afac61aa082e83d49fb6d4a80834b005a76',
-            'enode': 'enode://979dcadb3ce38e9569da7e9d47c9d99869bfbe62a64e6e36f76755aacc044cacf5cdd3fea96d2863414b164271412ff966adc95b037858bf095d66952c2618e8@124.222.52.62:30311',
-            'since': '20240319',
-            'coreId': 47,
-            },
 
 # 20240402
 {
