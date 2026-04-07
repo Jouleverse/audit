@@ -119,7 +119,7 @@ core_nodes = [
     {
             'owner': 'Jeff',
             'type': 'miner',
-            'ip': '47.120.35.41',
+            'ip': '43.156.46.11',
             'id': '58871675d4f24d7c916b4c3ccad303b3b862abfe125b1650b0177bd8be09e896',
             'signer': '0x0ac52a05a4f87404b03dd58a7ac1427429522222',
             'enode': 'enode://db1d084eaf12722b04600084a9bd5dcdbbff89facedff931629354ac396acf3564082fbae5a933f1bf4332a174bf9374941dc1caa1527f32c909589a26796014@47.120.35.41:30311',
