@@ -366,15 +366,6 @@ core_nodes = [
             'coreId': 49,
             },
 # 20240509
-{
-            'owner': '相瑾',
-            'type': 'witness',
-            'ip': '101.43.23.92',
-            'id': 'bda5a83e2f7c70a33d31a998f285d50da8a09448af9805a5e069d8a780407989',
-            'enode': 'enode://620113e75c0cf4a645b9bfe938a147211cbbf84b2f36405f69dfaa359e58032519e7eababe033214966a10579517a588d25060e71e6399459a227c8ef2ecda00@101.43.23.92:30311',
-            'since': '20240509',
-            'coreId': 51,
-            },
         {
             'owner': '盛美',
             'type': 'witness',
