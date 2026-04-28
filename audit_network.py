@@ -460,13 +460,22 @@ core_nodes = [
             'coreId': 65
             },
         {
-            'owner': '元神道（机构）', 
+            'owner': '元神道（机构）',
             'type': 'witness',
             'ip': '49.233.62.105',
-            'id': '7ee0f8e16164ffc13d80a8eb155e7bd00bba520447aab29a144837f3b9375c72',
-            'enode': 'enode://625a60ec8b7a5c66ef44419b5c76cc63661f62ea2f06c48f8a38adfd60f2fe5305e90421bb7cea6ccb62138894383b7cec0456a218c7264909d78815d0ce5b16@49.233.62.105:30311',
+            'id': '04a1f66d3ce6dd92f1c28691c2304997dcf14d289654905ffd790182ca9ca0b1',
+            'enode': 'enode://f5789c9d338ba8a3fced6e4f5dc6b761523e6942a883c034bc7a5c1e422387774f80050dbcb92936e6996b14dcda283bce81b593ca33c80251aa21cc1f747ed9@49.233.62.105:30311',
             'since': '20250403',
             'coreId': 66,
+            },
+        {
+            'owner': 'Bataroc',
+            'type': 'witness',
+            'ip': '111.229.116.199',
+            'id': '3e62c5d447703b9a78bbf779602bccecba6c7074a98e457225ccdf2cf958605b',
+            'enode': 'enode://fef160d4781967b4aa55ab51c7931e7f32815bcb2489dd4b1ec6aa77d3699457f8cb84f4d70e2f8a7ab379c3a9129996954f73003d66434d875e5faa09d31496@111.229.116.199:30311',
+            'since': '20260428',
+            'coreId': 67,
             },
 
 ]
