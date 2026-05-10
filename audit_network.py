@@ -268,15 +268,7 @@ core_nodes = [
             'since': '20230529',
             'coreId': 25, # maintainer JVCore #id. 尚未获得则删去该字段.
             },
-    {
-            'owner': '严光红',
-            'type': 'witness',
-            'ip': '1.14.111.74', # bootnode-ygh.jnsdao.com
-            'id': '65e0dc09479950368c2edaa0d7f3dd30af33ebd0187b31f0ad5df55535905f01',
-            'enode': 'enode://b3eca38a3d18a789a0ca4e0e871c77fbf98fbe82cb8ed577895be8be14599abd07df88fe5fcf5fa11a63843b25bbc69b28da9a68bc0fcf42b01583329d4e0006@1.14.111.74:30311',
-            'since': '20231014',
-            'coreId': 26,
-            },
+
     {
             'owner': '狮子猫',
             'type': 'witness',
@@ -305,15 +297,7 @@ core_nodes = [
             'since': '20240120',
             'coreId': 31,
             },
-        {
-            'owner': '煜歌', 
-            'type': 'witness',
-            'ip': '42.193.109.237',
-            'id': 'c0a15305660cdb54249dc6779625e3004c74cbfa4fd369e7ce549e5b3c13208e',
-            'enode': 'enode://2ff621a918f56499f6d7c2a220b9fe5b0db61ca0360b8915f4553bdb0c7f600ff065beb5499da4ac4afaa2861144197f4d01764a679070a71edb6402f3bd6c11@42.193.109.237:30311',
-            'since': '20250316',
-            'coreId': 33,
-            },
+
     {
             'owner': 'cijin',
             'type': 'witness',
@@ -324,16 +308,7 @@ core_nodes = [
             'coreId': 34,
             },
 
-# 20240307
-    {
-            'owner': '花开的声音',
-            'type': 'witness',
-            'ip': '42.192.22.155',
-            'id': 'c035d24a2ee04451b482b48aff6bd58a51ee9bdd92854487e224828a4c4dd468',
-            'enode': 'enode://187997b8ea894fb9574968d264baf0c5eab64a1104cabcf4e4d65102d7c73895e0501e4af08690a876490939e50eaf86b45370ab18f02d0a6c9e11e104a40075@42.192.22.155:30311',
-            'since': '20240307',
-            'coreId': 39,
-            },
+
     {
             'owner': '米高', #240314 update
             'type': 'witness',
@@ -354,17 +329,6 @@ core_nodes = [
             'coreId': 43,
             },
 
-
-# 20240402
-{
-            'owner': '星语欣愿',
-            'type': 'witness',
-            'ip': '122.51.194.8',
-            'id': '1c4e3d16f493c29a33dd7779d83780136691add1151698b740bffaf044419c7d',
-            'enode': 'enode://a1f164a376d59b7a8903fdaf1d10687523cbdacc298a625a5d31ad0a3615f0539a6f54243b2d304d66f1d3f3079ef0a1a3196342bdcaa12f034c0a83468e2f80@122.51.194.8:30311',
-            'since': '20240402',
-            'coreId': 49,
-            },
 # 20240509
         {
             'owner': '盛美',
