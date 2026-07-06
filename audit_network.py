@@ -107,16 +107,6 @@ core_nodes = [
             'coreId': 25,
             },
     {
-            'owner': '严光红',
-            'type': 'miner',
-            'ip': '106.53.60.230',
-            'id': 'f92367cc2a9b02c68d6f024b7630bdfa6060d0ce70fc676696633a59eef3ae39',
-            'signer': '0xcce6cc1ba66c6b9af2c7b20d78155c74ed9aad6f',
-            'enode': 'enode://94b45bc3705c8abebeda0ee9b31a76188b59c0c69397362e96accd39b15a56668775204d4f2e3e7ddb2b14df0b640b5bb9cd4dcb60c252ef80268f1af815f623@106.53.60.230:30311',
-            'since': '20240109',
-            'coreId': 26,
-            },
-    {
             'owner': 'Jeff',
             'type': 'miner',
             'ip': '43.156.46.11',
