@@ -431,7 +431,15 @@ core_nodes = [
             'since': '20260428',
             'coreId': 67,
             },
-
+        {
+            'owner': '刘桂洪',
+            'type': 'witness',
+            'ip': '124.221.160.142',
+            'id': '818a944a00febd06a8452cd51575e576a780e67ffddbab084e3741faf5a9f1d3',
+            'enode': 'enode://d3f6aef7feb72231798a9a86251a451a0a961dfa0cc039a57de67554d3b34e3c910707a049e7c3d2f72602f1cf974083b9b4ca7d74a69b96a1a9cf2930b3c4a9@124.221.160.142:30311',
+            'since': '20260710',
+            'coreId': 69,
+            },
 ]
 
 # JVCore 合约 ABI
