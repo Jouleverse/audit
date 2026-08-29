@@ -308,7 +308,15 @@ core_nodes = [
             'since': '20240313',
             'coreId': 42,
             },
-
+    {
+            'owner': 'Ted',
+            'type': 'witness',
+            'ip': '120.53.124.149',
+            'id': '1e416260cd36231d299160e8a8c24014a02eb4ba1494ad43011d6432b02fc7ef',
+            'enode': 'enode://64e36ff9563dd1e50adbc4ebea15b564eddc557f80e4ff1f19da417413d905fc95323a1bd807c8b5108d83a9587e5ead044bb2d2e9c818d9ccc7e407b5ca56c8@36.134.89.81:30311',
+            'since': '20240313',
+            'coreId': 43,
+            },
 # 20240509
         {
             'owner': '盛美',
