@@ -239,15 +239,6 @@ core_nodes = [
             'since': '20240119',
             'coreId': 18,
             },
-        {
-            'owner': 'gwendol', 
-            'type': 'witness',
-            'ip': '119.29.222.90',
-            'id': 'f633f834ce3f7593d6a67fc3c8b333ec165c7c6e003700d538d1bc8e89c4e817',
-            'enode': 'enode://0ee2ca0d4a0ba11221077b4ce05be53d0604e2540414b5e1d266bd6203ca44b32e4ebd76b8df194878f37d69de76e7008007a4b1cea6d761c5847c0ee4a9929f@119.29.222.90:30311',
-            'since': '20250820',
-            'coreId': 24,
-            },
 
         {
             'owner': 'JNSDAO',
@@ -381,16 +372,6 @@ core_nodes = [
             'coreId': 59,
             },
 
-# 20240825
-{
-            'owner': '蓝叶子-node',
-            'type': 'witness',
-            'ip': '1.92.122.1',
-            'id': 'bb341e65ad7fdac57853cd6e016207c99eb6ea07c758d8264fccffee63f0654a',
-            'enode': 'enode://f08af9f5fa587deee8b1adb8f14f14918d9cd21c592ab1a7975228a611839f6709d8bc4ef4839c582cc169234e599a9236fa53e7984210bbcf3a7fde691dc070@1.92.122.1:30311'
-            ,'since': '20240825',
-            'coreId': 60,
-            },
 
 # 20240925
 {
@@ -424,8 +405,8 @@ core_nodes = [
             'owner': 'Bataroc',
             'type': 'witness',
             'ip': '111.229.116.199',
-            'id': '3e62c5d447703b9a78bbf779602bccecba6c7074a98e457225ccdf2cf958605b',
-            'enode': 'enode://fef160d4781967b4aa55ab51c7931e7f32815bcb2489dd4b1ec6aa77d3699457f8cb84f4d70e2f8a7ab379c3a9129996954f73003d66434d875e5faa09d31496@111.229.116.199:30311',
+            'id': 'f6c40473991e88dd72be3a9204d0ee122c25c746570674bbd5516298097e876b',
+            'enode': 'enode://fafe29131462c51079562b6fcc3086849ffedf1fd7e8994a677472f27345a4841943b01413da842e32c8f169bbbea7ce2a0e3bdd10f9b47586a7d7dcc10b84b2@111.229.116.199:30311',
             'since': '20260428',
             'coreId': 67,
             },
