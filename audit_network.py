@@ -176,6 +176,16 @@ core_nodes = [
             'coreId': 53,
             },
     {
+            'owner': 'Bataroc',
+            'type': 'miner',
+            'ip': '42.193.14.2',
+            'id': '8c6cdf58883da01372ab4b58041b04049356fc7d85453c3c7dfc5c68269c07f3',
+            'signer': '0x690e514cc99293A49620D46A1f70c2c5E968359d',
+            'enode': 'enode://da80eccfb0fdc8ba75ec61d9131cf45c88c09aed80f5acecc33e448cf88cf09cfa847ce042f3973b2404c3d7ab46c33946f0be2f6ca6c2fcd7d251c3be05b126@42.193.14.2:30311',
+            'since': '20260808', 
+            'coreId': 67,
+            },
+    {
             'owner': 'Koant',
             'type': 'witness',
             'ip': '111.230.23.83', # bootnode-koant.jnsdao.com
