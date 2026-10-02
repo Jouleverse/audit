@@ -351,27 +351,7 @@ core_nodes = [
             'coreId': 54,
             },
 
-# 20240908
-{
-            'owner': 'TIGER',
-            'type': 'witness',
-            'ip': '117.72.152.237',
-            'id': '13b01d9329bbae324a581153eee384d148170bdcb5dc0ff43e2b5749224d483e',
-            'enode': 'enode://3abea1f6928c8400900c554fceb6a63a79120214e72bfde6a9ff10f60b147a616585f4b433e25cbac8b37a3efbb5eff36b0dc73961c09858ee15790a2732a3a2@162.14.111.59:30311'
-            ,'since': '20240908',
-            'coreId': 57,
-            },
 
-# 20240831
-{
-            'owner': 'sing2011',
-            'type': 'witness',
-            'ip': '117.72.147.245',
-            'id': '6b0da4e2b295d5479d6f856be3b2264bb57c443a23b568d76c40aa0f7774ae1e',
-            'enode': 'enode://d8cc45697a68aed642a2f4747d0829716d08b83c8384d3a0f9dc1705f0804efb33216afc11cfd4296b306a2ad18be1984366326d1920a584aa62d9d120896d82@101.126.79.130:30311'
-            ,'since': '20240831',
-            'coreId': 58,
-            },
 {
             'owner': '潇先生',
             'type': 'witness',
