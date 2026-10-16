@@ -344,9 +344,9 @@ core_nodes = [
 {
             'owner': 'Simon',
             'type': 'witness',
-            'ip': '139.224.209.54',
-            'id': 'b9ee64eeca1fcedad05629a41665df21e395900de11e8d84f785d773b4ccbcec',
-            'enode': 'enode://bfda1116bba6ac01a61479acf917fc45b667d9bed824f21d6e1acfc04e546c8d2ce1b629e2c924797eb43243188586544de5618f6aadc97c70916d31e10b7fff@139.224.209.54:30311',
+            'ip': '43.142.123.23',
+            'id': 'e3a1dc55bde5321f7cfa56d2db414767bb7c5b80919300e0c3b1e0ac7b456187',
+            'enode': 'enode://666bb6b810a14eb1358ddb562cb8ae9117db4a3723f2fa7515a513cf6f3c825667fc67b852a89a12eccac9a234d52b0c4260600464a2bb986f9f13054a6898a4@43.142.123.23:30311',
             'since': '20240927',
             'coreId': 54,
             },
