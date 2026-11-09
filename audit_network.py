@@ -318,16 +318,6 @@ core_nodes = [
             'since': '20240313',
             'coreId': 43,
             },
-# 20240509
-        {
-            'owner': '盛美',
-            'type': 'witness',
-            'ip': '117.72.113.123',
-            'id': '68617066980c00985b7fc331487d193e22258badbaeec6bf619d3e7cbc255ae8',
-            'enode': 'enode://9fcb694d575cac90db04e4afd4611145b21b01282ce06097bec90e806f3819656bbc4ce3ea9c41b91f62a4a6fc4300758df0e829e38b708563cf43e5a159ba31@117.72.113.123:30311',
-            'since': '20240623',
-            'coreId': 52,
-            },
 
 # 20240719
 {
@@ -363,16 +353,7 @@ core_nodes = [
             },
 
 
-# 20240925
-{
-            'owner': '彩彩',
-            'type': 'witness',
-            'ip': '81.70.161.150',
-            'id': '1519723d38021e865a05454ca2b1c8f42a47ebe79eb5d7f5756608bb17c153f5',
-            'enode': 'enode://d391c5ce8898eece6d7aaaf23ebcd7caa342c9bc9406645f9be617fa3e405af07cd80beb56dcabb12317f8b46bb57cf67e8a6f631ddc09f8b9733c5041e74516@101.126.156.22:30311'
-            ,'since': '20240925',
-            'coreId': 61,
-            },
+
         {
             'owner': '王伟龙',
             'type': 'witness',
