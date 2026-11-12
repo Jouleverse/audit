@@ -99,10 +99,10 @@ core_nodes = [
         {
             'owner': '教链',
             'type': 'miner',
-            'ip': '82.157.210.13',
+            'ip': '106.55.228.105',
             'id': '61cb546c70e6a470e8ee64c4ff5fbef138d9afe116fb24147636802d6ffac30b',
             'signer': '0x85db5D64BD1a2652A75C4A7e12Eeba2f43c57bC4',
-            'enode': 'enode://d667d09c38706d40fa1c15cde8dc28c117087cdf55d41d402d70b0817636c6f65e6a6463e81ab178ad9a896ea93c37b479a01ff19dfe13cd4276ea2c64575c76@81.68.150.141:30311',
+            'enode': 'enode://d667d09c38706d40fa1c15cde8dc28c117087cdf55d41d402d70b0817636c6f65e6a6463e81ab178ad9a896ea93c37b479a01ff19dfe13cd4276ea2c64575c76@106.55.228.105:30311',
             'since': '20230524',
             'coreId': 25,
             },
